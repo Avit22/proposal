@@ -15,7 +15,7 @@
         <div class="right_col" role="main">
           
           <h1 class="text-center text-info">Input Laporan Kegiatan</h1> <br /><br />
-       <?php echo form_open('pjk/input_laporan/tambah_proses',array('id' => 'tambah_laporan','name' => 'tambah_laporan', 'class' => 'form-horizontal')); ?>
+       <?php echo form_open_multipart('pjk/input_laporan/tambah_proses',array('id' => 'tambah_laporan','name' => 'tambah_laporan', 'class' => 'form-horizontal')); ?>
        <?php echo validation_errors(); ?>
 
 
@@ -64,10 +64,23 @@
           <label for="bukti_biaya" class="col-sm-2 control-label">Dokumentasi</label>
           <div class="col-sm-10">
             <?php 
-           $data = array('name' => 'dokumentasi', 'id' => 'dokumentasi', 'class' => 'form-control', 'placeholder' => 'Upload Dokumentasi');
+           $data = array('name' => 'bukti_biaya', 'id' => 'bukti_biaya', 'class' => 'form-control', 'placeholder' => 'Upload Dokumentasi');
            echo form_textarea($data); ?>
           </div>
         </div>
+
+                <!-- file upload-->
+        <div class="form-group">
+        <label for="image" class="col-sm-2 control-label">Foto</label>
+        <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="file" name="filename" size="20" />
+                        <span class="text-danger"><?php if (isset($error)) { echo $error; } ?></span>
+                    </div>
+                </div>
+            </div>
+          <!--end of file upload -->   
 
        
 
