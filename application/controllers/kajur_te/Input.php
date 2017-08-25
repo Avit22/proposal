@@ -90,7 +90,7 @@ public function tambah_proses() {
 			if($this->Input_model->tambah($data));
 				
 		}	
-		//redirect('kajur_te/terkirim');	
+		redirect('kajur_te/terkirim');	
 }
 	
 	
