@@ -43,7 +43,7 @@
                 <td><?php echo anchor("kaprodi_tk/edit_proposal/edit/".$proposal->id_proposal,'<span class="glyphicon glyphicon-edit text-primary fa-lg" aria-hidden="true" title="Edit Proposal"></span>'); ?>   
                 </td>
                 <td>
-                <?php echo anchor("input/hapus/$proposal->id_proposal",'<span class="glyphicon glyphicon-trash text-danger fa-lg" aria-hidden="true" title="Hapus Proposal"></span>',array('onClick' => "return confirm('Anda yakin data ini akan di HAPUS ?')")); ?>
+                <?php echo anchor("kaprodi_tk/input/hapus/$proposal->id_proposal",'<span class="glyphicon glyphicon-trash text-danger fa-lg" aria-hidden="true" title="Hapus Proposal"></span>',array('onClick' => "return confirm('Anda yakin data ini akan di HAPUS ?')")); ?>
                 </td>      
             </tr>
             <?php } endforeach; } ?>

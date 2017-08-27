@@ -44,7 +44,7 @@ class Input extends CI_Controller {
 
 	function hapus($id) {
 		$this->Input_model->hapus($id);
-		redirect('terkirim');
+		redirect('kajur_ts/terkirim');
 	}
 
 	
