@@ -13,7 +13,7 @@
  
         <!-- page content -->
         <div class="right_col" role="main">
-          
+        
           <h1 class="text-center text-info">Input Laporan Kegiatan</h1> <br /><br />
        <?php echo form_open_multipart('pjk/input_laporan/tambah_proses',array('id' => 'tambah_laporan','name' => 'tambah_laporan', 'class' => 'form-horizontal')); ?>
        <?php echo validation_errors(); ?>
@@ -75,7 +75,7 @@
         <div class="col-sm-10">
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="file" name="filename" size="20" />
+                        <input type="file" name="filename" size="60" />
                         <span class="text-danger"><?php if (isset($error)) { echo $error; } ?></span>
                     </div>
                 </div>

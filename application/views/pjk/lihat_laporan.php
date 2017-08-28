@@ -34,6 +34,7 @@
                 <td><?php echo $laporan->judul; ?></td>
                 <td><?php echo $laporan->nama_pjk; ?></td>
                 <td><?php echo $laporan->tgl_input; ?></td>
+                <th>"-"</th>
       
             </tr>
             <?php } endforeach; } ?>
