@@ -13,15 +13,18 @@
  
         <!-- page content -->
         <div class="right_col" role="main">
-          
-          <h1 class="text-center text-info">Edit Proposal</h1> <br /><br />
-       <?php echo form_open('kaprodi_kecantikan/input/update_proses/',array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
-       <?php echo validation_errors(); ?>
 
- <?php 
+
+         <?php 
 foreach($proposale as $proposal)
 { 
 ?>
+          
+          <h1 class="text-center text-info">Edit Proposal</h1> <br /><br />
+       <?php echo form_open('kaprodi_kecantikan/input/update_proses/'.$proposal->id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
+       <?php echo validation_errors(); ?>
+
+
        	<!-- Jenis Proposal -->
         <div class="form-group">
           <label for="jenis" class="col-sm-2 control-label">Jenis Proposal</label>
@@ -78,7 +81,7 @@ foreach($proposale as $proposal)
         <div class="form-group">
           <label for="prodi" class="col-sm-2 control-label">Program Studi</label>
           <div class="col-sm-6">
-          <select class="form-control" name="jprodi">
+          <select class="form-control" name="prodi">
             <option value="">--- Pilih Program Studi ---</option>
            <?php 
            $id_prodi = $proposal->prodi;
@@ -118,12 +121,12 @@ foreach($proposale as $proposal)
           </div>
         </div>
 
-        <!-- Tujuan -->
+         <!-- Dasar Hukum -->
         <div class="form-group">
-          <label for="tujuan" class="col-sm-2 control-label">Tujuan</label>
+          <label for="dasar_hukum" class="col-sm-2 control-label">Dasar Hukum</label>
           <div class="col-sm-10">
             <?php 
-           $data = array('name' => 'tujuan', 'id' => 'tujuan', 'class' => 'form-control', 'placeholder' => 'Masukkan Tujuan','value'=>$proposal->dasar_hukum);
+           $data = array('name' => 'dasar_hukum', 'id' => 'tujuan', 'class' => 'form-control', 'placeholder' => 'Masukkan Tujuan','value'=>$proposal->dasar_hukum);
            echo form_textarea($data); ?>
           </div>
         </div>
@@ -134,6 +137,26 @@ foreach($proposale as $proposal)
           <div class="col-sm-10">
             <?php 
            $data = array('name' => 'rab', 'id' => 'rab', 'class' => 'form-control', 'placeholder' => 'Masukkan RAB','value'=>$proposal->rab);
+           echo form_textarea($data); ?>
+          </div>
+        </div>
+
+        <!-- Tempat -->
+        <div class="form-group">
+          <label for="tempat" class="col-sm-2 control-label">Tempat Pelaksanaan</label>
+          <div class="col-sm-10">
+            <?php 
+           $data = array('name' => 'tempat', 'id' => 'tempat', 'class' => 'form-control', 'placeholder' => 'Masukkan Tempat Pelaksanaan','value'=>$proposal->tempat);
+           echo form_textarea($data); ?>
+          </div>
+        </div>
+
+        <!-- Keluaran -->
+        <div class="form-group">
+          <label for="keluaran" class="col-sm-2 control-label">Keluaran</label>
+          <div class="col-sm-10">
+            <?php 
+           $data = array('name' => 'keluaran', 'id' => 'keluaran', 'class' => 'form-control', 'placeholder' => 'Masukkan RAB','value'=>$proposal->keluaran);
            echo form_textarea($data); ?>
           </div>
         </div>

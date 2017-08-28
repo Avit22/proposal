@@ -97,8 +97,7 @@ foreach($proposale as $proposal)
         </div>
 
 
-
-        
+      
         <!-- Judul -->
         <div class="form-group">
           <label for="judul" class="col-sm-2 control-label">Judul</label>
@@ -119,9 +118,9 @@ foreach($proposale as $proposal)
           </div>
         </div>
 
-        <!-- Tujuan -->
+        <!-- Dasar Hukum -->
         <div class="form-group">
-          <label for="dasar_hukum" class="col-sm-2 control-label">Tujuan</label>
+          <label for="dasar_hukum" class="col-sm-2 control-label">Dasar Hukum</label>
           <div class="col-sm-10">
             <?php 
            $data = array('name' => 'dasar_hukum', 'id' => 'tujuan', 'class' => 'form-control', 'placeholder' => 'Masukkan Tujuan','value'=>$proposal->dasar_hukum);
@@ -135,6 +134,26 @@ foreach($proposale as $proposal)
           <div class="col-sm-10">
             <?php 
            $data = array('name' => 'rab', 'id' => 'rab', 'class' => 'form-control', 'placeholder' => 'Masukkan RAB','value'=>$proposal->rab);
+           echo form_textarea($data); ?>
+          </div>
+        </div>
+
+        <!-- Tempat -->
+        <div class="form-group">
+          <label for="tempat" class="col-sm-2 control-label">Tempat Pelaksanaan</label>
+          <div class="col-sm-10">
+            <?php 
+           $data = array('name' => 'tempat', 'id' => 'tempat', 'class' => 'form-control', 'placeholder' => 'Masukkan Tempat Pelaksanaan','value'=>$proposal->tempat);
+           echo form_textarea($data); ?>
+          </div>
+        </div>
+
+        <!-- Keluaran -->
+        <div class="form-group">
+          <label for="keluaran" class="col-sm-2 control-label">Keluaran</label>
+          <div class="col-sm-10">
+            <?php 
+           $data = array('name' => 'keluaran', 'id' => 'keluaran', 'class' => 'form-control', 'placeholder' => 'Masukkan RAB','value'=>$proposal->keluaran);
            echo form_textarea($data); ?>
           </div>
         </div>
