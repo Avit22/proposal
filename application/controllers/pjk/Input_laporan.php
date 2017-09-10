@@ -21,9 +21,27 @@ class Input_laporan extends CI_Controller {
 	
 	public function index() {
 
-		$this->load->view('pjk/input_laporan');
+		$sessiondata = $this->session->userdata('id_user');
+		if($query = $this->Input_model->get_data_pjk($sessiondata)) {
+			$data['proposale'] = $query;
+		}
+		else
+			$data['proposale'] = NULL;
+		$this->load->view('pjk/proposalku', $data);
 		
 	}
+
+	public function input($id){
+
+		
+		if($query = $this->Input_model->get_data_input_laporan($id)) {
+			$data['proposale'] = $query;
+		}
+		else
+			$data['proposale'] = NULL;
+		$this->load->view('pjk/input_laporan',$data);
+	}
+
 
 	
 	public function tambah_proses() {
@@ -33,9 +51,9 @@ class Input_laporan extends CI_Controller {
 	$this->form_validation->set_rules('nama_pjk', 'Nama PJK', 'required');
 	$this->form_validation->set_rules('rincian_kegiatan', 'Rincian Kegiatan', 'required');
 	$this->form_validation->set_rules('rincian_biaya', 'Rincian Biaya', 'required');
-	$this->form_validation->set_rules('bukti_biaya', 'Bukti Biaya', 'required');
+	//$this->form_validation->set_rules('bukti_biaya', 'Bukti Biaya', 'required');
 	$name_of_file = "empty.jpg";
-				$config['upload_path']          	= 'assets/image/';
+				$config['upload_path']          = 'assets/image/';
                 $config['allowed_types']        = 'gif|jpg|jpeg|png|pdf|doc|docx';
                 $config['max_size']             = 10000;
                 $config['max_width']            = 4086;
@@ -51,8 +69,8 @@ class Input_laporan extends CI_Controller {
                 }
                 else
                 {
-                        $datas = array('upload_data' => $this->upload->data());
-                        $name_of_file = $datas['orig_name'];
+                        $datas = $this->upload->data();
+                        $name_of_file = $datas['file_name'];
                         //$this->load->view('upload_success', $data);
                 }
 
@@ -60,21 +78,23 @@ class Input_laporan extends CI_Controller {
 			$this->index();
 		}
 		else {
+			$id_user_session = $this->session->userdata('id_user'); // tambahkan penanda user
 			$tgl = date("Y-m-d");
 			$data = array(				
 				'judul' => $this->input->post('judul'),
 				'nama_pjk' => $this->input->post('nama_pjk'),
 				'rincian_kegiatan' => $this->input->post('rincian_kegiatan'),
 				'rincian_biaya' => $this->input->post('rincian_biaya'),
-				'bukti_biaya' => $this->input->post('bukti_biaya'),
+				//'bukti_biaya' => $this->input->post('bukti_biaya'),
 				'tgl_input' => $tgl,
 				'file1' => $name_of_file,       // Returns: mypic.jpg,
+				'id_user' => $id_user_session,
 				);	
 
 			if($this->Input_model->tambah_laporan($data)){
-				redirect('pjk/data_kirim');
+				redirect('pjk/laporan_terkirim');
 			}
 		}
-
+		redirect('pjk/laporan_terkirim');
 	}
 }

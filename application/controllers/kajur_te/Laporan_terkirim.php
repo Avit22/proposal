@@ -19,8 +19,8 @@ class Laporan_terkirim extends CI_Controller {
 
 	
 	public function index() {
-
-		if($query = $this->Input_model->get_laporan()) {
+		$sessiondata = $this->session->userdata('id_user');
+		if($query = $this->Input_model->get_laporan_by_idproposal($sessiondata)) {
 			$data['laporane'] = $query;
 		}
 		else

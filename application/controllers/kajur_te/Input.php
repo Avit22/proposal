@@ -108,7 +108,7 @@ public function update_proses($id) {
 	$this->form_validation->set_rules('rab', 'RAB', 'required');
 	$this->form_validation->set_rules('tempat', 'Tempat', 'required');
 	$this->form_validation->set_rules('keluaran', 'Keluaran', 'required');
-	//$this->form_validation->set_rules('tgl_pelaksanaan', 'Tanggal Pelaksanaan', 'required');
+	$this->form_validation->set_rules('tgl_pelaksanaan', 'Tanggal Pelaksanaan', 'required');
 	$this->form_validation->set_rules('penutup', 'Penutup', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->index();
@@ -128,7 +128,7 @@ public function update_proses($id) {
 				'tempat' => $this->input->post('tempat'),
 				'keluaran' => $this->input->post('keluaran'),
 				'penutup' => $this->input->post('penutup'),
-				//'tgl_pelaksanaan' => $this->input->post('tgl_pelaksanaan'),
+				'tgl_pelaksanaan' => $this->input->post('tgl_pelaksanaan'),
 				'tgl_input' => $tgl,
 				);
 

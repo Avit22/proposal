@@ -23,6 +23,13 @@ class Input_model extends CI_Model {
 		$query = $this->db->get('prodi');
 		return $query->result();
 	}
+
+	function get_revisi() {
+		$this->db->select('*');
+		$query = $this->db->get('revisi');
+		return $query->result();
+	}
+
 	function update($id,$data) {
 		$this->db->where('id_proposal',$id);
 		$this->db->update('proposal',$data);
@@ -30,6 +37,11 @@ class Input_model extends CI_Model {
 
 function tambah($data) {
 		$this->db->insert('proposal',$data);
+		return;
+	}
+
+function tambah_revisi($data) {
+		$this->db->insert('revisi',$data);
 		return;
 	}
 
@@ -43,6 +55,26 @@ function tambah($data) {
 		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_input_laporan($id_proposal){
+
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->where('proposal.id_proposal = "'.$id_proposal.'"');
+		$query = $this->db->get();
+		return $query->result();
+
+	}
+
+	function get_revisi_by_iduser($id_user) {
+
+		$this->db->select('*');
+		$this->db->from('revisi');
+		$this->db->join('user','revisi.id_user = user.id_user');
+		$this->db->where('revisi.id_pjk = "'.$id_user.'"');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -67,7 +99,7 @@ function tambah($data) {
 		$query = $this->db->get();
 		return $query->result();
 	}
-
+	
 	function get_data_pjk($id_user) {
 
 		$this->db->select('*');
@@ -369,6 +401,25 @@ function get_laporan() {
 
 		$this->db->select('*');
 		$this->db->from('laporan');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+function get_laporan_by_idproposal($id_user){
+	
+		$this->db->select('*');
+		$this->db->from('laporan');
+		$this->db->where('laporan.id_user = "'.$id_user.'"');
+		$query = $this->db->get();
+		return $query->result();
+
+}
+
+function get_data_by_idlaporan($id_laporan) {
+
+		$this->db->select('*');
+		$this->db->from('laporan');
+		$this->db->where('laporan.id_laporan = "'.$id_laporan.'"');
 		$query = $this->db->get();
 		return $query->result();
 	}
