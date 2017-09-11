@@ -33,6 +33,8 @@ class Revisi extends CI_Controller {
 	public function tambah_revisi() {
 	$this->load->library('form_validation');
 	$this->form_validation->set_message('required', '%s Harus Diisi.');
+	$this->form_validation->set_rules('id_pjk', 'Id PJK', 'required');
+	$this->form_validation->set_rules('id_proposal', 'Id Proposal', 'required');
 	$this->form_validation->set_rules('jenis_proposal', 'Jenis Proposal', 'required');
 	$this->form_validation->set_rules('judul', 'Judul', 'required');
 	$this->form_validation->set_rules('nama_pjk', 'Nama PJK', 'required');
@@ -46,10 +48,12 @@ class Revisi extends CI_Controller {
 			$this->index();
 		}
 		else {
-			//$id_user_session = $this->session->userdata('id_user'); // tambahkan penanda user
+			$id_user_session = $this->session->userdata('id_user'); // tambahkan penanda user
 			$tgl = date("Y-m-d");
 			$data = array(				
 				'jenis_proposal' => $this->input->post('jenis_proposal'),
+				'id_pjk' => $this->input->post('id_pjk'),
+				'id_proposal' => $this->input->post('id_proposal'),
 				'judul' => $this->input->post('judul'),
 				'nama_pjk' => $this->input->post('nama_pjk'),
 				'pendahuluan' => $this->input->post('pendahuluan'),
@@ -58,7 +62,7 @@ class Revisi extends CI_Controller {
 				'keluaran' => $this->input->post('keluaran'),
 				'revisi' => $this->input->post('revisi'),
 				'tgl_input' => $tgl,
-				//'id_user' => $id_user_session,
+				'id_user' => $id_user_session,
 				);
 
 			if($this->Input_model->tambah_revisi($data));

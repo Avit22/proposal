@@ -35,7 +35,7 @@
            <tr data-toggle="modal" data-target="myModal" class="noExl">
                 <td><?php echo $i++; ?></td>
                 <td><?php echo $revisi->jenis_proposal; ?></td>
-                <td><a href="<?php echo base_url('kaprodi_ptb/notifikasi/edit_proposal/');?><?php  echo '/'.$revisi->id_proposal; ?>"><?php echo $revisi->judul; ?></a></td>
+                <td><a href="<?php echo base_url('kaprodi_ptb/notifikasi/edit/');?><?php  echo '/'.$revisi->id_proposal; ?>"><?php echo $revisi->judul; ?></a></td>
                 <td><?php echo $revisi->nama_pjk; ?></td>
                 <td><?php echo $revisi->tgl_input; ?></td>
                 <td><?php echo $revisi->revisi; ?></td>

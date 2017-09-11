@@ -23,6 +23,26 @@ foreach($proposale as $proposal)
 { 
 ?>
         
+<!-- Id PJK-->
+        <div class="form-group">
+          <label for="id_pjk" class="col-sm-2 control-label">Id PJK</label>
+          <div class="col-sm-10">
+            <?php 
+           $data = array('name' => 'id_pjk', 'id' => 'id_pjk', 'class' => 'form-control', 'placeholder' => 'Id PJK','value'=>$proposal->id_user,'readonly'=>'true');
+           echo form_input($data); ?>
+          </div>
+        </div>
+
+<!-- Id Proposal-->
+        <div class="form-group">
+          <label for="id_proposal" class="col-sm-2 control-label">Id Proposal</label>
+          <div class="col-sm-10">
+            <?php 
+           $data = array('name' => 'id_proposal', 'id' => 'id_proposal', 'class' => 'form-control', 'placeholder' => 'Id Proposal','value'=>$proposal->id_proposal,'readonly'=>'true');
+           echo form_input($data); ?>
+          </div>
+        </div>        
+
 
 <!-- Jenis Proposal-->
         <div class="form-group">
