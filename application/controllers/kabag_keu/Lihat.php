@@ -30,6 +30,16 @@ class Lihat extends CI_Controller {
 		
 	}
 
+	public function detail($id_proposal){
+		if($query = $this->Input_model->get_data_by_idproposal($id_proposal)) {
+			$data['proposale'] = $query;
+		}
+		else
+			$data['proposale'] = NULL;
+
+		$this->load->view('kabag_keu/detail_proposal',$data);
+	}
+
 	
 
 }

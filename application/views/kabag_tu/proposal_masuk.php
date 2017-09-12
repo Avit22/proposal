@@ -36,7 +36,7 @@
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo $proposal->tgl_input; ?></td>
-                <td><?php echo anchor("xxxxxxx",'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
+                <td><?php echo anchor(base_url().'kabag_tu/detail/index/'.$proposal->id_proposal,'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
       
             </tr>
