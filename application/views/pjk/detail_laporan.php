@@ -13,26 +13,22 @@
         <?php $this->view('template/top'); ?>
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="text-center" style="font-size:30px;">Detail Proposal</div><br />
+          <div class="text-center" style="font-size:30px;">Detail Laporan</div><br />
           <?php
           echo '  <div class="container">        
   <table class="table">
     <tbody>';
-          if(!empty($proposale)){
-             foreach($proposale as $proposal) : {            
+          if(!empty($laporane)){
+             foreach($laporane as $laporan) : {            
               
-               echo '<tr><td>JUDUL</td><td>'.$proposal->judul.'</td></tr>';
-                echo '<tr><td>NAMA PJK</td><td>'.$proposal->nama_pjk.'</td></tr>';
-                echo '<tr><td>URUSAN</td><td>'.$proposal->urusan.'</td></tr>';
-                echo '<tr><td>JURUSAN</td><td>'.$proposal->nama_jurusan.'</td></tr>';
-                echo '<tr><td>PRODI</td><td>'.$proposal->nama_prodi.'</td></tr>';
-                 echo '<tr><td>PENDAHULUAN</td><td>'.$proposal->pendahuluan.'</td></tr>';
-              echo '<tr><td>DASAR HUKUM</td><td>'.$proposal->dasar_hukum.'</td></tr>';   
-              echo '<tr><td>KELUARAN</td><td>'.$proposal->keluaran.'</td></tr>'; 
-              //echo '<tr><td>RAB</td><td>'.$proposal->rab.'</td></tr>'; 
-              //echo '<tr><td>TANGGAL PELAKSANAAN</td><td>'.$proposal->tgl_pelaksanaan.'</td></tr>'; 
-              //echo '<tr><td>TEMPAT PELAKSANAAN</td><td>'.$proposal->tempat.'</td></tr>'; 
-              echo '<tr><td>PENUTUP</td><td>'.$proposal->penutup.'</td></tr>'; 
+                echo '<tr><td>JUDUL</td><td>'.$laporan->judul.'</td></tr>';
+                echo '<tr><td>NAMA PJK</td><td>'.$laporan->nama_pjk.'</td></tr>';
+                echo '<tr><td>Rincian Kegiatan</td><td>'.$laporan->rincian_kegiatan.'</td></tr>';
+                echo '<tr><td>Rincian Biaya</td><td>'.$laporan->rincian_biaya.'</td></tr>';
+                echo '<tr><td>Dokumentasi 1</td><td>'.$laporan->file1.'</td></tr>';
+                echo '<tr><td>Dokumentasi 2</td><td>'.$laporan->file2.'</td></tr>';
+                //echo '<tr><td>Status</td><td>'.$laporan->status.'</td></tr>';   
+              
              } endforeach;         
           }
           echo '     

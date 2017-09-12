@@ -73,6 +73,27 @@ class Input_laporan extends CI_Controller {
                         $name_of_file = $datas['file_name'];
                         //$this->load->view('upload_success', $data);
                 }
+    $name_of_file1 = "empty.jpg";
+				$config['upload_path']          = 'assets/image/';
+                $config['allowed_types']        = 'gif|jpg|jpeg|png|pdf|doc|docx';
+                $config['max_size']             = 10000;
+                $config['max_width']            = 4086;
+                $config['max_height']           = 2048;
+                $this->upload->initialize($config);
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('filename'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        $this->load->view('pjk/input_laporan', $error);
+                }
+                else
+                {
+                        $datas = $this->upload->data();
+                        $name_of_file1 = $datas['file_name'];
+                        //$this->load->view('upload_success', $data);
+                }
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->index();
@@ -88,6 +109,7 @@ class Input_laporan extends CI_Controller {
 				//'bukti_biaya' => $this->input->post('bukti_biaya'),
 				'tgl_input' => $tgl,
 				'file1' => $name_of_file,       // Returns: mypic.jpg,
+				'file2' => $name_of_file1,       // Returns: mypic.jpg,
 				'id_user' => $id_user_session,
 				);	
 

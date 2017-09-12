@@ -691,6 +691,7 @@
                       <li><a href="<?php echo site_url('admin/input'); ?>"><i class="fa fa-list"></i> Input Proposal</a></li>
                       <li><a href="<?php echo site_url('admin/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('admin/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
+                      <li><a href="<?php echo site_url('admin/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
                       <li><a href="<?php echo site_url('admin/validasi'); ?>"><i class="fa fa-table"></i> Validasi Proposal</a></li>
                       <li><a href="<?php echo site_url('admin/rekomendasi_rab'); ?>"><i class="fa fa-desktop"></i> Input Rekomendasi RAB </a></li>
                       <li><a href="<?php echo site_url('admin/rekomendasi_item'); ?>"><i class="fa fa-desktop"></i> Input Rekomendasi Item </a></li>

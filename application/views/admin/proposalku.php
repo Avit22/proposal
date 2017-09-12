@@ -15,35 +15,29 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="text-center" style="font-size:30px;"> Laporan Kegiatan Terkirim </div><br />
+          <div class="text-center" style="font-size:30px;"> Input Laporan Kegiatan </div><br />
           <table id="example" class="table table-bordered table-striped header-fixed ">
             <thead>
             <tr>
               <th>No.</th>
-              <th>Judul Kegiatan</th>
+              <th>Judul Proposal</th>
               <th>Nama PJK</th>
               <th>Tanggal Terkirim</th>
-              <th>File 1</th>
-              <th>File 2</th>
-              <th>Status</th>
+              <th>Input Laporan Kegiatan</th>
            </tr>
             </thead>
             <tbody>
-            <?php $i =1; if(!empty($laporane)) {
-            foreach($laporane as $laporan) : { ?>
+            <?php $i =1; if(!empty($proposale)) {
+            foreach($proposale as $proposal) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">
                 <td><?php echo $i++; ?></td>
-                
-
-                <td><a href="<?php echo base_url('pjk/laporan_terkirim/detail/');?><?php  echo '/'.$laporan->id_laporan; ?>"><?php echo $laporan->judul; ?></a></td>
-
-                <td><?php echo $laporan->nama_pjk; ?></td>
-                <td><?php echo $laporan->tgl_input; ?></td>
-                <td><a href="<?php echo base_url('assets/image/');?><?php  echo '/'.$laporan->file1; ?>"><?php echo $laporan->file1; ?></a>
+               
+                <td><?php echo $proposal->judul; ?></td>
+                <td><?php echo $proposal->nama_pjk; ?></td>
+                <td><?php echo $proposal->tgl_input; ?></td>
+                <td><?php echo anchor("admin/input_laporan/input/".$proposal->id_proposal,'<span class="glyphicon glyphicon-tags text-primary fa-lg" aria-hidden="true" title="Laporan"></span>'); ?>   
                 </td>
-                <td><a href="<?php echo base_url('assets/image/');?><?php  echo '/'.$laporan->file2; ?>"><?php echo $laporan->file2; ?></a>
-                </td>
-                <th>"-"</th>
+                 
       
             </tr>
             <?php } endforeach; } ?>

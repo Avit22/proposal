@@ -15,36 +15,33 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="text-center" style="font-size:30px;"> Laporan Kegiatan Terkirim </div><br />
+          <div class="text-center" style="font-size:30px;">Notifikasi Revisi</div><br />
           <table id="example" class="table table-bordered table-striped header-fixed ">
             <thead>
             <tr>
               <th>No.</th>
-              <th>Judul Kegiatan</th>
+              <th>Jenis Proposal</th>
+              <th>Judul Proposal</th>
               <th>Nama PJK</th>
               <th>Tanggal Terkirim</th>
-              <th>File 1</th>
-              <th>File 2</th>
-              <th>Status</th>
+              <th>Catatan Revisi</th>
+              <th>Korektor</th>
+              
            </tr>
-            </thead>
+            </thead> 
             <tbody>
-            <?php $i =1; if(!empty($laporane)) {
-            foreach($laporane as $laporan) : { ?>
+            <?php $i =1; if(!empty($revisine)) {
+            foreach($revisine as $revisi) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">
                 <td><?php echo $i++; ?></td>
+                <td><?php echo $revisi->jenis_proposal; ?></td>
                 
-
-                <td><a href="<?php echo base_url('pjk/laporan_terkirim/detail/');?><?php  echo '/'.$laporan->id_laporan; ?>"><?php echo $laporan->judul; ?></a></td>
-
-                <td><?php echo $laporan->nama_pjk; ?></td>
-                <td><?php echo $laporan->tgl_input; ?></td>
-                <td><a href="<?php echo base_url('assets/image/');?><?php  echo '/'.$laporan->file1; ?>"><?php echo $laporan->file1; ?></a>
-                </td>
-                <td><a href="<?php echo base_url('assets/image/');?><?php  echo '/'.$laporan->file2; ?>"><?php echo $laporan->file2; ?></a>
-                </td>
-                <th>"-"</th>
-      
+                <td><a href="<?php echo base_url('admin/notifikasi/edit/');?><?php  echo '/'.$revisi->id_proposal; ?>"><?php echo $revisi->judul; ?></a></td>
+                <td><?php echo $revisi->nama_pjk; ?></td>
+                <td><?php echo $revisi->tgl_input; ?></td>
+                <td><?php echo $revisi->revisi; ?></td>
+                <td><?php echo $revisi->tingkatan; ?></td>
+                    
             </tr>
             <?php } endforeach; } ?>
                   

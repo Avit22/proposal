@@ -28,7 +28,7 @@
               <th>Edit Proposal</th>
               <th>Hapus Proposal</th>
            </tr>
-            </thead>
+            </thead> 
             <tbody>
             <?php $i =1; if(!empty($proposale)) {
             foreach($proposale as $proposal) : { ?>
@@ -40,12 +40,11 @@
                 <td><?php echo $proposal->tgl_input; ?></td>
                 <td><?php echo anchor("admin/detail_proposal/detail/$proposal->id_proposal",'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
-                <td><?php echo anchor("admin/edit_proposal/edit/$proposal->id_proposal",'<span class="glyphicon glyphicon-edit text-primary fa-lg" aria-hidden="true" title="Edit Proposal"></span>'); ?>   
+                <td><?php echo anchor("admin/edit_proposal/edit/".$proposal->id_proposal,'<span class="glyphicon glyphicon-edit text-primary fa-lg" aria-hidden="true" title="Edit Proposal"></span>'); ?>   
                 </td>
                 <td>
-                <?php echo anchor("admin/input/hapus/$proposal->id_proposal",'<span class="glyphicon glyphicon-trash text-danger fa-lg" aria-hidden="true"></span>',array('onClick' => "return confirm('Anda yakin data ini akan di HAPUS ?')")); ?>
-                </td>
-      
+                <?php echo anchor("admin/input/hapus/$proposal->id_proposal",'<span class="glyphicon glyphicon-trash text-danger fa-lg" aria-hidden="true" title="Hapus Proposal"></span>',array('onClick' => "return confirm('Anda yakin data ini akan di HAPUS ?')")); ?>
+                </td>      
             </tr>
             <?php } endforeach; } ?>
                   

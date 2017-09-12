@@ -42,7 +42,7 @@ class Input extends CI_Controller {
 	public function hapus($id) {
 		$this->load->model('Input_model');
 		$this->Input_model->hapus($id);
-		redirect('admin/data_kirim');		
+		redirect('admin/terkirim');		
 	}
 
 	
@@ -52,6 +52,8 @@ public function tambah_proses() {
 	$this->form_validation->set_rules('nama_pjk', 'Nama PJK', 'required');
 	$this->form_validation->set_rules('jenis_proposal', 'Jenis Proposal', 'required');
 	$this->form_validation->set_rules('judul', 'Judul', 'required');
+	$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+	$this->form_validation->set_rules('prodi', 'Prodi', 'required');
 	$this->form_validation->set_rules('pendahuluan', 'Pendahuluan', 'required');
 	$this->form_validation->set_rules('dasar_hukum', 'Dasar Hukum', 'required');
 	$this->form_validation->set_rules('rab', 'RAB', 'required');
@@ -69,6 +71,8 @@ public function tambah_proses() {
 				'nama_pjk' => $this->input->post('nama_pjk'),
 				'jenis_proposal' => $this->input->post('jenis_proposal'),
 				'judul' => $this->input->post('judul'),
+				'jurusan' => $this->input->post('jurusan'),
+				'prodi' => $this->input->post('prodi'),
 				'pendahuluan' => $this->input->post('pendahuluan'),
 				'dasar_hukum' => $this->input->post('dasar_hukum'),
 				'rab' => $this->input->post('rab'),
@@ -81,9 +85,9 @@ public function tambah_proses() {
 				);
 
 			if($this->Input_model->tambah($data));
-				redirect('admin/data_kirim');	
+				redirect('admin/terkirim');	
 		}	
-	redirect('admin/data_kirim');	
+	redirect('admin/terkirim');	
 }
 
 public function update_proses($id) {
@@ -92,6 +96,8 @@ public function update_proses($id) {
 	$this->form_validation->set_rules('nama_pjk', 'Nama PJK', 'required');
 	$this->form_validation->set_rules('jenis_proposal', 'Jenis Proposal', 'required');
 	$this->form_validation->set_rules('judul', 'Judul', 'required');
+	$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+	$this->form_validation->set_rules('prodi', 'Prodi', 'required');
 	$this->form_validation->set_rules('pendahuluan', 'Pendahuluan', 'required');
 	$this->form_validation->set_rules('dasar_hukum', 'Dasar Hukum', 'required');
 	$this->form_validation->set_rules('rab', 'RAB', 'required');
@@ -109,6 +115,8 @@ public function update_proses($id) {
 				'nama_pjk' => $this->input->post('nama_pjk'),
 				'jenis_proposal' => $this->input->post('jenis_proposal'),
 				'judul' => $this->input->post('judul'),
+				'jurusan' => $this->input->post('jurusan'),
+				'prodi' => $this->input->post('prodi'),
 				'pendahuluan' => $this->input->post('pendahuluan'),
 				'dasar_hukum' => $this->input->post('dasar_hukum'),
 				'rab' => $this->input->post('rab'),
@@ -120,9 +128,9 @@ public function update_proses($id) {
 				);
 
 			if($this->Input_model->update($id,$data));
-				redirect('admin/data_kirim');	
+				redirect('admin/terkirim');	
 		}	
-	redirect('admin/data_kirim');	
+	redirect('admin/terkirim');	
 }
 
 public function update_review($id) {
@@ -133,6 +141,8 @@ public function update_review($id) {
 	$this->form_validation->set_rules('nama_pjk', 'Nama PJK', 'required');
 	$this->form_validation->set_rules('jenis_proposal', 'Jenis Proposal', 'required');
 	$this->form_validation->set_rules('judul', 'Judul', 'required');
+	$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+	$this->form_validation->set_rules('prodi', 'Prodi', 'required');
 	$this->form_validation->set_rules('pendahuluan', 'Pendahuluan', 'required');
 	$this->form_validation->set_rules('dasar_hukum', 'Dasar Hukum', 'required');
 	$this->form_validation->set_rules('rab', 'RAB', 'required');
@@ -152,6 +162,8 @@ public function update_review($id) {
 				'nama_pjk' => $this->input->post('nama_pjk'),
 				'jenis_proposal' => $this->input->post('jenis_proposal'),
 				'judul' => $this->input->post('judul'),
+				'jurusan' => $this->input->post('jurusan'),
+				'prodi' => $this->input->post('prodi'),
 				'pendahuluan' => $this->input->post('pendahuluan'),
 				'dasar_hukum' => $this->input->post('dasar_hukum'),
 				'rab' => $this->input->post('rab'),
@@ -163,8 +175,8 @@ public function update_review($id) {
 				);
 
 			if($this->Input_model->update($id,$data));
-				redirect('admin/data_kirim');	
+				redirect('admin/terkirim');	
 		}	
-	redirect('admin/data_kirim');	
+	redirect('admin/terkirim');	
 }
 }

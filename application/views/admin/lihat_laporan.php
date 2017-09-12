@@ -23,6 +23,7 @@
               <th>Judul Kegiatan</th>
               <th>Nama PJK</th>
               <th>Tanggal Terkirim</th>
+              <th>File</th>
               <th>Status</th>
            </tr>
             </thead>
@@ -34,6 +35,9 @@
                 <td><?php echo $laporan->judul; ?></td>
                 <td><?php echo $laporan->nama_pjk; ?></td>
                 <td><?php echo $laporan->tgl_input; ?></td>
+                <td><a href="<?php echo base_url('assets/image/');?><?php  echo '/'.$laporan->file1; ?>"><?php echo $laporan->file1; ?></a>
+                </td>
+                <th>"-"</th>
       
             </tr>
             <?php } endforeach; } ?>

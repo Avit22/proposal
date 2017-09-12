@@ -99,6 +99,16 @@ function tambah_revisi($data) {
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+
+	function get_data_laporan($id_laporan){
+
+		$this->db->select('*');
+		$this->db->from('laporan');
+		$this->db->where('laporan.id_laporan = "'.$id_laporan.'"');
+		$query = $this->db->get();
+		return $query->result();
+	}
 	
 	function get_data_pjk($id_user) {
 
