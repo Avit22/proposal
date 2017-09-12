@@ -133,7 +133,7 @@
           <label for="tempat" class="col-sm-2 control-label">Tempat</label>
           <div class="col-sm-10">
             <?php 
-           $data = array('name' => 'tempat', 'id' => 'tempat', 'class' => 'form-control', 'placeholder' => 'Masukkan Tempat');
+           $data = array('name' => 'tempat', 'id' => 'tempat', 'class' => 'form-control', 'placeholder' => 'Masukkan Tempat','rows' => '2');
            echo form_textarea($data); ?>
           </div>
         </div>
