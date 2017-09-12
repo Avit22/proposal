@@ -22,7 +22,7 @@ class Input extends CI_Controller {
 		}
 		else
 			$data['data_wd'] = NULL;
-		
+
 		if($query = $this->Input_model->get_jurusan()) {
 			$data['data_jurusan'] = $query;
 		}
@@ -34,7 +34,9 @@ class Input extends CI_Controller {
 		}
 		else
 			$data['data_prodi'] = NULL;
-		$this->load->view('admin/input_proposal',$data);		
+
+		$this->load->view('admin/input_proposal',$data);
+		
 	}
 
 	public function hapus($id) {

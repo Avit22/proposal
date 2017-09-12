@@ -165,7 +165,7 @@ foreach($proposale as $proposal)
           <label for="tempat" class="col-sm-2 control-label">Tempat Pelaksanaan</label>
           <div class="col-sm-10">
             <?php 
-           $data = array('name' => 'tempat', 'id' => 'tempat', 'class' => 'form-control', 'placeholder' => 'Masukkan Tempat Pelaksanaan','value'=>$proposal->tempat);
+           $data = array('name' => 'tempat', 'id' => 'tempat', 'class' => 'form-control', 'placeholder' => 'Masukkan Tempat Pelaksanaan','rows' => '2','value'=>$proposal->tempat);
            echo form_textarea($data); ?>
           </div>
         </div>

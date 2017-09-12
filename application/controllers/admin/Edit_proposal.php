@@ -40,13 +40,29 @@ class Edit_proposal extends CI_Controller {
 		else{
 			$data['data_wd'] = NULL;
 		}
+
+		if($query = $this->Input_model->get_jurusan()) {
+			$data['data_jurusan'] = $query;
+		}
+		else{
+			$data['data_jurusan'] = NULL;
+		}
+
+		if($query = $this->Input_model->get_prodi()) {
+			$data['data_prodi'] = $query;
+		}
+		else{
+			$data['data_prodi'] = NULL;
+		}
+
+
 		if($query = $this->Input_model->get_data_by_idproposal($id)) {
 			$data['proposale'] = $query;
 		}
 		else
 			$data['proposale'] = NULL;
 
-		$this->load->view('admin/edit_proposal', $data);
+		$this->load->view('kaprodi_boga/edit_proposal', $data);
 	}	
 	
 	public function tambah_proses() {
