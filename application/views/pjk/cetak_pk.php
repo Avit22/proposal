@@ -31,12 +31,12 @@
             <?php $i =1; if(!empty($proposale)) {
             foreach($proposale as $proposal) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">
-               <td><?php echo $i++; ?></td>
-                
+               <td><?php echo $i++; ?></td>                
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo $proposal->tgl_input; ?></td>
-                <td><?php echo anchor("xxxxxxxxxxx",'<span class="glyphicon glyphicon-print text-primary fa-lg" aria-hidden="true" title="Cetak Panjar Kerja"></span>'); ?>   
+                <td><?php echo "Review"; ?></td>
+                <td><?php echo anchor(base_url()."pjk/panjar_print",'<span class="glyphicon glyphicon-print text-primary fa-lg" aria-hidden="true" title="Cetak Panjar Kerja"></span>'); ?>   
                 </td>
       
             </tr>
