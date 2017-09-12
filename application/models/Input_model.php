@@ -439,4 +439,5 @@ function get_data_by_idlaporan($id_laporan) {
 		$this->db->delete('proposal');	
 		return;
 	}	
+
 }
