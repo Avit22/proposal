@@ -23,8 +23,8 @@
               <th>Judul Kegiatan</th>
               <th>Nama PJK</th>
               <th>Tanggal Terkirim</th>
-              <th>File</th>
-              <th>View Laporan</th>
+              <th>File 1</th>
+              <th>File 2</th>
               <th>Status</th>
            </tr>
             </thead>
@@ -33,12 +33,12 @@
             foreach($laporane as $laporan) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">
                 <td><?php echo $i++; ?></td>
-                <td><?php echo $laporan->judul; ?></td>
+                <td><a href="<?php echo base_url('kaprodi_tk/laporan_terkirim/detail/');?><?php  echo '/'.$laporan->id_laporan; ?>"><?php echo $laporan->judul; ?></a></td>
                 <td><?php echo $laporan->nama_pjk; ?></td>
                 <td><?php echo $laporan->tgl_input; ?></td>
                 <td><a href="<?php echo base_url('assets/image/');?><?php  echo '/'.$laporan->file1; ?>"><?php echo $laporan->file1; ?></a>
                 </td>
-                <td><?php echo anchor("kaprodi_tk/detail_laporan/detail/$laporan->id_laporan",'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Laporan"></span>'); ?>   
+                <td><a href="<?php echo base_url('assets/image/');?><?php  echo '/'.$laporan->file2; ?>"><?php echo $laporan->file2; ?></a>
                 </td>
                 <th>"-"</th>
       

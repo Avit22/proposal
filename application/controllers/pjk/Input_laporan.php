@@ -82,7 +82,7 @@ class Input_laporan extends CI_Controller {
                 $this->upload->initialize($config);
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('filename'))
+                if ( ! $this->upload->do_upload('filename1'))
                 {
                         $error = array('error' => $this->upload->display_errors());
 

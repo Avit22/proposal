@@ -80,7 +80,7 @@ foreach($proposale as $proposal)
             <div class="col-sm-10">
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="file" name="filename" size="60" />
+                        <input type="file" name="filename1" size="60" />
                         <span class="text-danger"><?php if (isset($error)) { echo $error; } ?></span>
                     </div>
                 </div>

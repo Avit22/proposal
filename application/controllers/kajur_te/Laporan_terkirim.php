@@ -28,7 +28,16 @@ class Laporan_terkirim extends CI_Controller {
 		$this->load->view('kajur_te/lihat_laporan', $data);
 	}
 
-	
+	public function detail ($id){
+
+		if($query = $this->Input_model->get_data_laporan($id)) {
+			$data['laporane'] = $query;
+		}
+		else
+			$data['laporane'] = NULL;
+
+		$this->load->view('kajur_te/detail_laporan', $data);
+	}
 	
 
 	
