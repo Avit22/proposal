@@ -30,5 +30,7 @@ class Revisi extends CI_Controller {
 		
 	}
 
+
+
 	
 }

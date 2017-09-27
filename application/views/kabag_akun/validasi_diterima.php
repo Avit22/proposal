@@ -17,7 +17,7 @@
           <h1 class="text-center text-info">PENGESAHAN VALIDASI PROPOSAL</h1> <br /><br />
  <?php 
 foreach($proposale as $proposal) { ?> 
-<?php echo form_open('wd1/revisi/update_review/'.$proposal->id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
+<?php echo form_open('kabag_akun/validasi/update_review/'.$proposal->id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
        <?php echo validation_errors(); ?>
 
         <!-- Validasi Proposal -->
@@ -40,8 +40,8 @@ foreach($proposale as $proposal) { ?>
           <label for="alasan" class="col-sm-2 control-label">Alasan Validasi</label>
           <div class="col-sm-10">
             <?php 
-           $tingkatnya =$this->session->userdata('tingkatan');
-           $data = array('name' => 'alasan', 'id' => 'alasan', 'class' => 'form-control', 'placeholder' => 'Masukkan Alasan Persetujuan/Penolakan Proposal','rows' => '2', 'value'=>'Disetujui oleh '.$tingkatnya);
+            $tingkatnya =$this->session->userdata('tingkatan');
+           $data = array('name' => 'alasan', 'id' => 'alasan', 'class' => 'form-control', 'placeholder' => 'Masukkan Alasan Persetujuan/Penolakan Proposal','rows' => '2','value'=>'Disetujui oleh '.$tingkatnya);
            echo form_textarea($data); ?>
           </div>
         </div>

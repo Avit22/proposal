@@ -16,6 +16,7 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="text-center" style="font-size:30px;"> Validasi Proposal </div><br />
+
           <table id="example" class="table table-bordered table-striped header-fixed ">
             <thead>
             <tr>
