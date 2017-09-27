@@ -30,8 +30,16 @@ class Detail_proposal extends CI_Controller {
 		if($query = $this->Input_model->get_data_by_idproposal($id)) {
 			$data['proposale'] = $query;
 		}
-		else
+		else{
 			$data['proposale'] = NULL;
+		}
+		
+		if($query = $this->Input_model->get_all_rab_id_proposal($id)) {
+			$data['rab'] = $query;
+		}
+		else{
+			$data['rab'] = NULL;
+		}
 
 		$this->load->view('pjk/detail_proposal', $data);
 	}
