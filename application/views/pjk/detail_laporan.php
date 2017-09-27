@@ -13,7 +13,7 @@
         <?php $this->view('template/top'); ?>
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="text-center" style="font-size:30px;">Detail Laporan</div><br />
+          <div class="text-center" style="font-size:30px;">Detail Laporan Kegiatan</div><br />
           <?php
           echo '  <div class="container">        
   <table class="table">
@@ -27,7 +27,7 @@
                 echo '<tr><td>Rincian Biaya</td><td>'.$laporan->rincian_biaya.'</td></tr>';
                 echo '<tr><td>Dokumentasi 1</td><td> <img height="250" width="500" src="'.base_url()."assets/image/".$laporan->file1.'"></td></tr>';
                 echo '<tr><td>Dokumentasi 2</td><td> <img height="250" width="500" src="'.base_url()."assets/image/".$laporan->file2.'"></td></tr>';
-                //echo '<tr><td>Status</td><td>'.$laporan->status.'</td></tr>';   
+                  
               
              } endforeach;         
           }

@@ -107,9 +107,6 @@ foreach($proposale as $proposal)
             </select>
           </div>
         </div>
-
-
-
         
         <!-- Judul -->
         <div class="form-group">

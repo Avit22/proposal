@@ -40,7 +40,5 @@ class Laporan_terkirim extends CI_Controller {
 
 		$this->load->view('pjk/detail_laporan', $data);
 	}
-
 	
-
 }

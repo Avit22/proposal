@@ -29,9 +29,9 @@
                  echo '<tr><td>PENDAHULUAN</td><td>'.$proposal->pendahuluan.'</td></tr>';
               echo '<tr><td>DASAR HUKUM</td><td>'.$proposal->dasar_hukum.'</td></tr>';   
               echo '<tr><td>KELUARAN</td><td>'.$proposal->keluaran.'</td></tr>'; 
-              //echo '<tr><td>RAB</td><td>'.$proposal->rab.'</td></tr>'; 
-              //echo '<tr><td>TANGGAL PELAKSANAAN</td><td>'.$proposal->tgl_pelaksanaan.'</td></tr>'; 
-              //echo '<tr><td>TEMPAT PELAKSANAAN</td><td>'.$proposal->tempat.'</td></tr>'; 
+              echo '<tr><td>RAB</td><td>'.$proposal->rab.'</td></tr>'; 
+              echo '<tr><td>TANGGAL PELAKSANAAN</td><td>'.$proposal->tgl_pelaksanaan.'</td></tr>'; 
+              echo '<tr><td>TEMPAT PELAKSANAAN</td><td>'.$proposal->tempat.'</td></tr>'; 
               echo '<tr><td>PENUTUP</td><td>'.$proposal->penutup.'</td></tr>'; 
              } endforeach;         
           }

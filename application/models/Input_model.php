@@ -35,7 +35,7 @@ class Input_model extends CI_Model {
 		$this->db->update('proposal',$data);
 	}
 
-function tambah($data) {
+	function tambah($data) {
 		$this->db->insert('proposal',$data);
 		return;
 	}

@@ -38,9 +38,9 @@ class Notifikasi extends CI_Controller {
 			$data['proposale'] = NULL;
 
 		$this->load->view('pjk/edit_proposal', $data);
-
-		
 	}
+
+	
 	public function edit($id) {
 		$this->load->model('Input_model');
 		if($query = $this->Input_model->get_wd()) {

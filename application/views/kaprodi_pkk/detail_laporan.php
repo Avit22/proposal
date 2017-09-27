@@ -13,7 +13,7 @@
         <?php $this->view('template/top'); ?>
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="text-center" style="font-size:30px;">Detail Laporan</div><br />
+          <div class="text-center" style="font-size:30px;">Detail Laporan Kegiatan </div><br />
           <?php
           echo '  <div class="container">        
   <table class="table">

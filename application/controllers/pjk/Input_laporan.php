@@ -42,7 +42,6 @@ class Input_laporan extends CI_Controller {
 		$this->load->view('pjk/input_laporan',$data);
 	}
 
-
 	
 	public function tambah_proses() {
 	$this->load->library('form_validation');
@@ -73,6 +72,7 @@ class Input_laporan extends CI_Controller {
                         $name_of_file = $datas['file_name'];
                         //$this->load->view('upload_success', $data);
                 }
+                
     $name_of_file1 = "empty.jpg";
 				$config['upload_path']          = 'assets/image/';
                 $config['allowed_types']        = 'gif|jpg|jpeg|png|pdf|doc|docx';
