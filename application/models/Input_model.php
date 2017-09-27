@@ -72,6 +72,16 @@ function tambah_revisi($data) {
 		return $query->result();
 	}
 
+	function get_data_proposal_disetujui_tu() {
+		$this->db->where('status_review','DISETUJUI'); // disetujui oleh wd
+		$this->db->where('tu_review',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	function get_data_input_laporan($id_proposal){
 
 		$this->db->select('*');

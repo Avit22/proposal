@@ -19,19 +19,29 @@ class Validasi extends CI_Controller {
 
 	
 	public function index() {
-
 		if($query = $this->Input_model->get_data()) {
 			$data['proposale'] = $query;
 		}
-		else
+		else{
 			$data['proposale'] = NULL;
-
-		$this->load->view('kabag_tu/validasi_proposal',$data);
-		
+		}
+		$this->load->view('kabag_tu/validasi_proposal',$data);		
 	}
+	public function validasi($id) {
+		$this->load->model('Input_model');
+		if($query = $this->Input_model->get_wd()) {
+			$data['data_wd'] = $query;
+		}
+		else{
+			$data['data_wd'] = NULL;
+		}
+		if($query = $this->Input_model->get_data_by_idproposal($id)) {
+			$data['proposale'] = $query;
+		}
+		else{
+			$data['proposale'] = NULL;
+		}
 
-	
-	
-	
-
+		$this->load->view('kabag_tu/validasi_diterima', $data);
+	}	
 }
