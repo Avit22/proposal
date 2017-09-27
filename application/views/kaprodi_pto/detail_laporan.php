@@ -20,12 +20,15 @@
     <tbody>';
           if(!empty($laporane)){
              foreach($laporane as $laporan) : {            
-               echo '<tr><td>JUDUL</td><td>'.$laporan->judul.'</td></tr>';
-                echo '<tr><td>NAMA PJK</td><td>'.$laporan->nama_pjk.'</td></tr>';
-                echo '<tr><td>RINCIAN KEGIATAN</td><td>'.$laporan->rincian_kegiatan.'</td></tr>';
-                echo '<tr><td>RINCIAN BIAYA</td><td>'.$laporan->rincian_biaya.'</td></tr>';
-                echo '<tr><td>DOKUMENTASI</td><td>'.$laporan->file1.'</td></tr>';
-                  
+              
+                echo '<tr><td>Judul</td><td>'.$laporan->judul.'</td></tr>';
+                echo '<tr><td>Nama PJK</td><td>'.$laporan->nama_pjk.'</td></tr>';
+                echo '<tr><td>Rincian Kegiatan</td><td>'.$laporan->rincian_kegiatan.'</td></tr>';
+                echo '<tr><td>Rincian Biaya</td><td>'.$laporan->rincian_biaya.'</td></tr>';
+                echo '<tr><td>Dokumentasi 1</td><td> <img height="250" width="500" src="'.base_url()."assets/image/".$laporan->file1.'"></td></tr>';
+                echo '<tr><td>Dokumentasi 2</td><td> <img height="250" width="500" src="'.base_url()."assets/image/".$laporan->file2.'"></td></tr>';
+                //echo '<tr><td>Status</td><td>'.$laporan->status.'</td></tr>';   
+              
              } endforeach;         
           }
           echo '     

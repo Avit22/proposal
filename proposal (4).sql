@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2017 at 03:51 PM
+-- Generation Time: Sep 12, 2017 at 03:07 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `laporan` (
   `tgl_input` date NOT NULL,
   `file1` varchar(100) NOT NULL,
   `file2` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `laporan`
@@ -136,7 +136,11 @@ INSERT INTO `laporan` (`id_laporan`, `id_user`, `judul`, `nama_pjk`, `rincian_ke
 (78, 44, 'uu', 'uu', 'vv', 'vv', '2017-09-09', '151026992.jpg', ''),
 (79, 49, 'bb', 'bb', 'll', 'll', '2017-09-09', '221013376.jpg', ''),
 (80, 41, 'rr', 'rr', 'kk', 'kk', '2017-09-09', '221023192.jpg', ''),
-(81, 37, 'ee', 'ee', 'kk', 'k', '2017-09-09', '421040490.jpg', '');
+(81, 37, 'ee', 'ee', 'kk', 'k', '2017-09-09', '421040490.jpg', ''),
+(82, 9, 'pp', 'pp', 'pp', 'pp', '2017-09-12', '91037339.jpg', ''),
+(83, 10, 'ss', 'ss', 'ss', 'ss', '2017-09-12', '181035510.jpg', '181035510.jpg'),
+(84, 10, 'a', 'a', 'a', 'a', '2017-09-12', '010097912.jpg', 'empty.jpg'),
+(85, 10, 'a', 'Avit Wisnu Prananda', 'a', 'a', '2017-09-12', '010097913.jpg', '010097914.jpg');
 
 -- --------------------------------------------------------
 
@@ -195,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `proposal` (
   `status_review` varchar(20) DEFAULT 'ON REVIEW',
   `keterangan_review` text,
   `revisi` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `proposal`
@@ -252,7 +256,16 @@ INSERT INTO `proposal` (`id_proposal`, `jenis_proposal`, `tgl_input`, `nama_pjk`
 (86, NULL, '2017-09-06', NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ON REVIEW', NULL, 'coba'),
 (87, NULL, '2017-09-06', NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ON REVIEW', NULL, 'coba'),
 (88, '1', '2017-09-07', 'coba', '3', '8', 'coba', 'coba', 'coba', 'coba', 'coba', '0000-00-00', 'coba', 'coba', 10, 'ON REVIEW', NULL, ''),
-(89, '1', '2017-09-10', 'a', '3', '7', 'a', 'a', 'a', 'a', 'a', '2017-09-21', 'a', 'a', 31, 'ON REVIEW', NULL, '');
+(89, '1', '2017-09-10', 'a', '3', '7', 'a', 'a', 'a', 'a', 'a', '2017-09-21', 'a', 'a', 31, 'ON REVIEW', NULL, ''),
+(90, '2', '2017-09-11', 'coba', '3', '8', 'coba', 'coba', 'coba', 'coba', 'coba', '2017-09-28', 'coba', 'coba', 31, 'ON REVIEW', NULL, ''),
+(91, '3', '2017-09-11', 'coba', '3', '8', 'coba', 'coba', 'coba', 'coba', 'coba', '2017-09-25', 'coba', 'coba', 43, 'ON REVIEW', NULL, ''),
+(92, '1', '2017-09-12', 'z', '', '', 'z', 'z', 'z', 'z', 'z', '2017-09-21', 'z', 'z', 9, 'ON REVIEW', NULL, ''),
+(93, '2', '2017-09-12', 'ss', '3', '8', 'ss', 'ss', 'ss', 'ss', 'ss', '2017-09-20', 'ss', 'ss', 10, 'ON REVIEW', NULL, ''),
+(94, '2', '2017-09-12', 'kk', '3', '7', 'kk', 'kk', 'kk', 'kk', 'kk', '2017-09-14', 'kk', 'kk', 31, 'ON REVIEW', NULL, ''),
+(99, '1', '2017-09-12', 'pp', '1', '1', 'pp', 'pp', 'pp', 'pp', 'pp', '2017-09-20', 'pp', 'pp', 9, 'ON REVIEW', NULL, ''),
+(100, '1', '2017-09-12', 'a', '3', '8', 'a', 'a', 'a', 'a', 'a', '2017-09-15', 'a', 'a', 10, 'ON REVIEW', NULL, ''),
+(101, '1', '2017-09-12', 'Avit Wisnu Prananda', '3', '7', 'a', 'a', 'a', 'a', 'a', '2017-09-20', 'a', 'a', 10, 'ON REVIEW', NULL, ''),
+(102, '1', '2017-09-12', 'Avit Wisnu Prananda', '3', '8', 'q', 'q', 'q', 'q', 'barang	 harga  jumlah	total\r\n\r\nbuku	= 1500	  2	3000\r\npensil	= 1000	  2	2000', '2017-09-23', 'q', 'q', 10, 'ON REVIEW', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -274,7 +287,7 @@ CREATE TABLE IF NOT EXISTS `revisi` (
   `revisi` text NOT NULL,
   `tgl_input` date NOT NULL,
   `id_user` int(25) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `revisi`
@@ -290,7 +303,10 @@ INSERT INTO `revisi` (`id_revisi`, `id_pjk`, `id_proposal`, `jenis_proposal`, `j
 (11, 10, 0, 'Akademik', 'coba', 'coba', 'coba', 'coba', 'coba', 'coba', 'testing', '2017-09-07', 0),
 (12, 10, 0, 'Akademik', 'coba', 'coba', 'coba', 'coba', 'coba', 'coba', 'test lagi', '2017-09-07', 1),
 (13, 10, 88, 'Akademik', 'coba', 'coba', 'coba', 'coba', 'coba', 'coba', 'test coba', '2017-09-10', 1),
-(14, 31, 89, 'Akademik', 'a', 'a', 'a', 'a', 'a', 'a', 'test', '2017-09-10', 1);
+(14, 31, 89, 'Akademik', 'a', 'a', 'a', 'a', 'a', 'a', 'test', '2017-09-10', 1),
+(15, 31, 90, 'Umum', 'coba', 'coba', 'coba', 'coba', 'coba', 'coba', 'test', '2017-09-11', 2),
+(16, 43, 91, 'Kemahasiswaan', 'coba', 'coba', 'coba', 'coba', 'coba', 'coba', 'ngetest', '2017-09-11', 3),
+(17, 9, 99, 'Akademik', 'pp', 'pp', 'pp', 'pp', 'pp', 'pp', 'test ', '2017-09-12', 1);
 
 -- --------------------------------------------------------
 
@@ -474,7 +490,7 @@ MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 -- AUTO_INCREMENT for table `laporan`
 --
 ALTER TABLE `laporan`
-MODIFY `id_laporan` int(25) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=82;
+MODIFY `id_laporan` int(25) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=86;
 --
 -- AUTO_INCREMENT for table `prodi`
 --
@@ -484,12 +500,12 @@ MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 -- AUTO_INCREMENT for table `proposal`
 --
 ALTER TABLE `proposal`
-MODIFY `id_proposal` int(25) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=90;
+MODIFY `id_proposal` int(25) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=103;
 --
 -- AUTO_INCREMENT for table `revisi`
 --
 ALTER TABLE `revisi`
-MODIFY `id_revisi` int(25) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+MODIFY `id_revisi` int(25) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `tingkatan`
 --
