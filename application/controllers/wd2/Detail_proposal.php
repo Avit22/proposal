@@ -33,6 +33,13 @@ class Detail_proposal extends CI_Controller {
 		else
 			$data['proposale'] = NULL;
 
+		if($query = $this->Input_model->get_all_rab_id_proposal($id)) {
+			$data['rab'] = $query;
+		}
+		else{
+			$data['rab'] = NULL;
+		}
+
 		$this->load->view('wd2/detail_proposal', $data);
 	}
 
