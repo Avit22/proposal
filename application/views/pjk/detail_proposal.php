@@ -49,8 +49,6 @@
     </tbody>
   </table>';
               echo '</tr></td>';
-
-
               echo '<tr><td>KELUARAN</td><td>'.$proposal->keluaran.'</td></tr>'; 
               //echo '<tr><td>RAB</td><td>'.$proposal->rab.'</td></tr>'; 
               //echo '<tr><td>TANGGAL PELAKSANAAN</td><td>'.$proposal->tgl_pelaksanaan.'</td></tr>'; 
