@@ -56,7 +56,15 @@ function tambah_revisi($data) {
 	}
 
 	function get_data() {
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$query = $this->db->get();
+		return $query->result();
+	}
 
+	function get_data_proposal_disetujui() {
+		$this->db->where('status_review','DISETUJUI');
 		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');

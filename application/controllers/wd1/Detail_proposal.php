@@ -30,9 +30,13 @@ class Detail_proposal extends CI_Controller {
 		if($query = $this->Input_model->get_data_by_idproposal($id)) {
 			$data['proposale'] = $query;
 		}
-		else
+		else{
 			$data['proposale'] = NULL;
+<<<<<<< HEAD
 		
+=======
+		}
+>>>>>>> 849391fe21b6a341847d7aaed6159c84024761aa
 		if($query = $this->Input_model->get_all_rab_id_proposal($id)) {
 			$data['rab'] = $query;
 		}
