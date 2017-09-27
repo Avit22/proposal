@@ -184,6 +184,4 @@ public function update_review($id) {
 	redirect('pjk/terkirim');	
 }
 
-	
-
 }

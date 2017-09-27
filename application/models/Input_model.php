@@ -50,6 +50,11 @@ function tambah_revisi($data) {
 		return;
 	}
 
+	function tambah_rab($data) {
+		$this->db->insert('rab',$data);
+		return;
+	}
+
 	function get_data() {
 
 		$this->db->select('*');
@@ -440,4 +445,10 @@ function get_data_by_idlaporan($id_laporan) {
 		return;
 	}	
 
+public function get_all_rab_id_proposal($id_prop){
+	$this->db->where('id_proposal',$id_prop);
+	$this->db->from('rab');
+	$query = $this->db->get();
+	return $query->result();
+}
 }
