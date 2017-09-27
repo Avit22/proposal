@@ -19,12 +19,11 @@ class Validasi extends CI_Controller {
 
 	
 	public function index() {
-<<<<<<< HEAD
+
 
 		if($query = $this->Input_model->get_data_proposal_disetujui()) {
-=======
-		if($query = $this->Input_model->get_data()) {
->>>>>>> 6bf281f07eaede1079bbc843f79ac251b94ad412
+
+		
 			$data['proposale'] = $query;
 		}
 		else{
@@ -32,6 +31,7 @@ class Validasi extends CI_Controller {
 		}
 		$this->load->view('kabag_tu/validasi_proposal',$data);		
 	}
+	
 	public function validasi($id) {
 		$this->load->model('Input_model');
 		if($query = $this->Input_model->get_wd()) {

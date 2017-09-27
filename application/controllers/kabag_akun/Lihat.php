@@ -20,11 +20,10 @@ class Lihat extends CI_Controller {
 	
 	public function index() {
 
-<<<<<<< HEAD
-		if($query = $this->Input_model->get_data_proposal_disetujui()) {
-=======
+
+		
+
 		if($query = $this->Input_model->get_data_proposal_disetujui_tu()) {
->>>>>>> 6bf281f07eaede1079bbc843f79ac251b94ad412
 			$data['proposale'] = $query;
 		}
 		else
