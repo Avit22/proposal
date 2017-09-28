@@ -29,6 +29,17 @@ class Login_model extends CI_Model {
 		return $tingkat;
 	}
 
+	function keterangan_tingkatan($tingkatan){
+
+		$tingkat ='';
+		$query = $this->db->query('select keterangan_tingkatan from tingkatan where nama_tingkatan="'.$tingkatan.'"');
+
+		foreach($query->result() as $data) {
+			$tingkat = $data->keterangan_tingkatan;
+		}
+		return $tingkat;
+	}
+
 	function id($user, $pw) {
 		$this->db->select('id_user');
 		$this->db->where('username',$user);

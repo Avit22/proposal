@@ -40,7 +40,7 @@ foreach($proposale as $proposal) { ?>
           <label for="alasan" class="col-sm-2 control-label"> Pemberi Validasi</label>
           <div class="col-sm-10">
             <?php 
-           $tingkatnya =$this->session->userdata('tingkatan');
+           $tingkatnya =$this->session->userdata('keterangan_tingkatan');
            $data = array('name' => 'alasan', 'id' => 'alasan', 'class' => 'form-control', 'placeholder' => 'Masukkan Alasan Persetujuan/Penolakan Proposal','rows' => '2', 'readonly'=>'true', 'value'=>$tingkatnya);
            echo form_textarea($data); ?>
           </div>
@@ -51,7 +51,7 @@ foreach($proposale as $proposal) { ?>
           <label for="jenis_proposal" class="col-sm-2 control-label">Jenis Proposal</label>
           <div class="col-sm-10">
             <?php 
-           $data = array('name' => 'jenis_proposal', 'id' => 'jenis_proposal', 'class' => 'form-control', 'placeholder' => 'Nama PJK','value'=>$proposal->urusan,'readonly'=>'true');
+           $data = array('name' => 'jenis_proposal', 'id' => 'jenis_proposal', 'class' => 'form-control', 'placeholder' => 'Nama PJK','value'=>$proposal->id_wd,'readonly'=>'true');
            echo form_input($data); ?>
           </div>
         </div>
@@ -96,6 +96,15 @@ foreach($proposale as $proposal) { ?>
           </div>
         </div>
 
+        <!-- RAB -->
+        <div class="form-group">
+          <label for="rab" class="col-sm-2 control-label">RAB</label>
+          <div class="col-sm-10">
+            <?php 
+           $data = array('name' => 'rab', 'id' => 'rab', 'class' => 'form-control', 'readonly'=>'true', 'placeholder' => 'Masukkan RAB','value'=>$proposal->rab);
+           echo form_textarea($data); ?>
+          </div>
+        </div>
        
 
         <!-- Tempat -->

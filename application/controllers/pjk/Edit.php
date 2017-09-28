@@ -49,6 +49,7 @@ public function tambah_proses() {
 	$this->form_validation->set_rules('keluaran', 'Keluaran', 'required');
 	$this->form_validation->set_rules('tgl_pelaksanaan', 'Tanggal Pelaksanaan', 'required');
 	$this->form_validation->set_rules('penutup', 'Penutup', 'required');
+	$this->form_validation->set_rules('revisi', 'Revisi', 'required');
 	
 
 
@@ -70,7 +71,7 @@ public function tambah_proses() {
 				'penutup' => $this->input->post('penutup'),
 				'tgl_pelaksanaan' => $this->input->post('tgl_pelaksanaan'),
 				'tgl_input' => $tgl,
-
+				
 				);
 
 			if($this->Input_model->tambah($data))

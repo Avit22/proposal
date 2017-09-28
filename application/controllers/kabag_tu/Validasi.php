@@ -91,5 +91,5 @@ class Validasi extends CI_Controller {
 				redirect('kabag_tu/lihat');	
 		}	
 	redirect('kabag_tu/lihat');	
-}
+	}
 }

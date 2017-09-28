@@ -20,7 +20,7 @@ class Validasi extends CI_Controller {
 	
 	public function index() {
 
-		if($query = $this->Input_model->get_data_proposal_disetujui()) {
+		if($query = $this->Input_model->get_data_proposal_disetujui_tu()) {
 			$data['proposale'] = $query;
 		}
 		else

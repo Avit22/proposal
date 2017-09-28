@@ -57,9 +57,9 @@
               echo '<tr><td>TEMPAT PELAKSANAAN</td><td>'.$proposal->tempat.'</td></tr>'; 
 
               echo '<tr><td>KELUARAN</td><td>'.$proposal->keluaran.'</td></tr>'; 
-              echo '<tr><td>RAB</td><td>'.$proposal->rab.'</td></tr>'; 
-              echo '<tr><td>TANGGAL PELAKSANAAN</td><td>'.$proposal->tgl_pelaksanaan.'</td></tr>'; 
-              echo '<tr><td>TEMPAT PELAKSANAAN</td><td>'.$proposal->tempat.'</td></tr>'; 
+              //echo '<tr><td>RAB</td><td>'.$proposal->rab.'</td></tr>'; 
+             // echo '<tr><td>TANGGAL PELAKSANAAN</td><td>'.$proposal->tgl_pelaksanaan.'</td></tr>'; 
+              //echo '<tr><td>TEMPAT PELAKSANAAN</td><td>'.$proposal->tempat.'</td></tr>'; 
 
               echo '<tr><td>PENUTUP</td><td>'.$proposal->penutup.'</td></tr>'; 
               //echo "<a href='".base_url('pjk/insert_rab/').'/index/'.$proposal->id_proposal."'>INSERT RAB</a>";

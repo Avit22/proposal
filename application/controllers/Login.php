@@ -159,6 +159,7 @@ class Login extends CI_Controller {
 			if($status > 0) {
 
 	 	  		$tingkatan = $this->Login_model->tingkatan($username,$password);
+	 	  		$keterangan_tingkatan = $this->Login_model->keterangan_tingkatan($username);
 	 	  		$id_user = $this->Login_model->id($username,$password);	 	  		
 
 				$sessiondata = array(
@@ -166,6 +167,7 @@ class Login extends CI_Controller {
 					'password' => $password,
 					'nama'	=> $nama,
 					'tingkatan' => $tingkatan,
+					'keterangan_tingkatan' => $keterangan_tingkatan,
 					'id_user' => $id_user,
 					'logged_in' => TRUE);
 				
