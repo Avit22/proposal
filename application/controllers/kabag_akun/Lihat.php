@@ -23,7 +23,7 @@ class Lihat extends CI_Controller {
 
 		
 
-		if($query = $this->Input_model->get_data_proposal_disetujui_tu()) {
+		if($query = $this->Input_model->get_data_proposal_disetujui_akun()) {
 			$data['proposale'] = $query;
 		}
 		else

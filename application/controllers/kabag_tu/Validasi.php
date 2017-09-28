@@ -72,7 +72,7 @@ class Validasi extends CI_Controller {
 			$id_user_session = $this->session->userdata('id_user'); // tambahkan penanda user
 			$tgl = date("Y-m-d");
 			$data = array(				
-				'status_review' => $this->input->post('alasan'),				
+				'keterangan_review' => $this->input->post('alasan'),				
 				'nama_pjk' => $this->input->post('nama_pjk'),
 				'jenis_proposal' => $this->input->post('jenis_proposal'),
 				'judul' => $this->input->post('judul'),
