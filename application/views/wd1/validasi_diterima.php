@@ -40,7 +40,7 @@ foreach($proposale as $proposal) { ?>
           <label for="alasan" class="col-sm-2 control-label">Alasan Validasi</label>
           <div class="col-sm-10">
             <?php 
-           $tingkatnya =$this->session->userdata('tingkatan');
+           $tingkatnya =$this->session->userdata('keterangan_tingkatan');
            $data = array('name' => 'alasan', 'id' => 'alasan', 'class' => 'form-control', 'placeholder' => 'Masukkan Alasan Persetujuan/Penolakan Proposal','rows' => '2', 'value'=>'Disetujui oleh '.$tingkatnya);
            echo form_textarea($data); ?>
           </div>
