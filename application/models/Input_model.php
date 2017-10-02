@@ -55,6 +55,11 @@ function tambah_revisi($data) {
 		return;
 	}
 
+	function tambah_rab_keu($data) {
+		$this->db->insert('rab_keu',$data);
+		return;
+	}
+
 	function get_data() {
 		$this->db->select('*');
 		$this->db->from('proposal');
@@ -184,6 +189,7 @@ function tambah_revisi($data) {
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
 		$this->db->where('wd.id_wd=1');
+		$this->db->order_by('tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -492,6 +498,25 @@ public function get_all_rab_id_proposal_iduser($id_prop,$id_user){
 
 public function get_total_rab($id_prop,$id_user){	
 	$query = $this->db->query("select sum(total) as total_rab from rab where id_proposal=".$id_prop." and id_user=".$id_user."");
+	return $query->result();
+}
+
+public function get_all_rab_id_proposal_keu($id_prop){
+	$this->db->where('id_proposal',$id_prop);
+	$this->db->from('rab');
+	$query = $this->db->get();
+	return $query->result();
+}
+public function get_all_rab_id_proposal_iduser_keu($id_prop,$id_user){
+	$this->db->where('id_proposal',$id_prop);
+	$this->db->where('id_user',$id_user);
+	$this->db->from('rab_keu');
+	$query = $this->db->get();
+	return $query->result();
+}
+
+public function get_total_rab_keu($id_prop,$id_user){	
+	$query = $this->db->query("select sum(total) as total_rab from rab_keu where id_proposal=".$id_prop." and id_user=".$id_user."");
 	return $query->result();
 }
 }

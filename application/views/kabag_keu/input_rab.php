@@ -20,14 +20,6 @@ table, td {
           <div class="container">
   <h2>ID PROPOSAL : <?php echo $id_proposal;?></h2>
   <br />
-  <?php echo form_open('kabag_keu/rekomendasi/add_rab/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
-    <?php echo validation_errors(); ?>
-      <input type="text" id="nb" placeholder="Nama Barang"  name="nb">
-      <input type="text" id="harga" placeholder="Harga Barang"  name="harga">
-      <input type="text" id="jumlah" placeholder="Jumlah Barang/Item"  name="jumlah">
-      <input type="text" id="total" placeholder="Total Harga"  name="total">
-    <button>ADD RAB</button>  
-    </form>
  <table class="table table-striped" id="myTable">
     <thead>
       <tr>
@@ -48,6 +40,44 @@ table, td {
     }
     if(isset($totalrab)){
       foreach ($totalrab as $row){
+        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row->total_rab.'</strong></td></tr>';
+      }
+    }
+    ?>
+    </tbody>
+  </table>
+</div>
+<br>
+  <div class="container">
+  <br />
+  <?php echo form_open('kabag_keu/rekomendasi/add_rab_keu/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
+    <?php echo validation_errors(); ?>
+      <input type="text" id="nb" placeholder="Nama Barang"  name="nb">
+      <input type="text" id="harga" placeholder="Harga Barang"  name="harga">
+      <input type="text" id="jumlah" placeholder="Jumlah Barang/Item"  name="jumlah">
+      <input type="text" id="total" placeholder="Total Harga"  name="total">
+    <button>ADD RAB</button>  
+    </form>
+ <table class="table table-striped" id="myTable">
+    <thead>
+      <tr>
+        <th>Nama Barang</th>
+        <th>Harga</th>
+        <th>Jumlah</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php 
+    if(isset($rab_keu)){
+      foreach ($rab_keu as $row){
+      echo "<tr>";
+      echo "<td>".$row->barang."</td><td>".$row->harga."</td><td>".$row->jumlah."</td><td>".$row->total."</td>";
+      echo "</tr>";
+    }
+    }
+    if(isset($totalrab_keu)){
+      foreach ($totalrab_keu as $row){
         echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row->total_rab.'</strong></td></tr>';
       }
     }
