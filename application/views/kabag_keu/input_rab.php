@@ -1,64 +1,95 @@
 <!DOCTYPE html>
+<head>
+<style>
+table, td {
+    border: 1px solid black;
+}
+</style>
+</head>
 <html lang="en"> 
-  <?php
-  $proposalnya;
-  $this->view('template/head'); ?>
+  <?php $this->view('template/head'); ?>   
+
   <body class="nav-md">
     <div class="container body">
-      <div class="main_container">
-        
+      <div class="main_container">        
         <?php $this->view('template/sidebar'); ?>
         <?php $this->view('template/top'); ?>
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="text-center" style="font-size:30px;">Detail Proposal</div><br />
-          <?php
-          echo '  <div class="container">        
-  <table class="table">
-    <tbody>';
-          if(!empty($proposale)){
-             foreach($proposale as $proposal) : {      
-              $proposalnya = $proposal;      
-              echo '<tr><td>URUSAN</td><td>'.$proposal->urusan.'</td></tr>';
-              echo '<tr><td>JUDUL</td><td>'.$proposal->judul.'</td></tr>';
-              echo '<tr><td>NAMA PJK</td><td>'.$proposal->nama_pjk.'</td></tr>';
-              echo '<tr><td>PENDAHULUAN</td><td>'.$proposal->pendahuluan.'</td></tr>';
-              echo '<tr><td>DASAR HUKUM</td><td>'.$proposal->dasar_hukum.'</td></tr>';   
-              echo '<tr><td>KELUARAN</td><td>'.$proposal->keluaran.'</td></tr>'; 
-              echo '<tr><td>RAB</td><td>'.$proposal->rab.'</td></tr>'; 
-              //echo '<tr><td>TANGGAL PELAKSANAAN</td><td>'.$proposal->tgl_pelaksanaan.'</td></tr>'; 
-              //echo '<tr><td>TEMPAT PELAKSANAAN</td><td>'.$proposal->tempat.'</td></tr>'; 
-              echo '<tr><td>PENUTUP</td><td>'.$proposal->penutup.'</td></tr>'; 
-              echo  '<tr>';?>
-              <?php  
-             } endforeach;         
-          }
-          echo '     
+          <div class="text-center" style="font-size:30px;">INSERT RAB</div><br />
+          <div class="container">
+  <h2>ID PROPOSAL : <?php echo $id_proposal;?></h2>
+  <br />
+  <?php echo form_open('kabag_keu/rekomendasi/add_rab/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
+    <?php echo validation_errors(); ?>
+      <input type="text" id="nb" placeholder="Nama Barang"  name="nb">
+      <input type="text" id="harga" placeholder="Harga Barang"  name="harga">
+      <input type="text" id="jumlah" placeholder="Jumlah Barang/Item"  name="jumlah">
+      <input type="text" id="total" placeholder="Total Harga"  name="total">
+    <button>ADD RAB</button>  
+    </form>
+ <table class="table table-striped" id="myTable">
+    <thead>
+      <tr>
+        <th>Nama Barang</th>
+        <th>Harga</th>
+        <th>Jumlah</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php 
+    if(isset($rab)){
+      foreach ($rab as $row){
+      echo "<tr>";
+      echo "<td>".$row->barang."</td><td>".$row->harga."</td><td>".$row->jumlah."</td><td>".$row->total."</td>";
+      echo "</tr>";
+    }
+    }
+    if(isset($totalrab)){
+      foreach ($totalrab as $row){
+        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row->total_rab.'</strong></td></tr>';
+      }
+    }
+    ?>
     </tbody>
   </table>
-</div>'; ?>
-        <h1 class="text-center text-info">Input Rekomendasi RAB</h1> <br /><br />
-       <?php echo form_open('kabag_keu/rekomendasi/tambah_proses/'.$proposalnya->id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
-       <?php echo validation_errors(); ?>
-
-<!-- Nama PJK-->
-        <div class="form-group">
-          <label for="nama" class="col-sm-2 control-label">NOMINAL RAB</label>
-          <div class="col-sm-3">
-            <?php 
-           $data = array('name' => 'nominal_rab', 'id' => 'nominal_rab', 'class' => 'form-control', 'placeholder' => 'Nominal RAB');
-           echo form_input($data); ?>
+</div>
+<br>
+<script>
+function myFunction() {
+    var table = document.getElementById("myTable");    
+    var rows = table.rows.length;
+    console.log("lihat logging"+rows);
+    var row = table.insertRow(rows);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var barang = document.getElementById('nb').value;
+    var harga = document.getElementById('harga').value;
+    var jumlah = document.getElementById('jumlah').value;
+    var total = document.getElementById('total').value;
+    cell1.innerHTML = barang;
+    cell2.innerHTML = harga;
+    cell3.innerHTML = jumlah;
+    cell4.innerHTML = total;
+    document.getElementById('nb').value="";
+    document.getElementById('harga').value="";
+    document.getElementById('jumlah').value="";
+    document.getElementById('total').value="";
+    document.getElementById("total_nilai").innerHTML=total_nilai;
+}
+</script>
+<script>
+      function delete_row(){
+      var table = document.getElementById("myTable");
+      var rows = table.rows.length-1;
+      console.log("lihat logging delete"+rows);
+      table.deleteRow(rows);
+    }
+</script>
           </div>
-
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-primary">Kirim</button>
-            <button type="reset" class="btn btn-warning">Reset</button>
-          </div>
-        </div>
-       <?php echo form_close(); ?>
-        </div>
 
         <!-- /page content -->
 
@@ -78,4 +109,3 @@
 </script>
 </body>
 </html>
-

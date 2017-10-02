@@ -132,6 +132,7 @@ public function tambah_proses() {
 				'penutup' => $this->input->post('penutup'),
 				'tgl_pelaksanaan' => $this->input->post('tgl_pelaksanaan'),
 				'tgl_input' => $tgl,
+				'revisi' => $this->input->post('revisi'),
 				);
 
 			if($this->Input_model->update($id,$data));

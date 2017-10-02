@@ -82,6 +82,16 @@ function tambah_revisi($data) {
 		return $query->result();
 	}
 
+	function get_data_proposal_disetujui_akun() {
+		$this->db->where('status_review','DISETUJUI'); // disetujui oleh wd
+		$this->db->where('akun_review',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	function get_data_input_laporan($id_proposal){
 
 		$this->db->select('*');
@@ -97,6 +107,7 @@ function tambah_revisi($data) {
 		$this->db->select('*');
 		$this->db->from('revisi');
 		$this->db->join('user','revisi.id_user = user.id_user');
+		$this->db->join('tingkatan','user.username = tingkatan.nama_tingkatan');
 		$this->db->where('revisi.id_pjk = "'.$id_user.'"');
 		$query = $this->db->get();
 		return $query->result();
@@ -142,6 +153,8 @@ function tambah_revisi($data) {
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	
 
 	function get_data_kajur($id_user) {
 
@@ -467,6 +480,18 @@ public function get_all_rab_id_proposal($id_prop){
 	$this->db->where('id_proposal',$id_prop);
 	$this->db->from('rab');
 	$query = $this->db->get();
+	return $query->result();
+}
+public function get_all_rab_id_proposal_iduser($id_prop,$id_user){
+	$this->db->where('id_proposal',$id_prop);
+	$this->db->where('id_user',$id_user);
+	$this->db->from('rab');
+	$query = $this->db->get();
+	return $query->result();
+}
+
+public function get_total_rab($id_prop,$id_user){	
+	$query = $this->db->query("select sum(total) as total_rab from rab where id_proposal=".$id_prop." and id_user=".$id_user."");
 	return $query->result();
 }
 }

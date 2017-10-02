@@ -26,15 +26,14 @@ class Detail_proposal extends CI_Controller {
 			$data['laporane'] = NULL;
 		$this->load->view('wd1/detail_proposal', $data);
 	}
+	
 	public function detail($id) {		
 		if($query = $this->Input_model->get_data_by_idproposal($id)) {
 			$data['proposale'] = $query;
 		}
 		else{
 			$data['proposale'] = NULL;
-
 		
-
 		}
 
 		if($query = $this->Input_model->get_all_rab_id_proposal($id)) {

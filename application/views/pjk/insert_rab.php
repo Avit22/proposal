@@ -52,8 +52,6 @@ table, td {
   </table>
 </div>
 <br>
-
-
 <script>
 function myFunction() {
     var table = document.getElementById("myTable");    

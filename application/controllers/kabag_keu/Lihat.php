@@ -20,7 +20,7 @@ class Lihat extends CI_Controller {
 	
 	public function index() {
 
-		if($query = $this->Input_model->get_data()) {
+		if($query = $this->Input_model->get_data_proposal_disetujui_akun()) {
 			$data['proposale'] = $query;
 		}
 		else
@@ -29,17 +29,5 @@ class Lihat extends CI_Controller {
 		$this->load->view('kabag_keu/proposal_masuk',$data);
 		
 	}
-
-	public function detail($id_proposal){
-		if($query = $this->Input_model->get_data_by_idproposal($id_proposal)) {
-			$data['proposale'] = $query;
-		}
-		else
-			$data['proposale'] = NULL;
-
-		$this->load->view('kabag_keu/detail_proposal',$data);
-	}
-
-	
 
 }

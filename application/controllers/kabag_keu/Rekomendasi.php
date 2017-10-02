@@ -20,7 +20,7 @@ class Rekomendasi extends CI_Controller {
 	
 	public function index() {
 
-		if($query = $this->Input_model->get_data()) {
+		if($query = $this->Input_model->get_data_proposal_disetujui_akun()) {
 			$data['proposale'] = $query;
 		}
 		else
@@ -31,14 +31,56 @@ class Rekomendasi extends CI_Controller {
 	}	
 
 	public function input_rab($id_proposal){
-		  	if($query = $this->Input_model->get_data_by_idproposal($id_proposal)) {
+		if($query = $this->Input_model->get_data_by_idproposal($id_proposal)) {
 			$data['proposale'] = $query;
 		}
-		else
+		else{
 			$data['proposale'] = NULL;
+		}
 
+		$data = array("id_proposal"=>$id_proposal);
+		$id_usernya = $this->session->userdata('id_user');
+
+		if($query = $this->Input_model->get_all_rab_id_proposal_iduser($id_proposal,$id_usernya)) {
+			$data['rab'] = $query;
+		}
+		else{
+			$data['rab'] = NULL;
+		}
+		if($query = $this->Input_model->get_total_rab($id_proposal,$id_usernya)) {
+			$data['totalrab'] = $query;
+		}
+		else{
+			$data['totalrab'] = NULL;
+		}
 		$this->load->view('kabag_keu/input_rab',$data);
 	}
+
+	public function add_rab($id_proposal){
+	$this->load->library('form_validation');
+	$this->form_validation->set_message('required', '%s Harus Diisi.');
+	$this->form_validation->set_rules('nb', 'Nama Barang', 'required');
+	$this->form_validation->set_rules('harga', 'Harga Barang', 'required');
+	$this->form_validation->set_rules('jumlah', 'Jumlah Barang', 'required');
+	$this->form_validation->set_rules('total', 'Total Barang', 'required');
+	if ($this->form_validation->run() == FALSE) {
+		$this->index();
+		//redirect('pjk/insert_rab');	
+	}	else {
+		$id_user_session = $this->session->userdata('id_user'); // tambahkan penanda user
+		$tgl = date("Y-m-d");
+			$data = array(
+				'id_proposal' => $id_proposal,
+				'id_user' => $id_user_session,				
+				'barang' => $this->input->post('nb'),
+				'harga' => $this->input->post('harga'),
+				'jumlah' => $this->input->post('jumlah'),
+				'total' => $this->input->post('total'),
+				);
+			if($this->Input_model->tambah_rab($data));
+			redirect('kabag_keu/rekomendasi/input_rab/'.$id_proposal);	
+	}
+}
 
 	public function tambah_proses($id_proposal){
 	$this->load->library('form_validation');

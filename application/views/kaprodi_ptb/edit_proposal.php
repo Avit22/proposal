@@ -155,7 +155,7 @@ foreach($proposale as $proposal)
           <label for="tgl_pelaksanaan" class="col-sm-2 control-label">Tanggal Pelaksanaan</label>
           
           <div class="col-sm-10">
-          <input type="text" id="datepicker" name='tgl_pelaksanaan' placeholder="   Masukkan Tanggal">
+          <input type="text" id="datepicker" name='tgl_pelaksanaan' placeholder="   Masukkan Tanggal" value = "<?php echo $proposal->tgl_pelaksanaan; ?>">
           </div>         
         </div>
 
@@ -186,6 +186,18 @@ foreach($proposale as $proposal)
             <?php 
            $data = array('name' => 'penutup', 'id' => 'penutup', 'class' => 'form-control', 'placeholder' => 'Masukkan Penutup','value'=>$proposal->penutup);
           echo form_textarea($data); ?>
+          </div>
+        </div>
+
+        <p style="color:red;"><strong>DI ISI BILA MELAKUKAN REVISI PROPOSAL UNTUK CATATAN KOREKTOR</strong></p>
+
+        <!-- Catatan Revisi -->
+        <div class="form-group">
+          <label for="revisi" class="col-sm-2 control-label">Catatan Revisi</label>
+          <div class="col-sm-10">
+            <?php 
+           $data = array('name' => 'revisi', 'id' => 'revisi', 'class' => 'form-control', 'placeholder' => 'Masukkan Catatan Revisi','rows' => '2');
+           echo form_textarea($data); ?>
           </div>
         </div>
 

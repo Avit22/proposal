@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -24,7 +24,8 @@
         <!-- page content -->
         <div class="right_col" role="main">
 
-        <?php 
+
+         <?php 
 foreach($proposale as $proposal)
 { 
 ?>
@@ -33,8 +34,8 @@ foreach($proposale as $proposal)
        <?php echo form_open('kaprodi_pte/input/update_proses/'.$proposal->id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
        <?php echo validation_errors(); ?>
 
- 
-       	<!-- Jenis Proposal -->
+
+        <!-- Jenis Proposal -->
         <div class="form-group">
           <label for="jenis" class="col-sm-2 control-label">Jenis Proposal</label>
           <div class="col-sm-6">
@@ -106,7 +107,6 @@ foreach($proposale as $proposal)
             </select>
           </div>
         </div>
-
         
         <!-- Judul -->
         <div class="form-group">
@@ -153,17 +153,16 @@ foreach($proposale as $proposal)
           <label for="tgl_pelaksanaan" class="col-sm-2 control-label">Tanggal Pelaksanaan</label>
           
           <div class="col-sm-10">
-          <input type="text" id="datepicker" name='tgl_pelaksanaan' placeholder="   Masukkan Tanggal">
+          <input type="text" id="datepicker" name='tgl_pelaksanaan' placeholder="   Masukkan Tanggal" value = "<?php echo $proposal->tgl_pelaksanaan; ?>">
           </div>         
         </div>
         
-
         <!-- Tempat -->
         <div class="form-group">
           <label for="tempat" class="col-sm-2 control-label">Tempat Pelaksanaan</label>
           <div class="col-sm-10">
             <?php 
-           $data = array('name' => 'tempat', 'id' => 'tempat', 'class' => 'form-control', 'placeholder' => 'Masukkan Tempat Pelaksanaan',,'rows' => '2','value'=>$proposal->tempat);
+           $data = array('name' => 'tempat', 'id' => 'tempat', 'class' => 'form-control', 'placeholder' => 'Masukkan Tempat Pelaksanaan','rows' => '2','value'=>$proposal->tempat);
            echo form_textarea($data); ?>
           </div>
         </div>
@@ -185,6 +184,19 @@ foreach($proposale as $proposal)
             <?php 
            $data = array('name' => 'penutup', 'id' => 'penutup', 'class' => 'form-control', 'placeholder' => 'Masukkan Penutup','value'=>$proposal->penutup);
           echo form_textarea($data); ?>
+          </div>
+        </div>
+
+
+        <p style="color:red;"><strong>DI ISI BILA MELAKUKAN REVISI PROPOSAL UNTUK CATATAN KOREKTOR</strong></p>
+
+        <!-- Catatan Revisi -->
+        <div class="form-group">
+          <label for="revisi" class="col-sm-2 control-label">Catatan Revisi</label>
+          <div class="col-sm-10">
+            <?php 
+           $data = array('name' => 'revisi', 'id' => 'revisi', 'class' => 'form-control', 'placeholder' => 'Masukkan Catatan Revisi','rows' => '2');
+           echo form_textarea($data); ?>
           </div>
         </div>
 

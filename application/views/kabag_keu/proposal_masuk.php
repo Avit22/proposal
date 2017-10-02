@@ -25,6 +25,7 @@
               <th>Nama PJK</th>
               <th>Tanggal Terkirim</th>
               <th>View Proposal</th>
+              <th>Revisi Proposal</th>
            </tr>
             </thead>
             <tbody>
@@ -36,7 +37,9 @@
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo $proposal->tgl_input; ?></td>
-                <td><?php echo anchor(base_url()."kabag_keu/lihat/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
+                <td><?php echo anchor(base_url().'kabag_keu/detail/index/'.$proposal->id_proposal,'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
+                </td>
+                <td><?php echo anchor("kabag_keu/revisi_proposal/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-tags text-primary fa-lg" aria-hidden="true" title="Revisi"></span>'); ?>   
                 </td>
       
             </tr>

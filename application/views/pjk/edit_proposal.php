@@ -187,6 +187,9 @@ foreach($proposale as $proposal)
           </div>
         </div>
 
+
+        <p style="color:red;"><strong>DI ISI BILA MELAKUKAN REVISI PROPOSAL UNTUK CATATAN KOREKTOR</strong></p>
+
         <!-- Catatan Revisi -->
         <div class="form-group">
           <label for="revisi" class="col-sm-2 control-label">Catatan Revisi</label>

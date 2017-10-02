@@ -40,7 +40,7 @@
                 <td><?php echo $revisi->nama_pjk; ?></td>
                 <td><?php echo $revisi->tgl_input; ?></td>
                 <td><?php echo $revisi->revisi; ?></td>
-                <td><?php echo $revisi->tingkatan; ?></td>
+                <td><?php echo $revisi->keterangan_tingkatan; ?></td>
                     
             </tr>
             <?php } endforeach; } ?>

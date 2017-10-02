@@ -22,7 +22,7 @@
              foreach($proposale as $proposal) : {
                echo '<tr><td>JUDUL</td><td>'.$proposal->judul.'</td></tr>';
                 echo '<tr><td>NAMA PJK</td><td>'.$proposal->nama_pjk.'</td></tr>';
-                echo '<tr><td>URUSAN</td><td>'.$proposal->urusan.'</td></tr>';
+                echo '<tr><td>JENIS PROPOSAL</td><td>'.$proposal->urusan.'</td></tr>';
                 echo '<tr><td>JURUSAN</td><td>'.$proposal->nama_jurusan.'</td></tr>';
                 echo '<tr><td>PRODI</td><td>'.$proposal->nama_prodi.'</td></tr>';
                  echo '<tr><td>PENDAHULUAN</td><td>'.$proposal->pendahuluan.'</td></tr>';

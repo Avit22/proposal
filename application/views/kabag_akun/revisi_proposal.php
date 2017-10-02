@@ -15,29 +15,33 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="text-center" style="font-size:30px;"> Revisi Proposal </div><br />
+          <div class="text-center" style="font-size:30px;"> Revisi Proposal</div><br />
           <table id="example" class="table table-bordered table-striped header-fixed ">
             <thead>
             <tr>
               <th>No.</th>
+              <th>Jenis Proposal</th>
               <th>Judul Proposal</th>
               <th>Nama PJK</th>
               <th>Tanggal Terkirim</th>
-              <th>Revisi</th>
+              <th>Catatan Revisi</th>
+              <th>View Proposal</th>
+              
            </tr>
-            </thead>
+            </thead> 
             <tbody>
             <?php $i =1; if(!empty($proposale)) {
             foreach($proposale as $proposal) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">
                 <td><?php echo $i++; ?></td>
-               
+                <td><?php echo $proposal->urusan; ?></td>
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo $proposal->tgl_input; ?></td>
-                <td><?php echo anchor("xxxxxxx",'<span class="glyphicon glyphicon-tags text-primary fa-lg" aria-hidden="true" title="Revisi"></span>'); ?>   
+                <td><?php echo $proposal->revisi; ?></td>
+                <td><?php echo anchor(base_url().'kabag_akun/detail/index/'.$proposal->id_proposal,'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
-      
+                    
             </tr>
             <?php } endforeach; } ?>
                   
