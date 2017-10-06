@@ -61,7 +61,7 @@ table, td {
     <?php 
     if(isset($rab_keu)){
       foreach ($rab_keu as $row1){
-      echo "oooooooooooooooooooooo";
+      
       echo "<tr>";
       echo "<td>".$row1->barang."</td><td>".$row1->harga."</td><td>".$row1->jumlah."</td><td>".$row1->total."</td>";
       echo "</tr>";
