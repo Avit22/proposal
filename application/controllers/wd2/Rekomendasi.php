@@ -59,12 +59,7 @@ class Rekomendasi extends CI_Controller {
 			$data['totalrab'] = NULL;
 		}
 
-		if($query = $this->Input_model->get_all_rab_id_proposal_iduser_keu($id_proposal,$id_usernya)) {
-			$data['rab_keu'] = $query;
-		}
-		else{
-			$data['rab_keu'] = NULL;
-		}
+		
 		if($query = $this->Input_model->get_total_rab_keu($id_proposal,$id_usernya)) {
 			$data['totalrab_keu'] = $query;
 		}
