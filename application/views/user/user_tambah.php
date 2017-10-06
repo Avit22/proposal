@@ -70,7 +70,7 @@
            <?php 
            foreach($data_tingkatan as $tingkatan)
             { 
-                echo '<option value="'.$tingkatan->nama_tingkatan.'">'.$tingkatan->nama_tingkatan.'</option>';
+                echo '<option value="'.$tingkatan->keterangan_tingkatan.'">'.$tingkatan->keterangan_tingkatan.'</option>';
             } ?>
             </select>
             </div>

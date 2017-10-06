@@ -37,7 +37,7 @@ foreach($proposale as $proposal) { ?>
 
                 <!-- Alasan Validasi -->
         <div class="form-group">
-          <label for="alasan" class="col-sm-2 control-label">Alasan Validasi</label>
+          <label for="alasan" class="col-sm-2 control-label">Pemberi Validasi</label>
           <div class="col-sm-10">
             <?php 
            $data = array('name' => 'alasan', 'id' => 'alasan', 'class' => 'form-control', 'placeholder' => 'Masukkan Alasan Persetujuan/Penolakan Proposal','rows' => '2');

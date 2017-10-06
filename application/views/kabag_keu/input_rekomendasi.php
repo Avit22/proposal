@@ -22,7 +22,6 @@
               <th>No.</th>
               <th>Judul Proposal</th>
               <th>Nama PJK</th>
-              <th>RAB</th>
               <th>Input Rekomendasi RAB</th>
            </tr>
             </thead>
@@ -34,7 +33,6 @@
                 
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
-                <td><?php echo $proposal->rab; ?></td>
                 <td><?php echo anchor(base_url().'kabag_keu/rekomendasi/input_rab/'.$proposal->id_proposal,'<span class="glyphicon glyphicon-edit text-primary fa-lg" aria-hidden="true" title="Input Rekomendasi"></span>'); ?>   
                 </td>
                 

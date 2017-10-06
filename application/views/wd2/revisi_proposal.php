@@ -25,6 +25,7 @@
               <th>Nama PJK</th>
               <th>Tanggal Terkirim</th>
               <th>Catatan Revisi</th>
+              <th>Catatan Revisi Pjk</th>
               <th>View Proposal</th>
               
            </tr>
@@ -38,6 +39,7 @@
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo $proposal->tgl_input; ?></td>
+                <td><?php echo $proposal->revisi1; ?></td>
                 <td><?php echo $proposal->revisi; ?></td>
                 <td><?php echo anchor("wd2/detail_proposal/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>

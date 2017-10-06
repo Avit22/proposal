@@ -21,7 +21,7 @@ class Revisi extends CI_Controller {
 	public function index() {
 
 
-		if($query = $this->Input_model->get_data_wd2()) {
+		if($query = $this->Input_model->get_data_revisi_wd2()) {
 			$data['proposale'] = $query;
 		}
 		else
@@ -43,7 +43,7 @@ class Revisi extends CI_Controller {
 	$this->form_validation->set_rules('dasar_hukum', 'Dasar Hukum', 'required');
 	$this->form_validation->set_rules('rab', 'RAB', 'required');
 	$this->form_validation->set_rules('keluaran', 'Keluaran', 'required');
-	$this->form_validation->set_rules('revisi', 'Revisi', 'required');
+	$this->form_validation->set_rules('revisi1', 'Revisi', 'required');
 	
 		if ($this->form_validation->run() == FALSE) {
 			$this->index();
@@ -61,7 +61,7 @@ class Revisi extends CI_Controller {
 				'dasar_hukum' => $this->input->post('dasar_hukum'),
 				'rab' => $this->input->post('rab'),
 				'keluaran' => $this->input->post('keluaran'),
-				'revisi' => $this->input->post('revisi'),
+				'revisi1' => $this->input->post('revisi1'),
 				'tgl_input' => $tgl,
 				'id_user' => $id_user_session,
 				);

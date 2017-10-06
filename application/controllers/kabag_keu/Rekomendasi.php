@@ -40,13 +40,13 @@ class Rekomendasi extends CI_Controller {
 
 		$data = array("id_proposal"=>$id_proposal);
 		$id_usernya = $this->session->userdata('id_user');
-		if($query = $this->Input_model->get_all_rab_id_proposal_iduser($id_proposal,$id_usernya)) {
+		if($query = $this->Input_model->get_all_rab_id_proposal($id_proposal)) {
 			$data['rab'] = $query;
 		}
 		else{
 			$data['rab'] = NULL;
 		}
-		if($query = $this->Input_model->get_total_rab($id_proposal,$id_usernya)) {
+		if($query = $this->Input_model->get_total_rab($id_proposal)) {
 			$data['totalrab'] = $query;
 		}
 		else{

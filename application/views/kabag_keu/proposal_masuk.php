@@ -37,7 +37,7 @@
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo $proposal->tgl_input; ?></td>
-                <td><?php echo anchor(base_url().'kabag_keu/detail/index/'.$proposal->id_proposal,'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
+                <td><?php echo anchor("kabag_keu/detail_proposal/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
                 <td><?php echo anchor("kabag_keu/revisi_proposal/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-tags text-primary fa-lg" aria-hidden="true" title="Revisi"></span>'); ?>   
                 </td>

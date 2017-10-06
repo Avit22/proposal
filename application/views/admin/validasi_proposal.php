@@ -16,13 +16,16 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="text-center" style="font-size:30px;"> Validasi Proposal </div><br />
+
           <table id="example" class="table table-bordered table-striped header-fixed ">
             <thead>
             <tr>
               <th>No.</th>
               <th>Judul Proposal</th>
               <th>Nama PJK</th>
+              <th>Tanggal Terkirim</th>
               <th>Validasi</th>
+              <th>Status Validasi</th>
            </tr>
             </thead>
             <tbody>
@@ -32,9 +35,11 @@
                 <td><?php echo $i++; ?></td>
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
+                <td><?php echo $proposal->tgl_input; ?></td>
                 <td><?php echo anchor("admin/validasi/validasi/".$proposal->id_proposal,'<span class="glyphicon glyphicon-check text-primary fa-lg" aria-hidden="true" title="Validasi"></span>'); ?>   
                 </td>
-      
+                <td><?php echo $proposal->status_review; ?></td>
+          
       
             </tr>
             <?php } endforeach; } ?>

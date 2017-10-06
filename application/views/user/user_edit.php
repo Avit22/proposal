@@ -55,9 +55,9 @@
 
                 if($tingkatan->nama_tingkatan == $User->tingkatan)
 
-                  echo '<option value="'.$tingkatan->nama_tingkatan.'" selected>'.$tingkatan->nama_tingkatan.'</option>';
+                  echo '<option value="'.$tingkatan->keterangan_tingkatan.'" selected>'.$tingkatan->keterangan_tingkatan.'</option>';
                 else
-                  echo '<option value="'.$tingkatan->nama_tingkatan.'">'.$tingkatan->nama_tingkatan.'</option>';
+                  echo '<option value="'.$tingkatan->keterangan_tingkatan.'">'.$tingkatan->keterangan_tingkatan.'</option>';
             } ?>
             </select>
            

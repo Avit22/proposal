@@ -18,7 +18,7 @@
           <div class="text-center" style="font-size:30px;">Proposal Terkirim</div><br />
            <?php 
            $sessiondata = $this->session->userdata('nama');
-           echo 'Logged in as '.$sessiondata;
+           //echo 'Logged in as '.$sessiondata;
            ?>
           <table id="example" class="table table-bordered table-striped header-fixed ">
             <thead>

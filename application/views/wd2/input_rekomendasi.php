@@ -15,13 +15,16 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="text-center" style="font-size:30px;"> Rekomendasi Item Proposal </div><br />
+          <div class="text-center" style="font-size:30px;">Input Rekomendasi Item</div><br />
           <table id="example" class="table table-bordered table-striped header-fixed ">
             <thead>
             <tr>
               <th>No.</th>
+              <th>Jenis Proposal</th>
               <th>Judul Proposal</th>
               <th>Nama PJK</th>
+              <th>Tanggal Terkirim</th>
+              <th>View Proposal</th>
               <th>Input Rekomendasi Item</th>
            </tr>
             </thead>
@@ -30,12 +33,14 @@
             foreach($proposale as $proposal) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">
                 <td><?php echo $i++; ?></td>
-                
+                <td><?php echo $proposal->urusan; ?></td>
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
-                <td><?php echo anchor("xxxxxxx",'<span class="glyphicon glyphicon-edit text-primary fa-lg" aria-hidden="true" title="Input Rekomendasi"></span>'); ?>   
+                <td><?php echo $proposal->tgl_input; ?></td>
+                <td><?php echo anchor("wd2/detail_proposal/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
-                
+                <td><?php echo anchor(base_url().'wd2/rekomendasi/input_rab/'.$proposal->id_proposal,'<span class="glyphicon glyphicon-edit text-primary fa-lg" aria-hidden="true" title="Input Rekomendasi"></span>'); ?>   
+                </td>
       
             </tr>
             <?php } endforeach; } ?>

@@ -64,6 +64,7 @@ function tambah_revisi($data) {
 		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->order_by('tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -73,6 +74,19 @@ function tambah_revisi($data) {
 		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->order_by('tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_revisi_proposal_disetujui() {
+		$this->db->where('status_review','DISETUJUI');
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->join('revisi','proposal.id_proposal = revisi.id_proposal');
+		$this->db->where('revisi.id_user = 4');
+		$this->db->order_by('proposal.tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -83,9 +97,24 @@ function tambah_revisi($data) {
 		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->order_by('tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	function get_data_revisi_proposal_disetujui_tu() {
+		$this->db->where('status_review','DISETUJUI'); // disetujui oleh wd
+		$this->db->where('tu_review',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->join('revisi','proposal.id_proposal = revisi.id_proposal');
+		$this->db->order_by('proposal.tgl_input desc');
+		$this->db->where('revisi.id_user = 5');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 
 	function get_data_proposal_disetujui_akun() {
 		$this->db->where('status_review','DISETUJUI'); // disetujui oleh wd
@@ -93,6 +122,31 @@ function tambah_revisi($data) {
 		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->order_by('tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_revisi_proposal_disetujui_akun() {
+		$this->db->where('status_review','DISETUJUI'); // disetujui oleh wd
+		$this->db->where('akun_review',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->join('revisi','proposal.id_proposal = revisi.id_proposal');
+		$this->db->order_by('proposal.tgl_input desc');
+		$this->db->where('revisi.id_user = 6');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_proposal_disetujui_keu() {
+		$this->db->where('status_review','DISETUJUI'); // disetujui oleh wd
+		$this->db->where('keu_review',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->order_by('proposal.tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -114,6 +168,7 @@ function tambah_revisi($data) {
 		$this->db->join('user','revisi.id_user = user.id_user');
 		$this->db->join('tingkatan','user.username = tingkatan.nama_tingkatan');
 		$this->db->where('revisi.id_pjk = "'.$id_user.'"');
+		$this->db->order_by('revisi.tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -155,6 +210,7 @@ function tambah_revisi($data) {
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
 		$this->db->where('proposal.id_user = "'.$id_user.'"');
+		$this->db->order_by('tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -194,12 +250,41 @@ function tambah_revisi($data) {
 		return $query->result();
 	}
 
+	function get_data_revisi_wd1() {
+
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->join('revisi','proposal.id_proposal = revisi.id_proposal');
+		$this->db->where('wd.id_wd=1');
+		$this->db->where('revisi.id_user = 1');
+		$this->db->order_by('proposal.tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+
+
 	function get_data_wd2() {
 
 		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
 		$this->db->where('wd.id_wd=2');
+		$this->db->order_by('tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_revisi_wd2() {
+
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->join('revisi','proposal.id_proposal = revisi.id_proposal');
+		$this->db->order_by('proposal.tgl_input desc');
+		$this->db->where('wd.id_wd=2');
+		$this->db->where('revisi.id_user = 2');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -210,6 +295,19 @@ function tambah_revisi($data) {
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
 		$this->db->where('wd.id_wd=3');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_revisi_wd3() {
+
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->join('revisi','proposal.id_proposal = revisi.id_proposal');
+		$this->db->where('wd.id_wd=3');
+		$this->db->where('revisi.id_user = 3');
+		$this->db->order_by('proposal.tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -488,6 +586,14 @@ public function get_all_rab_id_proposal($id_prop){
 	$query = $this->db->get();
 	return $query->result();
 }
+
+public function get_all_rab_keu_id_proposal($id_prop){
+	$this->db->where('id_proposal',$id_prop);
+	$this->db->from('rab_keu');
+	$query = $this->db->get();
+	return $query->result();
+}
+
 public function get_all_rab_id_proposal_iduser($id_prop,$id_user){
 	$this->db->where('id_proposal',$id_prop);
 	$this->db->where('id_user',$id_user);
@@ -496,8 +602,8 @@ public function get_all_rab_id_proposal_iduser($id_prop,$id_user){
 	return $query->result();
 }
 
-public function get_total_rab($id_prop,$id_user){	
-	$query = $this->db->query("select sum(total) as total_rab from rab where id_proposal=".$id_prop." and id_user=".$id_user."");
+public function get_total_rab($id_prop){	
+	$query = $this->db->query("select sum(total) as total_rab from rab where id_proposal=".$id_prop."");
 	return $query->result();
 }
 

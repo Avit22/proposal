@@ -16,7 +16,7 @@ table, td {
         <?php $this->view('template/top'); ?>
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="text-center" style="font-size:30px;">INPUT REKOMENDASI RAB</div><br />
+          <div class="text-center" style="font-size:30px;">INPUT REKOMENDASI ITEM</div><br />
           <div class="container">
   <h2>ID PROPOSAL : <?php echo $id_proposal;?></h2>
   <br />
@@ -46,6 +46,36 @@ table, td {
     ?>
     </tbody>
   </table>
+
+<p><strong>REKOMENDASI RAB DARI KABAG KEUANGAN</strong></p>
+<table class="table table-striped" id="myTable1">
+    <thead>
+      <tr>
+        <th>Nama Barang</th>
+        <th>Harga</th>
+        <th>Jumlah</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php 
+    if(isset($rab_keu)){
+      foreach ($rab_keu as $row1){
+      echo "<tr>";
+      echo "<td>".$row1->barang."</td><td>".$row1->harga."</td><td>".$row1->jumlah."</td><td>".$row1->total."</td>";
+      echo "</tr>";
+    }
+    }
+    if(isset($totalrab_keu)){
+      foreach ($totalrab_keu as $row1){
+        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row1->total_rab.'</strong></td></tr>';
+      }
+    }
+    ?>
+    </tbody>
+  </table>
+
+
 </div>
 <br>
   <div class="container">
