@@ -621,8 +621,8 @@ public function get_all_rab_id_proposal_iduser_keu($id_prop,$id_user){
 	return $query->result();
 }
 
-public function get_total_rab_keu($id_prop,$id_user){	
-	$query = $this->db->query("select sum(total) as total_rab from rab_keu where id_proposal=".$id_prop." and id_user=".$id_user."");
+public function get_total_rab_keu($id_prop){	
+	$query = $this->db->query("select sum(total) as total_rab from rab_keu where id_proposal=".$id_prop."");
 	return $query->result();
 }
 }
