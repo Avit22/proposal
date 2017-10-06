@@ -609,7 +609,7 @@ public function get_total_rab($id_prop){
 
 public function get_all_rab_id_proposal_keu($id_prop){
 	$this->db->where('id_proposal',$id_prop);
-	$this->db->from('rab');
+	$this->db->from('rab_keu');
 	$query = $this->db->get();
 	return $query->result();
 }
