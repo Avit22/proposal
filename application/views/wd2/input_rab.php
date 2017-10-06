@@ -82,7 +82,7 @@ table, td {
   <div class="container">
   <br />
    <p><strong>INPUT REKOMENDASI RAB KEPADA DEKAN</strong></p>
-  <?php echo form_open('kabag_keu/rekomendasi/add_rab_keu/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
+  <?php echo form_open('wd2/rekomendasi/add_rab_item/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
     <?php echo validation_errors(); ?>
       <input type="text" id="nb" placeholder="Nama Barang"  name="nb">
       <input type="text" id="harga" placeholder="Harga Barang"  name="harga">
@@ -102,15 +102,15 @@ table, td {
     <tbody>
 
     <?php 
-    if(isset($rab_keu)){
-      foreach ($rab_keu as $row){
+    if(isset($item_wd2)){
+      foreach ($item_wd2 as $row){
       echo "<tr>";
       echo "<td>".$row->barang."</td><td>".$row->harga."</td><td>".$row->jumlah."</td><td>".$row->total."</td>";
       echo "</tr>";
     }
     }
-    if(isset($totalrab_keu)){
-      foreach ($totalrab_keu as $row){
+    if(isset($totalitem)){
+      foreach ($totalitem as $row){
         echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row->total_rab.'</strong></td></tr>';
       }
     }
@@ -118,6 +118,7 @@ table, td {
     </tbody>
   </table>
   <!-- Catatan Revisi -->
+  <?php echo form_open('wd2/rekomendasi/tambah_catatan_rab_keu/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
         <div class="form-group">
           <label for="revisi" class="col-sm-1 control-label">Catatan </label>
           <div class="col-sm-11">

@@ -52,6 +52,14 @@ class Rekomendasi extends CI_Controller {
 		else{
 			$data['rab_keu'] = NULL;
 		}
+
+		if($query = $this->Input_model->get_all_rab_item_wd2_id_proposal($id_proposal)) {
+			$data['item_wd2'] = $query;
+		}
+		else{
+			$data['item_wd2'] = NULL;
+		}
+
 		if($query = $this->Input_model->get_total_rab($id_proposal,$id_usernya)) {
 			$data['totalrab'] = $query;
 		}
@@ -59,10 +67,16 @@ class Rekomendasi extends CI_Controller {
 			$data['totalrab'] = NULL;
 		}
 
+		if($query = $this->Input_model->get_total_item($id_proposal,$id_usernya)) {
+			$data['totalitem'] = $query;
+		}
+		else{
+			$data['totalitem'] = NULL;
+		}
+
 		if($query = $this->Input_model->get_total_rab_keu($id_proposal)) {
 
-		if($query = $this->Input_model->get_total_rab_keu($id_proposal,$id_usernya)) {
-
+		
 			$data['totalrab_keu'] = $query;
 		}
 		else{
@@ -70,6 +84,26 @@ class Rekomendasi extends CI_Controller {
 		}
 		$this->load->view('wd2/input_rab',$data);
 	}
+
+	public function tambah_catatan_rab_keu($id_proposal){
+	$this->load->library('form_validation');
+	$this->form_validation->set_message('required', '%s Harus Diisi.');
+	$this->form_validation->set_rules('catatan', 'Catatan', 'required');
+	if ($this->form_validation->run() == FALSE) {
+		$this->index();
+		//redirect('pjk/insert_rab');	
+	}	else {
+		$id_user_session = $this->session->userdata('id_user'); // tambahkan penanda user
+		$tgl = date("Y-m-d");
+			$data = array(
+				'id_proposal' => $id_proposal,
+				'catatan_wd2' => $this->input->post('catatan'),
+				'validasi_wd2'=> "DISETUJUI",
+				);
+			if($this->Input_model->update($id_proposal,$data));
+			redirect('wd2/rekomendasi/input_rab/'.$id_proposal);	
+	}
+}
 
 	public function add_rab($id_proposal){
 	$this->load->library('form_validation');
@@ -119,6 +153,32 @@ public function add_rab_keu($id_proposal){
 				'total' => $this->input->post('total'),
 				);
 			if($this->Input_model->tambah_rab_keu($data));
+			redirect('wd2/rekomendasi/input_rab/'.$id_proposal);	
+	}
+}
+
+public function add_rab_item($id_proposal){
+	$this->load->library('form_validation');
+	$this->form_validation->set_message('required', '%s Harus Diisi.');
+	$this->form_validation->set_rules('nb', 'Nama Barang', 'required');
+	$this->form_validation->set_rules('harga', 'Harga Barang', 'required');
+	$this->form_validation->set_rules('jumlah', 'Jumlah Barang', 'required');
+	$this->form_validation->set_rules('total', 'Total Barang', 'required');
+	if ($this->form_validation->run() == FALSE) {
+		$this->index();
+		//redirect('pjk/insert_rab');	
+	}	else {
+		$id_user_session = $this->session->userdata('id_user'); // tambahkan penanda user
+		$tgl = date("Y-m-d");
+			$data = array(
+				'id_proposal' => $id_proposal,
+				'id_user' => $id_user_session,				
+				'barang' => $this->input->post('nb'),
+				'harga' => $this->input->post('harga'),
+				'jumlah' => $this->input->post('jumlah'),
+				'total' => $this->input->post('total'),
+				);
+			if($this->Input_model->tambah_rab_item($data));
 			redirect('wd2/rekomendasi/input_rab/'.$id_proposal);	
 	}
 }
