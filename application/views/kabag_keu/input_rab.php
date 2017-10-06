@@ -87,6 +87,7 @@ table, td {
     </tbody>
   </table>
   <!-- Catatan Revisi -->
+  <?php echo form_open('kabag_keu/rekomendasi/tambah_catatan_rab_keu/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
         <div class="form-group">
           <label for="revisi" class="col-sm-1 control-label">Catatan </label>
           <div class="col-sm-11">

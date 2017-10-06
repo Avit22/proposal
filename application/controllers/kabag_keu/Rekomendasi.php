@@ -66,7 +66,7 @@ class Rekomendasi extends CI_Controller {
 			$data['totalrab_keu'] = NULL;
 		}
 		$this->load->view('kabag_keu/input_rab',$data);
-	}
+	} 
 
 	public function add_rab($id_proposal){
 	$this->load->library('form_validation');
@@ -90,6 +90,25 @@ class Rekomendasi extends CI_Controller {
 				'total' => $this->input->post('total'),
 				);
 			if($this->Input_model->tambah_rab($data));
+			redirect('kabag_keu/rekomendasi/input_rab/'.$id_proposal);	
+	}
+}
+
+public function tambah_catatan_rab_keu($id_proposal){
+	$this->load->library('form_validation');
+	$this->form_validation->set_message('required', '%s Harus Diisi.');
+	$this->form_validation->set_rules('catatan', 'Catatan', 'required');
+	if ($this->form_validation->run() == FALSE) {
+		$this->index();
+		//redirect('pjk/insert_rab');	
+	}	else {
+		$id_user_session = $this->session->userdata('id_user'); // tambahkan penanda user
+		$tgl = date("Y-m-d");
+			$data = array(
+				'id_proposal' => $id_proposal,
+				'catatan_keu' => $this->input->post('catatan'),
+				);
+			if($this->Input_model->update($id_proposal,$data));
 			redirect('kabag_keu/rekomendasi/input_rab/'.$id_proposal);	
 	}
 }
