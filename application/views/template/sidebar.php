@@ -679,10 +679,12 @@
                        </ul>
                     </li>
                     <li><a><i class="fa fa-clone"></i> Rekomendasi <span class="fa fa-chevron-down"></span></a>
+
                     <ul class="nav child_menu">
                     <li><a href="<?php echo site_url('dekan/rekomendasi_rab'); ?>"><i class="fa fa-edit"></i> Rekomendasi RAB</a></li>
                      <li><a href="<?php echo site_url('dekan/rekomendasi_item'); ?>"><i class="fa fa-edit"></i> Rekomendasi Item</a></li>
-                     </ul>
+
+                    </ul>
                     <?php } ?>
 
 

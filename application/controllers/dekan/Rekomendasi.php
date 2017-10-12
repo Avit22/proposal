@@ -21,7 +21,7 @@ class Rekomendasi extends CI_Controller {
 	public function index() {
 
 
-		if($query = $this->Input_model->get_data()) {
+		if($query = $this->Input_model->get_data_proposal_disetujui_wd2_validasi()) {
 			$data['proposale'] = $query;
 		}
 		else
