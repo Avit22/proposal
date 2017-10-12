@@ -37,7 +37,7 @@
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo $proposal->tgl_input; ?></td>
-                <td><?php echo $proposal->catatan_keu; ?></td>
+                <td><?php echo $proposal->revisi_rab_keu; ?></td>
                 <td><?php echo anchor("pjk/detail_rab/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-list-alt text-primary fa-lg" aria-hidden="true" title="Rekomendasi RAB"></span>'); ?>   
                 
                
