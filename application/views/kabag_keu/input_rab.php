@@ -20,6 +20,7 @@ table, td {
           <div class="container">
   <h2>ID PROPOSAL : <?php echo $id_proposal;?></h2>
   <br />
+
  <table class="table table-striped" id="myTable">
     <thead>
       <tr>
@@ -38,6 +39,7 @@ table, td {
       echo "</tr>";
     }
     }
+    
     if(isset($totalrab)){
       foreach ($totalrab as $row){
         echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row->total_rab.'</strong></td></tr>';

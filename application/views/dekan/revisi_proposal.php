@@ -35,7 +35,7 @@
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo $proposal->tgl_input; ?></td>
-                <td><?php echo anchor("xxxxxxx",'<span class="glyphicon glyphicon-tags text-primary fa-lg" aria-hidden="true" title="Revisi"></span>'); ?>   
+                <td><?php echo anchor("dekan/revisi_proposal/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-tags text-primary fa-lg" aria-hidden="true" title="Revisi"></span>'); ?>   
                 </td>
       
             </tr>

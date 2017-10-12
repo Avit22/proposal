@@ -15,6 +15,7 @@
         <div class="right_col" role="main">
           
           <h1 class="text-center text-info">PENGESAHAN VALIDASI PROPOSAL</h1> <br /><br />
+          
  <?php 
 foreach($proposale as $proposal) { ?> 
 <?php echo form_open('wd1/revisi/update_review/'.$proposal->id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
