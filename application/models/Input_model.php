@@ -55,6 +55,17 @@ function tambah_revisi($data) {
 		return;
 	}
 
+	function update_rab($id_rab,$data) {
+		$this->db->where('id',$id_rab);
+		$this->db->update('rab',$data);
+	}
+
+	function delete_rab($id_rab) {
+		$this->db->where('id',$id_rab);
+		$this->db->delete('rab');
+	}
+
+
 	function tambah_rab_keu($data) {
 		$this->db->insert('rab_keu',$data);
 		return;
@@ -617,6 +628,13 @@ function get_data_by_idlaporan($id_laporan) {
 
 public function get_all_rab_id_proposal($id_prop){
 	$this->db->where('id_proposal',$id_prop);
+	$this->db->from('rab');
+	$query = $this->db->get();
+	return $query->result();
+}
+
+public function get_all_rab_id_rab($id_rab){	
+	$this->db->where('id',$id_rab);
 	$this->db->from('rab');
 	$query = $this->db->get();
 	return $query->result();

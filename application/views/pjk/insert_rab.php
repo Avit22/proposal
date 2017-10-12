@@ -35,6 +35,8 @@ table, td {
         <th>Harga</th>
         <th>Jumlah</th>
         <th>Total</th>
+        <th>Update</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -42,7 +44,7 @@ table, td {
     if(isset($rab)){
       foreach ($rab as $row){
       echo "<tr>";
-      echo "<td>".$row->barang."</td><td>".$row->harga."</td><td>".$row->jumlah."</td><td>".$row->total."</td>";
+      echo "<td>".$row->barang."</td><td>".$row->harga."</td><td>".$row->jumlah."</td><td>".$row->total."</td>"."<td><a href='".base_url('pjk/insert_rab/update/').'/'.$id_proposal.'/'.$row->id."'>UPDATE</a></td><td><a href='".base_url('pjk/insert_rab/delete_rab/').'/'.$id_proposal.'/'.$row->id."'>DELETE</a></td>";
       echo "</tr>";
     }
     }
