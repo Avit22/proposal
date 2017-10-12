@@ -60,9 +60,10 @@ function tambah_revisi($data) {
 		$this->db->update('rab',$data);
 	}
 
-	function delete_rab($id_rab) {
-		$this->db->where('id',$id_rab);
-		$this->db->delete('rab');
+	function deleting_rab($id_rab) {
+		$this->db->where('id',$id_rab);	
+		$this->db->delete('rab');	
+		return;
 	}
 
 
