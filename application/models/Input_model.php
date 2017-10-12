@@ -65,6 +65,11 @@ function tambah_revisi($data) {
 		return;
 	}
 
+	function get_max_id_proposal(){
+		$query = $this->db->query("select max(id_proposal) + 1 as max_id from proposal");
+		return $query->result();
+	}
+
 	function get_data() {
 		$this->db->select('*');
 		$this->db->from('proposal');
