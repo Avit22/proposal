@@ -7,7 +7,7 @@ table, td {
 </style>
 </head>
 <html lang="en"> 
-  <?php $this->view('template/head'); ?>   
+  <?php $this->view('template/head'); ?>  
 
   <body class="nav-md">
     <div class="container body">
