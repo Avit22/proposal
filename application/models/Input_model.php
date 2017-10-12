@@ -237,6 +237,17 @@ function tambah_revisi($data) {
 		return $query->result();
 	}
 
+function get_revisi_rab($id_user) {
+
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->where('proposal.id_user = "'.$id_user.'"');
+		$this->db->where('revisi_rab_keu is not null');
+		$this->db->order_by('tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
 	
 
 	function get_data_kajur($id_user) {
@@ -636,6 +647,8 @@ public function get_total_rab($id_prop){
 	$query = $this->db->query("select sum(total) as total_rab from rab where id_proposal=".$id_prop."");
 	return $query->result();
 }
+
+
 
 public function get_total_item($id_prop){	
 	$query = $this->db->query("select sum(total) as total_rab from item_wd2 where id_proposal=".$id_prop."");

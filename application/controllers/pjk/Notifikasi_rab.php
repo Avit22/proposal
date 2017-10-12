@@ -20,11 +20,12 @@ class Notifikasi_rab extends CI_Controller {
 	
 	public function index() {
 		$sessiondata = $this->session->userdata('id_user');
-		if($query = $this->Input_model->get_data($sessiondata)) {
-			$data['revisine'] = $query;
+		
+		if($query = $this->Input_model->get_revisi_rab($sessiondata)) {
+			$data['proposale'] = $query;
 		}
 		else
-			$data['revisine'] = NULL;
+			$data['proposale'] = NULL;
 		
 		$this->load->view('pjk/notifikasi_rab',$data);
 	}
