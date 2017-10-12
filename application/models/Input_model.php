@@ -222,6 +222,7 @@ function tambah_revisi($data) {
 		$this->db->select('*');
 		$this->db->from('laporan');
 		$this->db->where('laporan.id_laporan = "'.$id_laporan.'"');
+		$this->db->order_by('tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -584,6 +585,7 @@ function get_laporan() {
 
 		$this->db->select('*');
 		$this->db->from('laporan');
+		$this->db->order_by('tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
