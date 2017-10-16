@@ -689,6 +689,7 @@
                     <?php } ?>
 
                     <?php if($this->session->userdata('tingkatan') == "bendahara") { ?>
+                      <li><a href="<?php echo site_url('bendahara/lihat_proposal'); ?>"><i class="fa fa-list"></i> Lihat Proposal Masuk</a></li>
                       <li><a href="<?php echo site_url('bendahara/lihat'); ?>"><i class="fa fa-edit"></i> Lihat Laporan Kegiatan</a></li>
                       <li><a href="<?php echo site_url('bendahara/revisi'); ?>"><i class="fa fa-bar-chart-o"></i> Revisi Laporan Kegiatan</a></li>
                       <li><a href="<?php echo site_url('bendahara/validasi'); ?>"><i class="fa fa-table"></i> Validasi Laporan Kegiatan</a></li>
