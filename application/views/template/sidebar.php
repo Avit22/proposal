@@ -32,6 +32,7 @@
 
                       <li><a href="<?php echo site_url('pjk/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('pjk/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('pjk/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -688,6 +689,7 @@
                     <?php } ?>
 
                     <?php if($this->session->userdata('tingkatan') == "bendahara") { ?>
+                      <li><a href="<?php echo site_url('bendahara/lihat_proposal'); ?>"><i class="fa fa-list"></i> Lihat Proposal Masuk</a></li>
                       <li><a href="<?php echo site_url('bendahara/lihat'); ?>"><i class="fa fa-edit"></i> Lihat Laporan Kegiatan</a></li>
                       <li><a href="<?php echo site_url('bendahara/revisi'); ?>"><i class="fa fa-bar-chart-o"></i> Revisi Laporan Kegiatan</a></li>
                       <li><a href="<?php echo site_url('bendahara/validasi'); ?>"><i class="fa fa-table"></i> Validasi Laporan Kegiatan</a></li>

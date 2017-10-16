@@ -233,6 +233,19 @@ function tambah_revisi($data) {
 		return $query->result();
 	}
 
+	function get_data_proposal_disetujui_dekan() {
+		$this->db->where('status_review','DISETUJUI'); // disetujui oleh wd
+		$this->db->where('keu_review',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->where('validasi_wd2',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->where('dekan_review',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->order_by('proposal.tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	function get_data_input_laporan($id_proposal){
 
 		$this->db->select('*');
@@ -286,6 +299,18 @@ function tambah_revisi($data) {
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	function get_data_laporan_pjk($id_user) {
+
+		$this->db->select('*');
+		$this->db->from('laporan');
+		$this->db->where('laporan.id_user = "'.$id_user.'"');
+		$this->db->where('laporan_review is not null');
+		$this->db->order_by('tgl_input_bendahara desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
 	
 	function get_data_pjk($id_user) {
 

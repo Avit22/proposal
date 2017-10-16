@@ -23,7 +23,7 @@
               <th>Judul Proposal</th>
               <th>Nama PJK</th>
               <th>Tanggal Validasi</th>
-              <th>Status</th>
+              <th>Status Validasi</th>
               <th>Keterangan</th>
            </tr>
             </thead>
