@@ -48,6 +48,7 @@ class Validasi extends CI_Controller {
 	}	
 	
 	public function update_review($id) {
+	$this->load->helper('fungsidate'); //kita load helper yang kita buat cukup   
 	$this->load->library('form_validation');
 	$this->form_validation->set_message('required', '%s Harus Diisi.');
 	$this->form_validation->set_rules('validasi_proposal', 'Validasi Proposal', 'required');
@@ -62,12 +63,15 @@ class Validasi extends CI_Controller {
 	$this->form_validation->set_rules('keluaran', 'Keluaran', 'required');
 	$this->form_validation->set_rules('tgl_pelaksanaan', 'Tanggal Pelaksanaan', 'required');
 	$this->form_validation->set_rules('penutup', 'Penutup', 'required');
+	$this->form_validation->set_rules('nominal', 'Nominal', 'required');
+	$this->form_validation->set_rules('terbilang', 'Terbilang', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->index();
 		}
 		else {
 			$id_user_session = $this->session->userdata('id_user'); // tambahkan penanda user
 			$tgl = date("Y-m-d");
+			$nominal_rp = rupiah3($this->input->post('nominal'));
 			$data = array(
 				'dekan_review' => $this->input->post('validasi_proposal'),
 				'keterangan_review' => $this->input->post('alasan'),				
@@ -82,6 +86,9 @@ class Validasi extends CI_Controller {
 				'penutup' => $this->input->post('penutup'),
 				'tgl_pelaksanaan' => $this->input->post('tgl_pelaksanaan'),
 				'tgl_input' => $tgl,
+				'nominal_disetujui_dekan' => $this->input->post('nominal'),
+				'nominal_disetujui_rp' => $nominal_rp,
+				'terbilang' => $this->input->post('terbilang'),
 				);
 
 			if($this->Input_model->update($id,$data));

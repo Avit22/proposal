@@ -7,7 +7,7 @@ class Panjar_print extends CI_Controller {
         $this->load->library("Pdf");
     }
   
-    public function index() {
+    public function index($id_proposal) {
     //============================================================+
     // File name   : example_001.php
     //
@@ -22,7 +22,15 @@ class Panjar_print extends CI_Controller {
     //               http://www.phplatesttutorials.com/
     //               saqlain.sial@gmail.com
     //============================================================+
- 
+    $this->load->model('Input_model');
+    $this->load->helper('fungsidate'); //kita load helper yang kita buat cukup    
+    $data= NULL;
+    if($query = $this->Input_model->get_data_by_idproposal($id_proposal)) {
+            $data['proposale'] = $query;
+        }
+        else{
+            $data['proposale'] = NULL;
+    }
    
   
     // create new PDF document
@@ -84,13 +92,28 @@ $pdf->setPrintFooter(false);
     // set text shadow effect
     //$pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));    
   
-    // Set some content to print
-    $name = "This if from php";
+    
 
-    $html = "
+    foreach ($data['proposale'] as $proposal) { 
+    // Set some content to print
+    //$nominal = rupiah2($proposal->nominal_disetujui_dekan);   
+    $html = '
     <h3>PANJAR KERJA</h3>
-    <table><tr><td>Nama Pjk</td><td>:</td><td>$name</td></tr></table>";
-  
+    <table border="1"><tr><td align="center" width="60%"><strong>KEMENTRIAN RISET, TEKNOLOGI DAN PENDIDIKAN TINGGI<br /> BADAN LAYANAN UMUM <br /> UNIVERSITAS NEGERI SEMARANG</strong></td><td align="CENTER" width="20%">PANJAR KERJA <br /> <br /> <strong>BPK (UP)</strong></td><td align="center" width="20%">Lembar ke <br /> <br /> <strong>1</strong></td></tr>
+    </table>
+    <br /><br />
+    <table>
+    <tr><td width="40%">Telah diterima dari</td><td width="1%">:</td><td width="59%">Kuasa Pengguna Anggaran Universitas Negeri Semarang</td></tr>
+    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.$proposal->nominal_disetujui_rp.'</td></tr>
+    <tr><td width="40%">Sumber dana</td><td width="1%">:</td><td width="59%">PNBP</td></tr>
+    <tr><td width="40%">Terbilang</td><td width="1%">:</td><td width="59%">'.$proposal->terbilang.'</td></tr>
+    <tr><td width="40%">Judul proposal</td><td width="1%">:</td><td width="59%">'.$proposal->judul.'</td></tr>
+    </table>
+    <br />
+    <table border="1"><tr><td align="left" width="60%">&nbsp<br />BPP FT <br /><br /><br /> Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="CENTER" width="20%">PANJAR KERJA <br /> <br /> <strong>BPK (UP)</strong></td><td align="center" width="20%">Lembar ke <br /> <br /> <strong>1</strong></td></tr>
+    </table>
+    ';
+  }
     // Print text using writeHTMLCell()
     $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);   
   
