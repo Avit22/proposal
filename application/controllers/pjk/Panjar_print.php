@@ -110,7 +110,8 @@ $pdf->setPrintFooter(false);
     <tr><td width="40%">Judul proposal</td><td width="1%">:</td><td width="59%">'.$proposal->judul.'</td></tr>
     </table>
     <br />
-    <table border="1"><tr><td align="left" width="60%">&nbsp<br />BPP FT <br /><br /><br /> Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="CENTER" width="20%">PANJAR KERJA <br /> <br /> <strong>BPK (UP)</strong></td><td align="center" width="20%">Lembar ke <br /> <br /> <strong>1</strong></td></tr>
+    <br />
+    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />Dimas Wicaksono S.T., M.Eng<br />NIP.</td><td align="center" width="20%" border="1">Lembar ke <br /> <br /> <strong>1</strong></td></tr>
     </table>
     ';
   }
