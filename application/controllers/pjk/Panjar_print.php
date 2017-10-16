@@ -96,7 +96,9 @@ $pdf->setPrintFooter(false);
 
     foreach ($data['proposale'] as $proposal) { 
     // Set some content to print
-    //$nominal = rupiah2($proposal->nominal_disetujui_dekan);   
+   // $nominal = rupiah2($proposal->nominal_disetujui_dekan);   
+    //$nominal_70 = (70/100)* $nominal;
+    //$sisa = $nominal - $nominal_70;
     $html = '
     <h3>PANJAR KERJA</h3>
     <table border="1"><tr><td align="center" width="60%"><strong>KEMENTRIAN RISET, TEKNOLOGI DAN PENDIDIKAN TINGGI<br /> BADAN LAYANAN UMUM <br /> UNIVERSITAS NEGERI SEMARANG</strong></td><td align="CENTER" width="20%">PANJAR KERJA <br /> <br /> <strong>BPK (UP)</strong></td><td align="center" width="20%">Lembar ke <br /> <br /> <strong>1</strong></td></tr>
@@ -111,7 +113,7 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />Dimas Wicaksono S.T., M.Eng<br />NIP.</td><td align="center" width="20%" border="1">Lembar ke <br /> <br /> <strong>1</strong></td></tr>
+    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />Dimas Wicaksono S.T., M.Eng<br />NIP.</td><td align="left" width="20%" border="1">&nbsp; <br />SPBy </td></tr>
     </table>
     ';
   }

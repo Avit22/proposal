@@ -25,6 +25,7 @@
               <th>Nama PJK</th>
               <th>Tanggal Terkirim</th>
               <th>View Proposal</th>
+              <th>Input Panjar Kerja</th>
            </tr>
             </thead>
             <tbody>
@@ -37,6 +38,8 @@
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo $proposal->tgl_input; ?></td>
                 <td><?php echo anchor("bendahara/detail_proposal/detail/$proposal->id_proposal",'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
+                </td>
+                <td><?php echo anchor("bendahara/detail_proposal/input_panjar/$proposal->id_proposal",'<span class="glyphicon glyphicon-pencil text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
       
             </tr>
