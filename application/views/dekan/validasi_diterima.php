@@ -147,6 +147,26 @@ foreach($proposale as $proposal) { ?>
           </div>
         </div>
 
+        <!-- Nominal Persetujuan -->
+        <div class="form-group">
+          <label for="nominal" class="col-sm-2 control-label">Nominal</label>
+          <div class="col-sm-10">
+            <?php 
+           $data = array('name' => 'nominal', 'id' => 'nominal', 'class' => 'form-control',  'placeholder' => 'Masukkan Nominal Disetujui');
+          echo form_input($data); ?>
+          </div>
+        </div>
+
+        <!-- Terbilang -->
+        <div class="form-group">
+          <label for="terblang" class="col-sm-2 control-label">Terbilang</label>
+          <div class="col-sm-10">
+            <?php 
+           $data = array('name' => 'terbilang', 'id' => 'terbilang', 'class' => 'form-control',  'placeholder' => 'Masukkan Nilai Terbilang');
+          echo form_input($data); ?>
+          </div>
+        </div>
+
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-primary">Kirim</button>

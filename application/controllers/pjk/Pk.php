@@ -24,9 +24,9 @@ class Pk extends CI_Controller {
 			$data['proposale'] = $query;
 		}
 		else
-			$data['proposale'] = NULL;
-
-		$this->load->view('pjk/cetak_pk',$data);
+			$data['proposale'] = NULL;{
+				$this->load->view('pjk/cetak_pk',$data);
+			}		
 		
 	}
 
