@@ -77,8 +77,60 @@ table, td {
     </tbody>
   </table>
 
+  <p><strong>INPUT REVISI RAB</strong></p>
 
+  <?php echo form_open('pjk/insert_rab/add_rab1/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
+    <?php echo validation_errors(); ?>
+      <input type="text" id="nb" placeholder="Nama Barang"  name="nb">
+      <input type="text" id="harga" placeholder="Harga Barang"  name="harga">
+      <input type="text" id="jumlah" placeholder="Jumlah Barang/Item"  name="jumlah">
+      <input type="text" id="total" placeholder="Total Harga"  name="total">
+    <button>ADD RAB</button>  
+    </form>
+ <table class="table table-striped" id="myTable">
+    <thead>
+      <tr>
+        <th>Nama Barang</th>
+        <th>Harga</th>
+        <th>Jumlah</th>
+        <th>Total</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php 
+    if(isset($rab)){
+      foreach ($rab as $row){
+      echo "<tr>";
+      echo "<td>".$row->barang."</td><td>".$row->harga."</td><td>".$row->jumlah."</td><td>".$row->total."</td>"."<td><a href='".base_url('pjk/insert_rab/update1/').'/'.$id_proposal.'/'.$row->id."'>UPDATE</a></td><td><a href='".base_url('pjk/insert_rab/delete_rab1/').'/'.$id_proposal.'/'.$row->id."'>DELETE</a></td>";
+      echo "</tr>";
+    }
+    }
+    
+    ?>
+    </tbody>
+  </table>
+</div>
 
+<p><strong>Catatan Revisi RAB Kepada Kasubag Keuangan </strong></p>
+  <!-- Catatan Revisi -->
+  <?php echo form_open('pjk/insert_rab/tambah_catatan_rab/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
+        <div class="form-group">
+          <label for="catatan" class="col-sm-1 control-label">Catatan Dekan </label>
+          <div class="col-sm-11">
+            <?php 
+           $data = array('name' => 'catatan', 'id' => 'catatan', 'class' => 'form-control', 'placeholder' => 'Masukkan Catatan','rows' => '2');
+           echo form_textarea($data); ?>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10">
+            <button type="submit" class="btn btn-primary">Kirim</button>
+            
+          </div>
+        </div>
 
 <br>
 <script>

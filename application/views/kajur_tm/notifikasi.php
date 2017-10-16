@@ -23,7 +23,7 @@
               <th>Jenis Proposal</th>
               <th>Judul Proposal</th>
               <th>Nama PJK</th>
-              <th>Tanggal Terkirim</th>
+              <th>Tanggal Validasi</th>
               <th>Catatan Revisi</th>
               <th>Korektor</th>
               
@@ -37,9 +37,9 @@
                 <td><?php echo $revisi->jenis_proposal; ?></td>
                 <td><a href="<?php echo base_url('kajur_tm/notifikasi/edit/');?><?php  echo '/'.$revisi->id_proposal; ?>"><?php echo $revisi->judul; ?></a></td>
                 <td><?php echo $revisi->nama_pjk; ?></td>
-                <td><?php echo $revisi->tgl_input; ?></td>
-                <td><?php echo $revisi->revisi; ?></td>
-                <td><?php echo $revisi->tingkatan; ?></td>
+                <td><?php echo $revisi->tgl_revisi; ?></td>
+                <td><?php echo $revisi->revisi1; ?></td>
+                <td><?php echo $revisi->keterangan_tingkatan; ?></td>
                     
             </tr>
             <?php } endforeach; } ?>

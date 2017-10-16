@@ -22,7 +22,7 @@
               <th>No.</th>
               <th>Judul Proposal</th>
               <th>Nama PJK</th>
-              <th>Tanggal</th>
+              <th>Tanggal Validiasi</th>
               <th>Status</th>
               <th>Keterangan</th>
            </tr>
@@ -35,7 +35,7 @@
                 
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
-                <td><?php echo $proposal->tgl_input; ?></td>
+                <td><?php echo $proposal->tgl_validasi; ?></td>
                 <td><?php echo $proposal->status_review; ?></td>
                 <td><?php echo $proposal->keterangan_review; ?></td>
             </tr>

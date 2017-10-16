@@ -20,7 +20,7 @@ class Spk extends CI_Controller {
 	
 	public function index() {
 
-		if($query = $this->Input_model->get_data()) {
+		if($query = $this->Input_model->get_data_spk()) {
 			$data['proposale'] = $query;
 		}
 		else

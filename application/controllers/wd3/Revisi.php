@@ -61,7 +61,7 @@ class Revisi extends CI_Controller {
 				'rab' => $this->input->post('rab'),
 				'keluaran' => $this->input->post('keluaran'),
 				'revisi1' => $this->input->post('revisi1'),
-				'tgl_input' => $tgl,
+				'tgl_revisi' => $tgl,
 				'id_user' => $id_user_session,
 				);
 
@@ -146,11 +146,11 @@ public function update_proses($id) {
 				'keluaran' => $this->input->post('keluaran'),
 				'penutup' => $this->input->post('penutup'),
 				'tgl_pelaksanaan' => $this->input->post('tgl_pelaksanaan'),
-				'tgl_input' => $tgl,
+				'tgl_validasi' => $tgl,
 				);
 
 			if($this->Input_model->update($id,$data));
-				redirect('wd3/lihat');	
+				redirect('wd3/validasi');	
 		}	
 	redirect('wd2/lihat');	
 }	

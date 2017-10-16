@@ -81,7 +81,7 @@ public function validasi($id) {
 				'keluaran' => $this->input->post('keluaran'),
 				'penutup' => $this->input->post('penutup'),
 				'tgl_pelaksanaan' => $this->input->post('tgl_pelaksanaan'),
-				'tgl_input' => $tgl,
+				'tgl_validasi' => $tgl,
 				);
 
 			if($this->Input_model->update($id,$data));
