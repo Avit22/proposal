@@ -25,7 +25,7 @@
               <th>Tanggal Terkirim</th>
               <th>File 1</th>
               <th>File 2</th>
-              <th>Status</th>
+              
            </tr>
             </thead>
             <tbody>
@@ -40,7 +40,7 @@
                 </td>
                 <td><a href="<?php echo base_url('assets/image/');?><?php  echo '/'.$laporan->file2; ?>"><?php echo $laporan->file2; ?></a>
                 </td>
-                <th>"-"</th>
+                
       
             </tr>
             <?php } endforeach; } ?>

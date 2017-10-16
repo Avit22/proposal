@@ -286,6 +286,18 @@ function tambah_revisi($data) {
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	function get_data_laporan_pjk($id_user) {
+
+		$this->db->select('*');
+		$this->db->from('laporan');
+		$this->db->where('laporan.id_user = "'.$id_user.'"');
+		$this->db->where('laporan_review is not null');
+		$this->db->order_by('tgl_input_bendahara desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
 	
 	function get_data_pjk($id_user) {
 

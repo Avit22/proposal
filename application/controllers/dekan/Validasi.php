@@ -85,7 +85,7 @@ class Validasi extends CI_Controller {
 				'keluaran' => $this->input->post('keluaran'),
 				'penutup' => $this->input->post('penutup'),
 				'tgl_pelaksanaan' => $this->input->post('tgl_pelaksanaan'),
-				'tgl_input' => $tgl,
+				'tgl_validasi' => $tgl,
 				'nominal_disetujui_dekan' => $this->input->post('nominal'),
 				'nominal_disetujui_rp' => $nominal_rp,
 				'terbilang' => $this->input->post('terbilang'),
