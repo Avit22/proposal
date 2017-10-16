@@ -33,7 +33,7 @@
                 
                 <td><?php echo $laporan->judul; ?></td>
                 <td><?php echo $laporan->nama_pjk; ?></td>
-                <td><?php echo anchor("xxxxxxx",'<span class="glyphicon glyphicon-check text-primary fa-lg" aria-hidden="true" title="Validasi"></span>'); ?>   
+                <td><?php echo anchor("bendahara/validasi/validasi/".$laporan->id_laporan,'<span class="glyphicon glyphicon-check text-primary fa-lg" aria-hidden="true" title="Validasi"></span>'); ?>   
                 </td>
                
       

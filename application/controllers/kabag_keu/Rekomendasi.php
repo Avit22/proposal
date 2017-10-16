@@ -99,7 +99,7 @@ public function tambah_catatan_rab_keu($id_proposal){
 		$id_user_session = $this->session->userdata('id_user'); // tambahkan penanda user
 		$tgl = date("Y-m-d");
 		$catatan_keu = $this->input->post('catatan');
-		echo 'aaaaaaaaaaaaaaaaaaaaaaa'.$catatan_keu;
+		//echo 'aaaaaaaaaaaaaaaaaaaaaaa'.$catatan_keu;
 		
 		if ($catatan_keu==""){
 			$catatan_keu = "-";

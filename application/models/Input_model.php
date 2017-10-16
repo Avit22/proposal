@@ -35,8 +35,20 @@ class Input_model extends CI_Model {
 		$this->db->update('proposal',$data);
 	}
 
+	function update_laporan($id,$data) {
+		$this->db->where('id_laporan',$id);
+		$this->db->update('laporan',$data);
+	}
+
 	function tambah($data) {
+		$this->db->where('id_proposal',$id);
 		$this->db->insert('proposal',$data);
+		return;
+	}
+
+	function tambah_catatan_rab($id,$data) {
+		$this->db->where('id_proposal',$id);
+		$this->db->update('proposal',$data);
 		return;
 	}
 
@@ -86,6 +98,27 @@ function tambah_revisi($data) {
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
 		$this->db->order_by('tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_pk() {
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->where('dekan_review is not null');
+		$this->db->order_by('tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_spk() {
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->join('laporan','proposal.judul = laporan.judul');
+		$this->db->where('laporan_review is not null');
+		$this->db->order_by('tgl_input_bendahara desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -161,6 +194,21 @@ function tambah_revisi($data) {
 		return $query->result();
 	}
 
+	function get_data_revisi_rab_disetujui_akun() {
+		$this->db->where('status_review','DISETUJUI'); // disetujui oleh wd
+		$this->db->where('akun_review',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->where('catatan_rab is not null');
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->join('revisi','proposal.id_proposal = revisi.id_proposal');
+		$this->db->order_by('proposal.tgl_input desc');
+		$this->db->where('revisi.id_user = 6');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	
 	function get_data_proposal_disetujui_keu() {
 		$this->db->where('status_review','DISETUJUI'); // disetujui oleh wd
 		$this->db->where('keu_review',"DISETUJUI"); // disetujui juga oleh tu
@@ -201,7 +249,7 @@ function tambah_revisi($data) {
 		$this->db->join('user','revisi.id_user = user.id_user');
 		$this->db->join('tingkatan','user.username = tingkatan.nama_tingkatan');
 		$this->db->where('revisi.id_pjk = "'.$id_user.'"');
-		$this->db->order_by('revisi.tgl_input desc');
+		$this->db->order_by('revisi.tgl_revisi desc');
 		$query = $this->db->get();
 		return $query->result();
 	}

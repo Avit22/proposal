@@ -35,7 +35,8 @@
                 
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
-                <td><?php echo $proposal->tgl_input; ?></td>
+                <td><?php echo $proposal->tgl_input_bendahara; ?></td>
+                <td><?php echo $proposal->laporan_review; ?></td>
                 <td><?php echo anchor("xxxxxxxxxxx",'<span class="glyphicon glyphicon-print text-primary fa-lg" aria-hidden="true" title="Cetak Panjar Kerja"></span>'); ?>   
                 </td>
       
