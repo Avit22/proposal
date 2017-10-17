@@ -100,7 +100,7 @@ $pdf->setPrintFooter(false);
     //$nominal_70 = (70/100)* $nominal;
     //$sisa = $nominal - $nominal_70;
     $html = '
-    <h3>PANJAR KERJA</h3>
+    <h3>SISA PANJAR KERJA</h3>
     <table border="1"><tr><td align="center" width="60%"><strong>KEMENTRIAN RISET, TEKNOLOGI DAN PENDIDIKAN TINGGI<br /> BADAN LAYANAN UMUM <br /> UNIVERSITAS NEGERI SEMARANG</strong></td><td align="CENTER" width="20%">PANJAR KERJA <br /> <br /> <strong>BPK (UP)</strong></td><td align="center" width="20%">Lembar ke <br /> <br /> <strong>1</strong></td></tr>
     </table>
     <br /><br />
@@ -114,7 +114,7 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />Dimas Wicaksono S.T., M.Eng<br />NIP.</td></tr>
+    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />Dimas Wicaksono S.T., M.Eng<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.$proposal->nominal_total.' <br /> Lalu : '.$proposal->lalu.' <br /> Nominal : '.$proposal->nominal_70.' <br /> Sisa : '.$proposal->sisa.'</td></tr>
     </table>
     ';
   }
