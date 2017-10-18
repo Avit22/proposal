@@ -46,6 +46,10 @@ class Input_model extends CI_Model {
 		return;
 	}
 
+	function insert_panjar($data){
+		$this->db->insert('panjar_kerja',$data);
+	}
+
 	function tambah_catatan_rab($id,$data) {
 		$this->db->where('id_proposal',$id);
 		$this->db->update('proposal',$data);
@@ -113,13 +117,25 @@ function tambah_revisi($data) {
 		return $query->result();
 	}
 
+	function get_data_pk_2($id,$pencairan) {
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->join('panjar_kerja','proposal.id_proposal=panjar_kerja.id_proposal');
+		$this->db->where('proposal.dekan_review is not null');
+		$this->db->where('proposal.id_proposal',$id);
+		$this->db->where('panjar_kerja.pencairanke',$pencairan);
+		$this->db->order_by('proposal.tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	function get_data_spk() {
 		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
-		$this->db->join('laporan','proposal.judul = laporan.judul');
-		$this->db->where('laporan_review is not null');
-		$this->db->order_by('tgl_input_bendahara desc');
+		$this->db->where('dekan_review is not null');
+		$this->db->order_by('tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
