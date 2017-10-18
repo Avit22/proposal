@@ -23,6 +23,7 @@
                       <li><a href="<?php echo site_url('pjk/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('pjk/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('pjk/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('pjk/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                        </ul>
                     </li>
                   
@@ -31,6 +32,7 @@
 
                       <li><a href="<?php echo site_url('pjk/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('pjk/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('pjk/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -52,6 +54,7 @@
                       <li><a href="<?php echo site_url('kajur_te/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kajur_te/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kajur_te/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kajur_te/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kajur_te/terkirim_jurusan'); ?>"><i class="fa fa-list"></i> Lihat Proposal Jurusan</a></li>
                        </ul>
                     </li>
@@ -83,6 +86,7 @@
                       <li><a href="<?php echo site_url('kajur_tjp/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kajur_tjp/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kajur_tjp/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                       <li><a href="<?php echo site_url('kajur_tjp/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kajur_tjp/terkirim_jurusan'); ?>"><i class="fa fa-list"></i> Lihat Proposal Jurusan</a></li>
                        </ul>
                     </li>
@@ -113,6 +117,7 @@
                       <li><a href="<?php echo site_url('kajur_tk/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kajur_tk/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kajur_tk/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                       <li><a href="<?php echo site_url('kajur_tk/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                        <li><a href="<?php echo site_url('kajur_tk/terkirim_jurusan'); ?>"><i class="fa fa-list"></i> Lihat Proposal Jurusan</a></li>
                        </ul>
                     </li>
@@ -142,6 +147,7 @@
                       <li><a href="<?php echo site_url('kajur_tm/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kajur_tm/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kajur_tm/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                       <li><a href="<?php echo site_url('kajur_tm/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kajur_tm/terkirim_jurusan'); ?>"><i class="fa fa-list"></i> Lihat Proposal Jurusan</a></li>
                        </ul>
                     </li>
@@ -172,6 +178,7 @@
                       <li><a href="<?php echo site_url('kajur_ts/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kajur_ts/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kajur_ts/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kajur_ts/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                        <li><a href="<?php echo site_url('kajur_ts/terkirim_jurusan'); ?>"><i class="fa fa-list"></i> Lihat Proposal Jurusan</a></li>
                        </ul>
                     </li>
@@ -202,6 +209,7 @@
                       <li><a href="<?php echo site_url('kaprodi_boga/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_boga/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_boga/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_boga/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kaprodi_boga/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -232,6 +240,7 @@
                       <li><a href="<?php echo site_url('kaprodi_busana/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_busana/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_busana/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_busana/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kaprodi_busana/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -262,6 +271,7 @@
                       <li><a href="<?php echo site_url('kaprodi_kecantikan/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_kecantikan/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_kecantikan/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_kecantikan/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kaprodi_kecantikan/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -292,6 +302,7 @@
                       <li><a href="<?php echo site_url('kaprodi_pkk/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_pkk/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_pkk/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_pkk/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kaprodi_pkk/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -322,6 +333,7 @@
                       <li><a href="<?php echo site_url('kaprodi_ptb/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ptb/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ptb/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ptb/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ptb/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -352,6 +364,7 @@
                       <li><a href="<?php echo site_url('kaprodi_pte/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_pte/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_pte/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_pte/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kaprodi_pte/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -382,6 +395,7 @@
                       <li><a href="<?php echo site_url('kaprodi_ptik/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ptik/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ptik/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ptik/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ptik/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -412,6 +426,7 @@
                       <li><a href="<?php echo site_url('kaprodi_ptm/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ptm/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ptm/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ptm/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ptm/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -442,6 +457,7 @@
                       <li><a href="<?php echo site_url('kaprodi_pto/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_pto/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_pto/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_pto/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kaprodi_pto/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -472,6 +488,7 @@
                       <li><a href="<?php echo site_url('kaprodi_ta/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ta/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ta/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ta/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ta/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -502,6 +519,7 @@
                       <li><a href="<?php echo site_url('kaprodi_te/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_te/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_te/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_te/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                       <li><a href="<?php echo site_url('kaprodi_te/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -532,6 +550,7 @@
                       <li><a href="<?php echo site_url('kaprodi_tm/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_tm/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_tm/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_tm/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                        <li><a href="<?php echo site_url('kaprodi_tm/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -562,6 +581,7 @@
                       <li><a href="<?php echo site_url('kaprodi_ts/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ts/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_ts/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ts/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                        <li><a href="<?php echo site_url('kaprodi_ts/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -591,6 +611,7 @@
                       <li><a href="<?php echo site_url('kaprodi_tk/terkirim'); ?>"><i class="fa fa-list"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_tk/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('kaprodi_tk/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
+                      <li><a href="<?php echo site_url('kaprodi_tk/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
                        <li><a href="<?php echo site_url('kaprodi_tk/terkirim_prodi'); ?>"><i class="fa fa-list"></i> Lihat Proposal Prodi</a></li>
                        </ul>
                     </li>
@@ -655,13 +676,20 @@
 
                     <?php if($this->session->userdata('tingkatan') == "kabag_keu") { ?>
                       <li><a href="<?php echo site_url('kabag_keu/lihat'); ?>"><i class="fa fa-edit"></i> Lihat Proposal</a></li>
-                      <li><a href="<?php echo site_url('kabag_keu/revisi'); ?>"><i class="fa fa-bar-chart-o"></i> Revisi Proposal</a></li>
+                       <li><a><i class="fa fa-clone"></i> Revisi <span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
+
+                      <li><a href="<?php echo site_url('kabag_keu/revisi'); ?>"><i class="fa fa-table"></i> Revisi Proposal </a></li>
+                      <li><a href="<?php echo site_url('kabag_keu/revisi_rab'); ?>"><i class="fa fa-table"></i> Revisi RAB </a></li>
+                      </ul>
+                    </li>
                       <li><a href="<?php echo site_url('kabag_keu/rekomendasi'); ?>"><i class="fa fa-desktop"></i> Input Rekomendasi RAB </a></li>
                       <li><a href="<?php echo site_url('kabag_keu/validasi'); ?>"><i class="fa fa-table"></i> Validasi Proposal</a></li>
 
                     <?php } ?>
 
                     <?php if($this->session->userdata('tingkatan') == "bendahara") { ?>
+                      <li><a href="<?php echo site_url('bendahara/lihat_proposal'); ?>"><i class="fa fa-list"></i> Lihat Proposal Masuk</a></li>
                       <li><a href="<?php echo site_url('bendahara/lihat'); ?>"><i class="fa fa-edit"></i> Lihat Laporan Kegiatan</a></li>
                       <li><a href="<?php echo site_url('bendahara/revisi'); ?>"><i class="fa fa-bar-chart-o"></i> Revisi Laporan Kegiatan</a></li>
                       <li><a href="<?php echo site_url('bendahara/validasi'); ?>"><i class="fa fa-table"></i> Validasi Laporan Kegiatan</a></li>
@@ -675,10 +703,16 @@
                       <li><a href="<?php echo site_url('dekan/lihat'); ?>"><i class="fa fa-edit"></i> Lihat Proposal</a></li>
                       <li><a href="<?php echo site_url('dekan/revisi'); ?>"><i class="fa fa-bar-chart-o"></i> Revisi Proposal</a></li>
                       <li><a href="<?php echo site_url('dekan/validasi'); ?>"><i class="fa fa-table"></i> Validasi  Proposal</a></li>
+
                        </ul>
                     </li>
-                      <li><a href="<?php echo site_url('dekan/rekomendasi'); ?>"><i class="fa fa-edit"></i> Rekomendasi </a></li>
-                     
+                    <li><a><i class="fa fa-clone"></i> Rekomendasi <span class="fa fa-chevron-down"></span></a>
+
+                    <ul class="nav child_menu">
+                    <li><a href="<?php echo site_url('dekan/rekomendasi_rab'); ?>"><i class="fa fa-edit"></i> Rekomendasi RAB</a></li>
+                     <li><a href="<?php echo site_url('dekan/rekomendasi_item'); ?>"><i class="fa fa-edit"></i> Rekomendasi Item</a></li>
+
+                    </ul>
                     <?php } ?>
 
 

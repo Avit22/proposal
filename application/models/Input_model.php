@@ -35,8 +35,24 @@ class Input_model extends CI_Model {
 		$this->db->update('proposal',$data);
 	}
 
+	function update_laporan($id,$data) {
+		$this->db->where('id_laporan',$id);
+		$this->db->update('laporan',$data);
+	}
+
 	function tambah($data) {
+		$this->db->where('id_proposal',$id);
 		$this->db->insert('proposal',$data);
+		return;
+	}
+
+	function insert_panjar($data){
+		$this->db->insert('panjar_kerja',$data);
+	}
+
+	function tambah_catatan_rab($id,$data) {
+		$this->db->where('id_proposal',$id);
+		$this->db->update('proposal',$data);
 		return;
 	}
 
@@ -55,15 +71,70 @@ function tambah_revisi($data) {
 		return;
 	}
 
+	function update_rab($id_rab,$data) {
+		$this->db->where('id',$id_rab);
+		$this->db->update('rab',$data);
+	}
+
+	function deleting_rab($id_rab) {
+		$this->db->where('id',$id_rab);	
+		$this->db->delete('rab');	
+		return;
+	}
+
+
 	function tambah_rab_keu($data) {
 		$this->db->insert('rab_keu',$data);
 		return;
+	}
+
+	function tambah_rab_item($data) {
+		$this->db->insert('item_wd2',$data);
+		return;
+	}
+
+	function get_max_id_proposal(){
+		$query = $this->db->query("select max(id_proposal) + 1 as max_id from proposal");
+		return $query->result();
 	}
 
 	function get_data() {
 		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->order_by('tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_pk() {
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->where('dekan_review is not null');
+		$this->db->order_by('tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_pk_2($id,$pencairan) {
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->join('panjar_kerja','proposal.id_proposal=panjar_kerja.id_proposal');
+		$this->db->where('proposal.dekan_review is not null');
+		$this->db->where('proposal.id_proposal',$id);
+		$this->db->where('panjar_kerja.pencairanke',$pencairan);
+		$this->db->order_by('proposal.tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_spk() {
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->where('dekan_review is not null');
 		$this->db->order_by('tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
@@ -140,9 +211,49 @@ function tambah_revisi($data) {
 		return $query->result();
 	}
 
+	function get_data_revisi_rab_disetujui_akun() {
+		$this->db->where('status_review','DISETUJUI'); // disetujui oleh wd
+		$this->db->where('akun_review',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->where('catatan_rab is not null');
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->join('revisi','proposal.id_proposal = revisi.id_proposal');
+		$this->db->order_by('proposal.tgl_input desc');
+		$this->db->where('revisi.id_user = 6');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	
 	function get_data_proposal_disetujui_keu() {
 		$this->db->where('status_review','DISETUJUI'); // disetujui oleh wd
 		$this->db->where('keu_review',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->order_by('proposal.tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_proposal_disetujui_wd2_validasi() {
+		$this->db->where('status_review','DISETUJUI'); // disetujui oleh wd
+		$this->db->where('keu_review',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->where('validasi_wd2',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->order_by('proposal.tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_proposal_disetujui_dekan() {
+		$this->db->where('status_review','DISETUJUI'); // disetujui oleh wd
+		$this->db->where('keu_review',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->where('validasi_wd2',"DISETUJUI"); // disetujui juga oleh tu
+		$this->db->where('dekan_review',"DISETUJUI"); // disetujui juga oleh tu
 		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
@@ -168,7 +279,7 @@ function tambah_revisi($data) {
 		$this->db->join('user','revisi.id_user = user.id_user');
 		$this->db->join('tingkatan','user.username = tingkatan.nama_tingkatan');
 		$this->db->where('revisi.id_pjk = "'.$id_user.'"');
-		$this->db->order_by('revisi.tgl_input desc');
+		$this->db->order_by('revisi.tgl_revisi desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -200,9 +311,22 @@ function tambah_revisi($data) {
 		$this->db->select('*');
 		$this->db->from('laporan');
 		$this->db->where('laporan.id_laporan = "'.$id_laporan.'"');
+		$this->db->order_by('tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	function get_data_laporan_pjk($id_user) {
+
+		$this->db->select('*');
+		$this->db->from('laporan');
+		$this->db->where('laporan.id_user = "'.$id_user.'"');
+		$this->db->where('laporan_review is not null');
+		$this->db->order_by('tgl_input_bendahara desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
 	
 	function get_data_pjk($id_user) {
 
@@ -215,6 +339,17 @@ function tambah_revisi($data) {
 		return $query->result();
 	}
 
+function get_revisi_rab($id_user) {
+
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->where('proposal.id_user = "'.$id_user.'"');
+		$this->db->where('revisi_rab_keu is not null');
+		$this->db->order_by('tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
 	
 
 	function get_data_kajur($id_user) {
@@ -551,6 +686,7 @@ function get_laporan() {
 
 		$this->db->select('*');
 		$this->db->from('laporan');
+		$this->db->order_by('tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -587,12 +723,27 @@ public function get_all_rab_id_proposal($id_prop){
 	return $query->result();
 }
 
+public function get_all_rab_id_rab($id_rab){	
+	$this->db->where('id',$id_rab);
+	$this->db->from('rab');
+	$query = $this->db->get();
+	return $query->result();
+}
+
 public function get_all_rab_keu_id_proposal($id_prop){
 	$this->db->where('id_proposal',$id_prop);
 	$this->db->from('rab_keu');
 	$query = $this->db->get();
 	return $query->result();
 }
+
+public function get_all_rab_item_wd2_id_proposal($id_prop){
+	$this->db->where('id_proposal',$id_prop);
+	$this->db->from('item_wd2');
+	$query = $this->db->get();
+	return $query->result();
+}
+
 
 public function get_all_rab_id_proposal_iduser($id_prop,$id_user){
 	$this->db->where('id_proposal',$id_prop);
@@ -607,9 +758,16 @@ public function get_total_rab($id_prop){
 	return $query->result();
 }
 
+
+
+public function get_total_item($id_prop){	
+	$query = $this->db->query("select sum(total) as total_rab from item_wd2 where id_proposal=".$id_prop."");
+	return $query->result();
+}
+
 public function get_all_rab_id_proposal_keu($id_prop){
 	$this->db->where('id_proposal',$id_prop);
-	$this->db->from('rab');
+	$this->db->from('rab_keu');
 	$query = $this->db->get();
 	return $query->result();
 }
@@ -621,8 +779,8 @@ public function get_all_rab_id_proposal_iduser_keu($id_prop,$id_user){
 	return $query->result();
 }
 
-public function get_total_rab_keu($id_prop,$id_user){	
-	$query = $this->db->query("select sum(total) as total_rab from rab_keu where id_proposal=".$id_prop." and id_user=".$id_user."");
+public function get_total_rab_keu($id_prop){	
+	$query = $this->db->query("select sum(total) as total_rab from rab_keu where id_proposal=".$id_prop."");
 	return $query->result();
 }
 }

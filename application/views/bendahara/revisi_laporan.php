@@ -31,8 +31,7 @@
             <?php $i =1; if(!empty($laporane)) {
             foreach($laporane as $laporan) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">
-               <td><?php echo $i++; ?></td>
-                
+               <td><?php echo $i++; ?></td>                
                 <td><?php echo $laporan->judul; ?></td>
                 <td><?php echo $laporan->nama_pjk; ?></td>
                 <td><?php echo $laporan->tgl_input; ?></td>

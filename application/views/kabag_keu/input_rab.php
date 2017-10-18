@@ -20,6 +20,7 @@ table, td {
           <div class="container">
   <h2>ID PROPOSAL : <?php echo $id_proposal;?></h2>
   <br />
+
  <table class="table table-striped" id="myTable">
     <thead>
       <tr>
@@ -38,6 +39,7 @@ table, td {
       echo "</tr>";
     }
     }
+    
     if(isset($totalrab)){
       foreach ($totalrab as $row){
         echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row->total_rab.'</strong></td></tr>';
@@ -86,13 +88,26 @@ table, td {
     ?>
     </tbody>
   </table>
+
+  <p><strong>Catatan Rekomendasi RAB Kepada Dekan </strong></p>
   <!-- Catatan Revisi -->
   <?php echo form_open('kabag_keu/rekomendasi/tambah_catatan_rab_keu/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
         <div class="form-group">
-          <label for="revisi" class="col-sm-1 control-label">Catatan </label>
+          <label for="catatan" class="col-sm-1 control-label">Catatan Dekan </label>
           <div class="col-sm-11">
             <?php 
            $data = array('name' => 'catatan', 'id' => 'catatan', 'class' => 'form-control', 'placeholder' => 'Masukkan Catatan','rows' => '2');
+           echo form_textarea($data); ?>
+          </div>
+        </div>
+
+<p><strong>Catatan Revisi RAB Kepada PJK </strong></p>
+  <!-- Catatan Revisi -->
+         <div class="form-group">
+          <label for="revisi" class="col-sm-1 control-label">Catatan PJK </label>
+          <div class="col-sm-11">
+            <?php 
+           $data = array('name' => 'revisi', 'id' => 'revisi', 'class' => 'form-control', 'placeholder' => 'Masukkan Catatan','rows' => '2');
            echo form_textarea($data); ?>
           </div>
         </div>

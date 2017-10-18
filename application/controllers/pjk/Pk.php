@@ -20,13 +20,13 @@ class Pk extends CI_Controller {
 	
 	public function index() {
 
-		if($query = $this->Input_model->get_data()) {
+		if($query = $this->Input_model->get_data_pk()) {
 			$data['proposale'] = $query;
 		}
-		else
-			$data['proposale'] = NULL;
-
-		$this->load->view('pjk/cetak_pk',$data);
+		else{
+			$data['proposale'] = NULL;				
+		}
+		$this->load->view('pjk/cetak_pk',$data);	
 		
 	}
 
