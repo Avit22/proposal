@@ -129,7 +129,7 @@ public function update_rab($id_rab,$id_proposal){
 	}
 }
 
-<<<<<<< HEAD
+
 public function update_rab1($id_rab,$id_proposal){
 	$this->load->library('form_validation');
 	$this->form_validation->set_message('required', '%s Harus Diisi.');
@@ -188,10 +188,12 @@ public function delete_rab1($id_proposal,$id_rab){
 				
 		}	
 		redirect('pjk/notifikasi_rab');	
-=======
+	}
+
+
 public function delete_rab($id_proposal,$id_rab){
 	if($this->Input_model->deleting_rab($id_rab));
 	redirect('pjk/insert_rab/index/'.$id_proposal);	
->>>>>>> 3812f71a1a48e24c0273d411e773687b2bbd5dcf
+
 }
 }

@@ -29,7 +29,4 @@ class Pk extends CI_Controller {
 			}		
 		
 	}
-
-	
-	
 }

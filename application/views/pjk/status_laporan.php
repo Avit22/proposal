@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"> 
   
-
   <?php $this->view('template/head'); ?>
-    
-
+   
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
