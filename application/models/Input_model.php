@@ -289,6 +289,18 @@ function tambah_revisi_laporan($data) {
 		return $query->result();
 	}
 
+	function get_revisi_laporan_by_iduser($id_user) {
+
+		$this->db->select('*');
+		$this->db->from('revisi_laporan');
+		$this->db->where('revisi_laporan.id_pjk = "'.$id_user.'"');
+		$this->db->join('user','revisi_laporan.id_user = user.id_user');
+		$this->db->join('tingkatan','user.tingkatan = tingkatan.nama_tingkatan');
+		$this->db->order_by('revisi_laporan.tgl_revisi desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	function get_proposal_by_idproposal($id_proposal) {
 
 		$this->db->select('*');
