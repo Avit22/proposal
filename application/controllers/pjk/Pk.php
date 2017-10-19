@@ -29,7 +29,4 @@ class Pk extends CI_Controller {
 		$this->load->view('pjk/cetak_pk',$data);	
 		
 	}
-
-	
-	
 }

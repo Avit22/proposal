@@ -29,8 +29,4 @@ class Notifikasi_rab extends CI_Controller {
 		
 		$this->load->view('pjk/notifikasi_rab',$data);
 	}
-
-	
-	
-
 }

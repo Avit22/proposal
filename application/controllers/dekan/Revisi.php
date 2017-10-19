@@ -21,7 +21,7 @@ class Revisi extends CI_Controller {
 	public function index() {
 
 
-		if($query = $this->Input_model->get_data_proposal_disetujui_wd2_validasi()) {
+		if($query = $this->Input_model->get_data_revisi_disetujui_wd2()) {
 			$data['proposale'] = $query;
 		}
 		else
@@ -61,7 +61,7 @@ class Revisi extends CI_Controller {
 				'rab' => $this->input->post('rab'),
 				'keluaran' => $this->input->post('keluaran'),
 				'revisi1' => $this->input->post('revisi1'),
-				'tgl_input' => $tgl,
+				'tgl_revisi' => $tgl,
 				'id_user' => $id_user_session,
 				);
 

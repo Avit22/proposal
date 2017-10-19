@@ -29,6 +29,7 @@ table, td {
         <th>Total</th>
       </tr>
     </thead>
+
     <tbody>
     <?php 
     if(isset($rab)){
@@ -67,6 +68,7 @@ table, td {
       echo "</tr>";
     }
     }
+
     if(isset($totalrab_keu)){
       foreach ($totalrab_keu as $row1){
         echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row1->total_rab.'</strong></td></tr>';
@@ -117,6 +119,7 @@ table, td {
     ?>
     </tbody>
   </table>
+  
   <!-- Catatan Revisi -->
   <?php echo form_open('wd2/rekomendasi/tambah_catatan_rab_keu/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
         <div class="form-group">
