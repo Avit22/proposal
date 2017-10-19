@@ -77,14 +77,19 @@ foreach($proposale as $proposal)
                     </div>
                 </div>
             </div>
-            <div class="col-sm-10">
+            </div>
+
+      <!-- file upload-->
+        <div class="form-group">
+        <label for="image" class="col-sm-2 control-label">Bukti Penggunaan Biaya</label>
+        <div class="col-sm-10">
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="file" name="filename1" size="60" />
+                        <input type="file" name="filename" size="60" />
                         <span class="text-danger"><?php if (isset($error)) { echo $error; } ?></span>
                     </div>
                 </div>
-            </div>
+            </div>        
 
         
 
