@@ -28,6 +28,7 @@
            </tr>
             </thead>
             <tbody>
+            
             <?php $i =1; if(!empty($proposale)) {
             foreach($proposale as $proposal) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">

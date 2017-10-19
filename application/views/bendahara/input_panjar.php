@@ -31,6 +31,26 @@
           </div>
         </div>
 
+        <!-- Nomor Seri Dokumen-->
+        <div class="form-group">
+          <label for="noseri" class="col-sm-4 control-label">Nomor Seri</label>
+          <div class="col-sm-4">
+            <?php 
+           $data = array('name' => 'noseri', 'id' => 'noseri', 'class' => 'form-control', 'placeholder' => 'Nomor Seri Dokumen');
+           echo form_input($data); ?>
+          </div>
+        </div>
+
+        <!-- Nomor Surat Jalan-->
+        <div class="form-group">
+          <label for="nosurat" class="col-sm-4 control-label">Nomor Surat</label>
+          <div class="col-sm-4">
+            <?php 
+           $data = array('name' => 'nosurat', 'id' => 'nosurat', 'class' => 'form-control', 'placeholder' => 'Nomor Surat Keluar');
+           echo form_input($data); ?>
+          </div>
+        </div>
+
         <!-- Pencairan Ke-->
         <div class="form-group">
           <label for="pencairanke" class="col-sm-4 control-label">Pencairan Ke</label>

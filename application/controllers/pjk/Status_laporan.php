@@ -29,7 +29,4 @@ class Status_laporan extends CI_Controller {
 		$this->load->view('pjk/status_laporan',$data);
 		
 	}
-
-	
-
 }

@@ -20,11 +20,11 @@ class Revisi extends CI_Controller {
 	
 	public function index() {
 
-		if($query = $this->Input_model->get_laporan()) {
-			$data['laporane'] = $query;
+		if($query = $this->Input_model->get_revisi_laporan()) {
+			$data['revisi_laporane'] = $query;
 		}
 		else
-			$data['laporane'] = NULL;
+			$data['revisi_laporane'] = NULL;
 
 
 		$this->load->view('bendahara/revisi_laporan',$data);

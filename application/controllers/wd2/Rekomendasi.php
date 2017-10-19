@@ -46,6 +46,7 @@ class Rekomendasi extends CI_Controller {
 		else{
 			$data['rab'] = NULL;
 		}
+		
 		if($query = $this->Input_model->get_all_rab_keu_id_proposal($id_proposal)) {
 			$data['rab_keu'] = $query;
 		}
