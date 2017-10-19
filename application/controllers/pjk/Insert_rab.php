@@ -191,9 +191,5 @@ public function delete_rab1($id_proposal,$id_rab){
 	}
 
 
-public function delete_rab($id_proposal,$id_rab){
-	if($this->Input_model->deleting_rab($id_rab));
-	redirect('pjk/insert_rab/index/'.$id_proposal);	
 
-}
 }

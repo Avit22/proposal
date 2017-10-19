@@ -23,7 +23,8 @@
               <th>Judul Kegiatan</th>
               <th>Nama PJK</th>
               <th>Tanggal Terkirim</th>
-              <th>View Laporan Kegiatan</th>
+              <th>View Laporan </th>
+              <th>Revisi Laporan </th>
            </tr>
             </thead>
             <tbody>
@@ -36,6 +37,8 @@
                 <td><?php echo $laporan->nama_pjk; ?></td>
                 <td><?php echo $laporan->tgl_input; ?></td>
                 <td><?php echo anchor("bendahara/laporan_terkirim/detail/$laporan->id_laporan",'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Laporan"></span>'); ?>   
+                </td>
+                <td><?php echo anchor("bendahara/laporan_terkirim/revisi/$laporan->id_laporan",'<span class="glyphicon glyphicon-tags text-primary fa-lg" aria-hidden="true" title="View Laporan"></span>'); ?>   
                 </td>
       
             </tr>

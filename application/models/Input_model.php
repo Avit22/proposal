@@ -61,6 +61,11 @@ function tambah_revisi($data) {
 		return;
 	}
 
+function tambah_revisi_laporan($data) {
+		$this->db->insert('revisi_laporan',$data);
+		return;
+	}	
+
 	function tambah_laporan($data) {
 		$this->db->insert('laporan',$data);
 		return;
@@ -398,7 +403,18 @@ function get_revisi_rab($id_user) {
 		return $query->result();
 	}
 
+function get_data_revisi_disetujui_wd2() {
 
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->join('revisi','proposal.id_proposal = revisi.id_proposal');
+		$this->db->where('wd.id_wd=1');
+		$this->db->where('revisi.id_user = 8');
+		$this->db->order_by('proposal.tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
 
 	function get_data_wd2() {
 
@@ -687,6 +703,15 @@ function get_laporan() {
 		$this->db->select('*');
 		$this->db->from('laporan');
 		$this->db->order_by('tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_revisi_laporan() {
+
+		$this->db->select('*');
+		$this->db->from('revisi_laporan');
+		$this->db->order_by('tgl_revisi desc');
 		$query = $this->db->get();
 		return $query->result();
 	}

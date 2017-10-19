@@ -15,31 +15,33 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="text-center" style="font-size:30px;"> Revisi Laporan Kegiatan </div><br />
+          <div class="text-center" style="font-size:30px;"> Revisi Proposal</div><br />
           <table id="example" class="table table-bordered table-striped header-fixed ">
             <thead>
             <tr>
               <th>No.</th>
-              <th>Judul Kegiatan</th>
+              <th>Judul Laporan</th>
               <th>Nama PJK</th>
-              <th>Tanggal Terkirim</th>
-              <th>View Laporan Kegiatan</th>
-              <th>Revisi</th>
+              <th>Tanggal Revisi</th>
+              <th>Catatan Revisi</th>
+              <th>Catatan Revisi Pjk</th>
+              <th>View Proposal</th>
+              
            </tr>
-            </thead>
+            </thead> 
             <tbody>
-            <?php $i =1; if(!empty($laporane)) {
-            foreach($laporane as $laporan) : { ?>
+            <?php $i =1; if(!empty($revisi_laporane)) {
+            foreach($revisi_laporane as $revisi_laporan) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">
-               <td><?php echo $i++; ?></td>                
-                <td><?php echo $laporan->judul; ?></td>
-                <td><?php echo $laporan->nama_pjk; ?></td>
-                <td><?php echo $laporan->tgl_input; ?></td>
-                <td><?php echo anchor("xxxxxxx",'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Laporan"></span>'); ?>   
+                <td><?php echo $i++; ?></td>
+                <td><?php echo $revisi_laporan->judul; ?></td>
+                <td><?php echo $revisi_laporan->nama_pjk; ?></td>
+                <td><?php echo $revisi_laporan->tgl_revisi; ?></td>
+                <td><?php echo $revisi_laporan->catatan_revisi; ?></td>
+                <td><?php echo $revisi_laporan->revisi; ?></td>
+                <td><?php echo anchor("bendahara/laporan_terkirim/detail/".$revisi_laporan->id_laporan,'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
-                <td><?php echo anchor("xxxxxxx",'<span class="glyphicon glyphicon-tags text-primary fa-lg" aria-hidden="true" title="Revisi"></span>'); ?>   
-                </td>
-      
+                    
             </tr>
             <?php } endforeach; } ?>
                   
