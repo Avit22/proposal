@@ -20,4 +20,9 @@ class Home extends CI_Controller {
 	   
 	   	$this->load->view('pjk/home');
 	}
+
+	public function rab() {
+		$this->load->model('Input_model');				
+		$this->load->view('pjk/test');			
+	}
 }
