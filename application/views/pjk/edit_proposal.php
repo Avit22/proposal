@@ -142,7 +142,7 @@ foreach($proposale as $proposal)
         <div class="form-group">
           <label for="rab" class="col-sm-2 control-label">RAB</label>         
 
-            <button type="button" onclick="openInNewTab('insert_rab')">edit rab</button>
+            <button type="button" onclick="openInNewTab('http://localhost/proposal/pjk/insert_rab')">edit rab</button>
             
           <div class="col-sm-2">
             <?php 
