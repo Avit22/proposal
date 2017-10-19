@@ -32,6 +32,7 @@
 
                       <li><a href="<?php echo site_url('pjk/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('pjk/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('pjk/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('pjk/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
