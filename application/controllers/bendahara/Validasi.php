@@ -74,6 +74,8 @@ public function insert_panjar($id) {
 	$this->load->library('form_validation');
 	$this->form_validation->set_message('required', '%s Harus Diisi.');
 	$this->form_validation->set_rules('total', 'Total Nominal', 'required');
+	$this->form_validation->set_rules('noseri', 'Nomor Seri', 'required');
+	$this->form_validation->set_rules('nosurat', 'Nomor Surat Jalan', 'required');
 	$this->form_validation->set_rules('pencairanke', 'pencairan', 'required');
 	$this->form_validation->set_rules('pencairan', 'Pencairan Minimal 70%', 'required');
 	$this->form_validation->set_rules('sisa', 'Sisa', 'required');
@@ -92,6 +94,8 @@ public function insert_panjar($id) {
 				'id_proposal' => $id,
 				'pencairanke' => $this->input->post('pencairanke'),
 				'nominal_total' => $this->input->post('total'),
+				'noseri' => $this->input->post('noseri'),
+				'nosurat' => $this->input->post('nosurat'),
 				'nominal_70' => $this->input->post('pencairan'),
 				'sisa' => $this->input->post('sisa'),
 				'lalu' => $this->input->post('lalu'),				
