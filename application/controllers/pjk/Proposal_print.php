@@ -104,13 +104,6 @@ $pdf->setPrintFooter(false);
    // $nominal = rupiah2($proposal->nominal_disetujui_dekan);   
     //$nominal_70 = (70/100)* $nominal;
     //$sisa = $nominal - $nominal_70;
-    $print_rab = '<iframe src="www.google.com"><iframe>';
-    $rab_print ='
-    <strong>Rencana Anggaran Belanja<br /></strong><br />
-    <table border="1"><tr><td align="center">Nama Barang</td><td align="center">Harga Barang</td><td align="center">Jumlah</td><td align="center">Total</td></tr>
-    </table>
-    '; 
-    
 
     foreach ($data['proposale'] as $proposal) { 
     $html = '
@@ -126,12 +119,41 @@ $pdf->setPrintFooter(false);
     <strong>D. Keluaran</strong>
     <p align="justify">'.$proposal->keluaran.'</p><br />
     <strong>E. Penutup</strong>
-    <p align="justify">'.$proposal->penutup.'</p><br />
-    '.$print_rab;
+    <p align="justify">'.$proposal->penutup.'</p><br />    
+    ';
   }
+
+
     // Print text using writeHTMLCell()
     $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);   
   
+  $pdf->AddPage(); 
+  
+    // set text shadow effect
+    //$pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));    
+    
+            # code...    
+        
+    // Set some content to print
+   // $nominal = rupiah2($proposal->nominal_disetujui_dekan);   
+    //$nominal_70 = (70/100)* $nominal;
+    //$sisa = $nominal - $nominal_70;
+
+    $html = '    
+    <h2><p align="center">Lampiran Rencana Anggaran Belanja</p></h2>
+    <table border="1" align="center"><tr><td>Nama Barang</td><td>Harga Barang</td><td>Jumlah</td><td>Harga</td></tr></table>';
+    // Print text using writeHTMLCell()
+    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);  
+
+    foreach ($data['rabnya'] as $rab) { 
+    $html = '    
+    <table border="1"><tr><td>'.$rab->barang.'</td><td>'.$rab->harga.'</td><td>'.$rab->jumlah.'</td><td>'.$rab->total.'</td></tr></table>';
+    // Print text using writeHTMLCell()
+    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);  
+  }
+
+  
+    
     // ---------------------------------------------------------    
   
     // Close and output PDF document

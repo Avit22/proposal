@@ -61,8 +61,10 @@
     </tbody>
   </table>
 </div>';
-          ?>
-         
+        ?> <?php foreach($proposale as $proposal){ ?>
+        <a href="<?php echo base_url('pjk/proposal_print/index').'/'?><?php echo $proposal->id_proposal ?>"><button type="buttton" class="btn btn-success">PRINT</button> </a>
+
+        <?php } ?>
         </div>
 
         <!-- /page content -->
