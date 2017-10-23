@@ -28,17 +28,11 @@ class Input extends CI_Controller {
 
 		$this->load->view('pjk/input_proposal',$data);
 		
-	}
-
-	
+	}	
 	
 public function tambah_proses() {
-
-
 	$this->load->library('form_validation');
 	$this->form_validation->set_message('required', '%s Harus Diisi.');
-
-
 	$this->form_validation->set_rules('nama_pjk', 'Nama PJK', 'required');
 	$this->form_validation->set_rules('jenis_proposal', 'Jenis Proposal', 'required');
 	$this->form_validation->set_rules('judul', 'Judul', 'required');

@@ -23,8 +23,10 @@ class Lihat_proposal extends CI_Controller {
 		if($query = $this->Input_model->get_data_proposal_disetujui_dekan($sessiondata)) {
 			$data['proposale'] = $query;
 		}
-		else
+		else{
 			$data['proposale'] = NULL;
+		}
+		
 		$this->load->view('bendahara/lihat_proposal', $data);
 	}
 }
