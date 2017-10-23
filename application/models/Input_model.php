@@ -259,7 +259,7 @@ function tambah_revisi_laporan($data) {
 		$this->db->where('keu_review',"DISETUJUI"); // disetujui juga oleh tu
 		$this->db->where('validasi_wd2',"DISETUJUI"); // disetujui juga oleh tu
 		$this->db->where('dekan_review',"DISETUJUI"); // disetujui juga oleh tu
-		$this->db->select('*');
+		$this->db->select('*,proposal.id_proposal as kode_proposal');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
 		$this->db->join('panjar_kerja','proposal.id_proposal = panjar_kerja.id_proposal','left outer');
