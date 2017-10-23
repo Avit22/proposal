@@ -42,7 +42,6 @@
                 <td><?php echo rupiah2($laporan->rincian_biaya); ?></td>
                 <td><?php echo $laporan->tgl_input; ?></td>
                 
-      
             </tr>
             <?php } endforeach; } ?>
                   

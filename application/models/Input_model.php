@@ -278,6 +278,16 @@ function tambah_revisi_laporan($data) {
 
 	}
 
+	function get_data_laporanbyid($id_laporan){
+
+		$this->db->select('*');
+		$this->db->from('laporan');
+		$this->db->where('laporan.id_laporan = "'.$id_laporan.'"');
+		$query = $this->db->get();
+		return $query->result();
+
+	}
+
 	function get_revisi_by_iduser($id_user) {
 
 		$this->db->select('*');
@@ -296,6 +306,7 @@ function tambah_revisi_laporan($data) {
 		$this->db->from('revisi_laporan');
 		$this->db->where('revisi_laporan.id_pjk = "'.$id_user.'"');
 		$this->db->join('user','revisi_laporan.id_user = user.id_user');
+		$this->db->join('revisi_laporan','laporan.id_laporan = revisi_laporan.id_laporan');
 		$this->db->join('tingkatan','user.tingkatan = tingkatan.nama_tingkatan');
 		$this->db->order_by('revisi_laporan.tgl_revisi desc');
 		$query = $this->db->get();
@@ -715,8 +726,8 @@ function get_laporan() {
 
 		$this->db->select('*');
 		$this->db->from('laporan');
-		$this->db->join('proposal','laporan.judul = proposal.judul');
-		$this->db->order_by('laporan.tgl_input desc');
+		$this->db->join('proposal','laporan.id_proposal = proposal.id_proposal');
+		$this->db->order_by('laporan.tgl_input_bendahara desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -725,6 +736,7 @@ function get_laporan() {
 
 		$this->db->select('*');
 		$this->db->from('revisi_laporan');
+		$this->db->join('laporan','revisi_laporan.id_laporan = laporan.id_laporan');
 		$this->db->order_by('tgl_revisi desc');
 		$query = $this->db->get();
 		return $query->result();
