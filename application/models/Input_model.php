@@ -262,7 +262,7 @@ function tambah_revisi_laporan($data) {
 		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
-		//$this->db->join('panjar_kerja','proposal.id_proposal = panjar_kerja.id_proposal','left outer');
+		$this->db->join('panjar_kerja','proposal.id_proposal = panjar_kerja.id_proposal','left outer');
 		$this->db->order_by('proposal.tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
