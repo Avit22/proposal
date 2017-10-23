@@ -38,9 +38,9 @@ class Panjar_print extends CI_Controller {
   
     // set document information
     $pdf->SetCreator(PDF_CREATOR);
-    $pdf->SetAuthor('Muhammad Saqlain Arif');
-    $pdf->SetTitle('TCPDF Example 001');
-    $pdf->SetSubject('TCPDF Tutorial');
+    $pdf->SetAuthor('Avit22');
+    $pdf->SetTitle('Print Panjar Kerja');
+    $pdf->SetSubject('Penjar Kerja');
     $pdf->SetKeywords('TCPDF, PDF, example, test, guide');   
   
     // set default header data
@@ -106,7 +106,7 @@ $pdf->setPrintFooter(false);
     <br /><br />
     <table>
     <tr><td width="40%">Telah diterima dari</td><td width="1%">:</td><td width="59%">Kuasa Pengguna Anggaran Universitas Negeri Semarang</td></tr>
-    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.$proposal->nominal_70.'</td></tr>
+    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.rupiah3($proposal->nominal_70).'</td></tr>
     <tr><td width="40%">Sumber dana</td><td width="1%">:</td><td width="59%">'.$proposal->sumberdana.'</td></tr>
     <tr><td width="40%">Terbilang</td><td width="1%">:</td><td width="59%">'.$proposal->terbilang.'</td></tr>
     <tr><td width="40%">Untuk Pembayaran</td><td width="1%">:</td><td width="59%">'.$proposal->tujuanbayar.' dg. Nomor '.$proposal->noseri.'</td></tr>
@@ -123,7 +123,7 @@ $pdf->setPrintFooter(false);
     <br /><br />
     <table>
     <tr><td width="40%">Telah diterima dari</td><td width="1%">:</td><td width="59%">Kuasa Pengguna Anggaran Universitas Negeri Semarang</td></tr>
-    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.$proposal->nominal_70.'</td></tr>
+    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.rupiah3($proposal->nominal_70).'</td></tr>
     <tr><td width="40%">Sumber dana</td><td width="1%">:</td><td width="59%">'.$proposal->sumberdana.'</td></tr>
     <tr><td width="40%">Terbilang</td><td width="1%">:</td><td width="59%">'.$proposal->terbilang.'</td></tr>
     <tr><td width="40%">Untuk Pembayaran</td><td width="1%">:</td><td width="59%">'.$proposal->tujuanbayar.' dg. Nomor '.$proposal->noseri.'</td></tr>
@@ -141,7 +141,7 @@ $pdf->setPrintFooter(false);
     <br /><br />
     <table>
     <tr><td width="40%">Telah diterima dari</td><td width="1%">:</td><td width="59%">Kuasa Pengguna Anggaran Universitas Negeri Semarang</td></tr>
-    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.$proposal->nominal_70.'</td></tr>
+    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.rupiah3($proposal->nominal_70).'</td></tr>
     <tr><td width="40%">Sumber dana</td><td width="1%">:</td><td width="59%">'.$proposal->sumberdana.'</td></tr>
     <tr><td width="40%">Terbilang</td><td width="1%">:</td><td width="59%">'.$proposal->terbilang.'</td></tr>
     <tr><td width="40%">Untuk Pembayaran</td><td width="1%">:</td><td width="59%">'.$proposal->tujuanbayar.' dg. Nomor '.$proposal->noseri.'</td></tr>
@@ -160,7 +160,7 @@ $pdf->setPrintFooter(false);
   
     // Close and output PDF document
     // This method has several options, check the source code documentation for more information.
-    $pdf->Output('example_001.pdf', 'I');    
+    $pdf->Output('Panjar Kerja.pdf', 'I');    
   
     //============================================================+
     // END OF FILE

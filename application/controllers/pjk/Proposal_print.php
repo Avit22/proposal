@@ -44,9 +44,9 @@ class Proposal_print extends CI_Controller {
   
     // set document information
     $pdf->SetCreator(PDF_CREATOR);
-    $pdf->SetAuthor('Muhammad Saqlain Arif');
-    $pdf->SetTitle('TCPDF Example 001');
-    $pdf->SetSubject('TCPDF Tutorial');
+    $pdf->SetAuthor('Avit');
+    $pdf->SetTitle('Naskah Proposal Lengkap Print');
+    $pdf->SetSubject('Naskah Proposal');
     $pdf->SetKeywords('TCPDF, PDF, example, test, guide');   
   
     // set default header data
@@ -104,6 +104,7 @@ $pdf->setPrintFooter(false);
    // $nominal = rupiah2($proposal->nominal_disetujui_dekan);   
     //$nominal_70 = (70/100)* $nominal;
     //$sisa = $nominal - $nominal_70;
+    $this->load->helper('fungsidate');
 
     foreach ($data['proposale'] as $proposal) { 
     $html = '
@@ -147,7 +148,7 @@ $pdf->setPrintFooter(false);
 
     foreach ($data['rabnya'] as $rab) { 
     $html = '    
-    <table border="1"><tr><td>'.$rab->barang.'</td><td>'.$rab->harga.'</td><td>'.$rab->jumlah.'</td><td>'.$rab->total.'</td></tr></table>';
+    <table border="1"><tr><td> '.$rab->barang.'</td><td> '.rupiah3($rab->harga).'</td><td> '.$rab->jumlah.'</td><td> '.rupiah3($rab->total).'</td></tr></table>';
     // Print text using writeHTMLCell()
     $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);  
   }
@@ -158,7 +159,7 @@ $pdf->setPrintFooter(false);
   
     // Close and output PDF document
     // This method has several options, check the source code documentation for more information.
-    $pdf->Output('example_001.pdf', 'I');    
+    $pdf->Output('Proposal_Naskah_Print.pdf', 'I');    
   
     //============================================================+
     // END OF FILE
