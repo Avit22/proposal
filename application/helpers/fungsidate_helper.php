@@ -155,8 +155,7 @@ function rupiah3($harga)
                 $angka=$angka.$a[$i];
             }
         }
-    }
-    echo 'Rp. '.$angka.",-";
+    }    
     $nilai_akhir = 'Rp. '.$angka.",-";
     return $nilai_akhir;
     }

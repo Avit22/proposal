@@ -111,7 +111,7 @@ $pdf->setPrintFooter(false);
     <br /><br />    
     <table>    
     <tr><td width="40%">Telah diterima dari</td><td width="1%">:</td><td width="59%">Kuasa Pengguna Anggaran Universitas Negeri Semarang</td></tr>
-    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.$proposal->nominal_70.'</td></tr>
+    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.rupiah3($proposal->nominal_70).'</td></tr>
     <tr><td width="40%">Sumber dana</td><td width="1%">:</td><td width="59%">'.$proposal->sumberdana.'</td></tr>
     <tr><td width="40%">Terbilang</td><td width="1%">:</td><td width="59%">'.$proposal->terbilang.'</td></tr>
     <tr><td width="40%">Untuk Pembayaran</td><td width="1%">:</td><td width="59%">'.$proposal->tujuanbayar.' berdasar SPBy Nomor '.$proposal->nosurat.'</td></tr>
@@ -119,7 +119,7 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.$proposal->nominal_total.' <br /> Lalu : '.$proposal->lalu.' <br /> Nominal : '.$proposal->nominal_70.' <br /> Sisa : '.$proposal->sisa.'</td></tr>
+    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
     </table>
 
     <br /><br />
@@ -134,7 +134,7 @@ $pdf->setPrintFooter(false);
     <br /><br />    
     <table>    
     <tr><td width="40%">Telah diterima dari</td><td width="1%">:</td><td width="59%">Kuasa Pengguna Anggaran Universitas Negeri Semarang</td></tr>
-    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.$proposal->nominal_70.'</td></tr>
+    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.rupiah3($proposal->nominal_70).'</td></tr>
     <tr><td width="40%">Sumber dana</td><td width="1%">:</td><td width="59%">'.$proposal->sumberdana.'</td></tr>
     <tr><td width="40%">Terbilang</td><td width="1%">:</td><td width="59%">'.$proposal->terbilang.'</td></tr>
     <tr><td width="40%">Untuk Pembayaran</td><td width="1%">:</td><td width="59%">'.$proposal->tujuanbayar.' berdasar SPBy Nomor '.$proposal->nosurat.'</td></tr>
@@ -142,7 +142,7 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.$proposal->nominal_total.' <br /> Lalu : '.$proposal->lalu.' <br /> Nominal : '.$proposal->nominal_70.' <br /> Sisa : '.$proposal->sisa.'</td></tr>
+    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
     </table>
 
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -157,7 +157,7 @@ $pdf->setPrintFooter(false);
     <br /><br />    
     <table>    
     <tr><td width="40%">Telah diterima dari</td><td width="1%">:</td><td width="59%">Kuasa Pengguna Anggaran Universitas Negeri Semarang</td></tr>
-    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.$proposal->nominal_70.'</td></tr>
+    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.rupiah3($proposal->nominal_70).'</td></tr>
     <tr><td width="40%">Sumber dana</td><td width="1%">:</td><td width="59%">'.$proposal->sumberdana.'</td></tr>
     <tr><td width="40%">Terbilang</td><td width="1%">:</td><td width="59%">'.$proposal->terbilang.'</td></tr>
     <tr><td width="40%">Untuk Pembayaran</td><td width="1%">:</td><td width="59%">'.$proposal->tujuanbayar.' berdasar SPBy Nomor '.$proposal->nosurat.'</td></tr>
@@ -165,7 +165,7 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.$proposal->nominal_total.' <br /> Lalu : '.$proposal->lalu.' <br /> Nominal : '.$proposal->nominal_70.' <br /> Sisa : '.$proposal->sisa.'</td></tr>
+    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
     </table>
     ';
   }
