@@ -23,6 +23,6 @@ class Home extends CI_Controller {
 
 	public function rab() {
 		$this->load->model('Input_model');				
-		$this->load->view('pjk/test');			
+		$this->load->view('pjk/proposal_print');			
 	}
 }
