@@ -39,9 +39,9 @@
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo $proposal->tgl_input; ?></td>
-                <td><?php echo anchor("bendahara/detail_proposal/detail/$proposal->id_proposal",'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
+                <td><?php echo anchor("bendahara/detail_proposal/detail/$proposal->kode_proposal",'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
-                <td><?php echo anchor("bendahara/detail_proposal/input_panjar/$proposal->id_proposal",'<span class="glyphicon glyphicon-pencil text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
+                <td><?php echo anchor("bendahara/detail_proposal/input_panjar/$proposal->kode_proposal",'<span class="glyphicon glyphicon-pencil text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
                 <td><?php echo $proposal->keterangan_input;; ?></td>
             </tr>

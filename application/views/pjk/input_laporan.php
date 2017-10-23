@@ -23,7 +23,7 @@ foreach($proposale as $proposal)
 { 
 ?>
         
-
+<input type="hidden" name="id_proposalnya" value="<?php echo $proposal->id_proposal; ?>">
 
 <!-- Judul -->
         <div class="form-group">
