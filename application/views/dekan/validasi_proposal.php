@@ -38,7 +38,7 @@
                 <td><?php echo $proposal->tgl_validasi; ?></td>
                 <td><?php echo anchor("dekan/validasi/validasi/".$proposal->id_proposal,'<span class="glyphicon glyphicon-check text-primary fa-lg" aria-hidden="true" title="Validasi"></span>'); ?>   
                 </td>
-                <td><?php echo $proposal->status_review; ?></td>
+                <td><?php echo $proposal->dekan_review; ?></td>
           
       
             </tr>

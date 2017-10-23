@@ -83,7 +83,7 @@ $pdf->setPrintFooter(false);
     // dejavusans is a UTF-8 Unicode font, if you only need to
     // print standard ASCII chars, you can use core fonts like
     // helvetica or times to reduce file size.
-    $pdf->SetFont('dejavusans', '', 9, '', true);   
+    $pdf->SetFont('dejavusans', '', 8, '', true);   
   
     // Add a page
     // This method has several options, check the source code documentation for more information.
@@ -119,7 +119,7 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
+    <table><tr><td align="left" width="50%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="30%">Semarang,'.tgl_indo($proposal->tgl_input).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
     </table>
 
     <br /><br />
@@ -142,7 +142,7 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
+    <table><tr><td align="left" width="50%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="30%">Semarang,'.tgl_indo($proposal->tgl_input).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
     </table>
 
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -165,7 +165,7 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
+    <table><tr><td align="left" width="50%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="30%">Semarang,'.tgl_indo($proposal->tgl_input).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
     </table>
     ';
   }
