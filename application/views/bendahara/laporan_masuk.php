@@ -25,6 +25,7 @@
               <th>Tanggal Terkirim</th>
               <th>View Laporan </th>
               <th>Revisi Laporan </th>
+              <th>Input Sisa Panjar Kerja</th>
            </tr>
             </thead>
             <tbody>
@@ -39,6 +40,8 @@
                 <td><?php echo anchor("bendahara/laporan_terkirim/detail/$laporan->id_laporan",'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Laporan"></span>'); ?>   
                 </td>
                 <td><?php echo anchor("bendahara/laporan_terkirim/revisi/$laporan->id_laporan",'<span class="glyphicon glyphicon-tags text-primary fa-lg" aria-hidden="true" title="View Laporan"></span>'); ?>   
+                </td>
+                <td><?php echo anchor("bendahara/detail_proposal/input_sisa_panjar/$laporan->id_proposal",'<span class="glyphicon glyphicon-pencil text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
       
             </tr>

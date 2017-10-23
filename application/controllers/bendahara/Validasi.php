@@ -103,6 +103,50 @@ public function insert_panjar($id) {
 				'terbilang' => $this->input->post('terbilang'),
 				'tujuanbayar' => $this->input->post('tujuanbayar'),
 				'keterangan' => $this->input->post('keterangan'),
+				'tgl_input'=>$tgl,
+				'keterangan_input'=>"Belum",
+				);
+			if($this->Input_model->insert_panjar($data));
+				redirect('bendahara/validasi');	
+		}	
+	redirect('bendahara/validasi');	
+}	
+
+public function insert_sisa_panjar($id) {
+	$this->load->library('form_validation');
+	$this->form_validation->set_message('required', '%s Harus Diisi.');
+	$this->form_validation->set_rules('total', 'Total Nominal', 'required');
+	$this->form_validation->set_rules('noseri', 'Nomor Seri', 'required');
+	$this->form_validation->set_rules('nosurat', 'Nomor Surat Jalan', 'required');
+	$this->form_validation->set_rules('pencairanke', 'pencairan', 'required');
+	$this->form_validation->set_rules('pencairan', 'Pencairan Minimal 70%', 'required');
+	$this->form_validation->set_rules('sisa', 'Sisa', 'required');
+	$this->form_validation->set_rules('lalu', 'Pencairan Lalu', 'required');
+	$this->form_validation->set_rules('sumberdana', 'Sumber Dana', 'required');
+	$this->form_validation->set_rules('terbilang', 'Terbilang Rupiah', 'required');
+	$this->form_validation->set_rules('tujuanbayar', 'Tujuan Pembayaaran', 'required');
+	$this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
+		if ($this->form_validation->run() == FALSE) {
+			$this->index();
+		}
+		else {
+			$id_user_session = $this->session->userdata('id_user'); // tambahkan penanda user
+			$tgl = date("Y-m-d");
+			$data = array(
+				'id_proposal' => $id,
+				'pencairanke' => $this->input->post('pencairanke'),
+				'nominal_total' => $this->input->post('total'),
+				'noseri' => $this->input->post('noseri'),
+				'nosurat' => $this->input->post('nosurat'),
+				'nominal_70' => $this->input->post('pencairan'),
+				'sisa' => $this->input->post('sisa'),
+				'lalu' => $this->input->post('lalu'),				
+				'sumberdana' => $this->input->post('sumberdana'),
+				'terbilang' => $this->input->post('terbilang'),
+				'tujuanbayar' => $this->input->post('tujuanbayar'),
+				'keterangan' => $this->input->post('keterangan'),
+				'tgl_input'=>$tgl,
+				'keterangan_input'=>"Sudah Input",
 				);
 			if($this->Input_model->insert_panjar($data));
 				redirect('bendahara/validasi');	
