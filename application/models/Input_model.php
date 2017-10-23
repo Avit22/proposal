@@ -259,7 +259,7 @@ function tambah_revisi_laporan($data) {
 		$this->db->where('keu_review',"DISETUJUI"); // disetujui juga oleh tu
 		$this->db->where('validasi_wd2',"DISETUJUI"); // disetujui juga oleh tu
 		$this->db->where('dekan_review',"DISETUJUI"); // disetujui juga oleh tu
-		$this->db->select('*');
+		$this->db->select('*,proposal.id_proposal as kode_proposal');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
 		$this->db->join('panjar_kerja','proposal.id_proposal = panjar_kerja.id_proposal','left outer');
@@ -273,6 +273,16 @@ function tambah_revisi_laporan($data) {
 		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->where('proposal.id_proposal = "'.$id_proposal.'"');
+		$query = $this->db->get();
+		return $query->result();
+
+	}
+
+	function get_data_laporanbyid($id_laporan){
+
+		$this->db->select('*');
+		$this->db->from('laporan');
+		$this->db->where('laporan.id_laporan = "'.$id_laporan.'"');
 		$query = $this->db->get();
 		return $query->result();
 
@@ -296,6 +306,7 @@ function tambah_revisi_laporan($data) {
 		$this->db->from('revisi_laporan');
 		$this->db->where('revisi_laporan.id_pjk = "'.$id_user.'"');
 		$this->db->join('user','revisi_laporan.id_user = user.id_user');
+		$this->db->join('revisi_laporan','laporan.id_laporan = revisi_laporan.id_laporan');
 		$this->db->join('tingkatan','user.tingkatan = tingkatan.nama_tingkatan');
 		$this->db->order_by('revisi_laporan.tgl_revisi desc');
 		$query = $this->db->get();
@@ -715,8 +726,8 @@ function get_laporan() {
 
 		$this->db->select('*');
 		$this->db->from('laporan');
-		$this->db->join('proposal','laporan.judul = proposal.judul');
-		$this->db->order_by('laporan.tgl_input desc');
+		$this->db->join('proposal','laporan.id_proposal = proposal.id_proposal');
+		$this->db->order_by('laporan.tgl_input_bendahara desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -725,6 +736,7 @@ function get_laporan() {
 
 		$this->db->select('*');
 		$this->db->from('revisi_laporan');
+		$this->db->join('laporan','revisi_laporan.id_laporan = laporan.id_laporan');
 		$this->db->order_by('tgl_revisi desc');
 		$query = $this->db->get();
 		return $query->result();

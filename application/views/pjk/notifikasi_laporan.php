@@ -25,6 +25,7 @@
               <th>Tanggal Revisi</th>
               <th>Catatan Revisi</th>
               <th>Korektor</th>
+              <th>Edit Laporan</th>
               
            </tr>
             </thead> 
@@ -38,6 +39,8 @@
                 <td><?php echo $revisi_laporan->tgl_revisi; ?></td>
                 <td><?php echo $revisi_laporan->catatan_revisi; ?></td>
                 <td><?php echo $revisi_laporan->keterangan_tingkatan; ?></td>
+                <td><?php echo anchor("pjk/input_laporan/edit/".$revisi_laporan->id_laporan,'<span class="glyphicon glyphicon-edit text-primary fa-lg" aria-hidden="true" title="Edit Proposal"></span>'); ?>   
+                </td>
                     
             </tr>
             <?php } endforeach; } ?>
