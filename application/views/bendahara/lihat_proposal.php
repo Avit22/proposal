@@ -26,6 +26,7 @@
               <th>Tanggal Terkirim</th>
               <th>View Proposal</th>
               <th>Input Panjar Kerja</th>
+              <th>Status</th>
               
            </tr>
             </thead>
@@ -42,7 +43,7 @@
                 </td>
                 <td><?php echo anchor("bendahara/detail_proposal/input_panjar/$proposal->id_proposal",'<span class="glyphicon glyphicon-pencil text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
-                
+                <td><?php echo $proposal->keterangan_input;; ?></td>
             </tr>
             <?php } endforeach; } ?>
                   
