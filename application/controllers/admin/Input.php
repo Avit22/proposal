@@ -34,6 +34,18 @@ class Input extends CI_Controller {
 		}
 		else
 			$data['data_prodi'] = NULL;
+		$query = $this->Input_model->get_max_id_proposal();
+		$kode_id_maks;
+		foreach ($query as $row) {
+			$kode_id_maks = $row->max_id;
+		}
+		$data['max_id_proposal'] = $kode_id_maks;
+		if($query = $this->Input_model->get_all_rab_id_proposal($kode_id_maks)) {
+			$data['rab'] = $query;
+		}
+		else{
+			$data['rab'] = NULL;
+		}
 
 		$this->load->view('admin/input_proposal',$data);
 		

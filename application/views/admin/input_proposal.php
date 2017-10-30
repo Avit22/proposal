@@ -1,5 +1,11 @@
 <!DOCTYPE html>
+<style>
+table, td {
+    border: 1px solid black;
+}
+</style>
 <html lang="en"> 
+  
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -8,7 +14,8 @@
   $( function() {
     $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });    
   });
-  </script>  
+  </script>
+
   <?php $this->view('template/head'); ?>
 
   <body class="nav-md">
@@ -22,8 +29,9 @@
         <!-- page content -->
         <div class="right_col" role="main">
           
-          <h1 class="text-center text-info">Input Proposal</h1> <br /><br />
-       <?php echo form_open('admin/input/tambah_proses',array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
+          <h1 class="text-center text-info">Input Proposal</h1> <p class="text-center text-info" id="maxid"><?php echo "Kode Proposal : ".$max_id_proposal ?></p><br /><br />
+
+       <?php echo form_open('pjk/input/tambah_proses',array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
        <?php echo validation_errors(); ?>
 
 
@@ -52,7 +60,8 @@
           </div>
         </div>
 
-        <!-- Jurusan -->
+
+<!-- Jurusan -->
         <div class="form-group">
           <label for="jurusan" class="col-sm-2 control-label">Jurusan</label>
           <div class="col-sm-6">
@@ -116,31 +125,34 @@
 
         <!-- RAB -->
         <div class="form-group">
-          <label for="rab" class="col-sm-2 control-label">RAB</label>
-          <div class="col-sm-10">
+          <label for="rab" class="col-sm-2 control-label">RAB</label>         
+
+            <button type="button" onclick="openInNewTab('insert_rab')">INPUT BARU</button>
+            
+          <div class="col-sm-2">
             <?php 
-           $data = array('name' => 'rab', 'id' => 'rab', 'class' => 'form-control', 'placeholder' => 'Masukkan RAB');
-           echo form_textarea($data); ?>
+           $data = array('name' => 'rab', 'id' => 'rab', 'class' => 'form-control', 'placeholder' => 'Masukkan RAB', 'value' => $max_id_proposal);
+           echo form_input($data); ?>
           </div>
         </div>
-
 
         <!-- Tempat -->
         <div class="form-group">
           <label for="tempat" class="col-sm-2 control-label">Tempat</label>
           <div class="col-sm-10">
             <?php 
-           $data = array('name' => 'tempat', 'id' => 'tempat', 'class' => 'form-control', 'placeholder' => 'Masukkan Tempat');
+           $data = array('name' => 'tempat', 'id' => 'tempat', 'class' => 'form-control', 'placeholder' => 'Masukkan Tempat','rows' => '2');
            echo form_textarea($data); ?>
           </div>
         </div>
+
 
         <!-- Tanggal Pelaksanaan -->
         <div class="form-group">
           <label for="tgl_pelaksanaan" class="col-sm-2 control-label">Tanggal Pelaksanaan</label>
           
           <div class="col-sm-10">
-          <input type="text" id="datepicker" name='tgl_pelaksanaan'>
+          <input type="text" id="datepicker" name='tgl_pelaksanaan' placeholder="   Masukkan Tanggal">
           </div>         
         </div>
 
@@ -182,9 +194,62 @@
     </div>
     
     <?php $this->view('template/js'); ?>
+
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header " >
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Input DATA RAB</h4>
+        </div>
+        <div class="modal-body">
+          <p>Data RAB</p>
+ <table class="table table-striped" id="myTable">
+    <thead>
+      <tr>
+        <th>Nama Barang</th>
+        <th>Harga</th>
+        <th>Jumlah</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php 
+    if(isset($rab)){
+      foreach ($rab as $row){
+      echo "<tr>";
+      echo "<td>".$row->barang."</td><td>".$row->harga."</td><td>".$row->jumlah."</td><td>".$row->total."</td>";
+      echo "</tr>";
+    }
+    }
+    
+    ?>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
 </body>
 </html>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript">
+    function openInNewTab(url) {
+    var id_prop = document.getElementById('rab').value;
+    var url_modi= url+'/index/'+id_prop;    
+    var win = window.open(url_modi, '_blank');
+    win.focus();
+}
+  </script>
