@@ -18,7 +18,7 @@ foreach($laporane as $laporan)
 { 
 ?>
           <h1 class="text-center text-info">Edit Laporan</h1> <br /><br />
-       <?php echo form_open_multipart('kaprodi_pte/input_laporan/update_proses/'.$laporan->id_laporan,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
+       <?php echo form_open_multipart('kaprodi_pkk/input_laporan/update_proses/'.$laporan->id_laporan,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
        <?php echo validation_errors(); ?>
 
 
