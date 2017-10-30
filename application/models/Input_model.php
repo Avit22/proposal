@@ -261,9 +261,11 @@ function tambah_revisi_laporan($data) {
 		$this->db->where('dekan_review',"DISETUJUI"); // disetujui juga oleh tu
 		$this->db->select('*,proposal.id_proposal as kode_proposal');
 		$this->db->from('proposal');
+		//$this->db->join('laporan','laporan.id_proposal=proposal.id_proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
 		$this->db->join('panjar_kerja','proposal.id_proposal = panjar_kerja.id_proposal','left outer');
 		$this->db->order_by('proposal.tgl_input desc');
+		//$this->db->group_by('proposal.id_proposal');
 		$query = $this->db->get();
 		return $query->result();
 	}
