@@ -28,8 +28,6 @@ class Spk extends CI_Controller {
 
 		$this->load->view('pjk/cetak_spk',$data);
 		
-	}
-
-	
+	}	
 	
 }

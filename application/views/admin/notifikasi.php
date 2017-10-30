@@ -25,8 +25,7 @@
               <th>Nama PJK</th>
               <th>Tanggal Terkirim</th>
               <th>Catatan Revisi</th>
-              <th>Korektor</th>
-              
+              <th>Korektor</th>              
            </tr>
             </thead> 
             <tbody>
@@ -38,7 +37,7 @@
                 
                 <td><a href="<?php echo base_url('admin/notifikasi/edit/');?><?php  echo '/'.$revisi->id_proposal; ?>"><?php echo $revisi->judul; ?></a></td>
                 <td><?php echo $revisi->nama_pjk; ?></td>
-                <td><?php echo $revisi->tgl_input; ?></td>
+                <td><?php echo $revisi->tgl_revisi; ?></td>
                 <td><?php echo $revisi->revisi1; ?></td>
                 <td><?php echo $revisi->tingkatan; ?></td>
                     
