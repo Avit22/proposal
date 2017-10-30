@@ -19,8 +19,8 @@ class Pk extends CI_Controller {
 
 	
 	public function index() {
-
-		if($query = $this->Input_model->get_data_pk()) {
+		$sessiondata = $this->session->userdata('id_user');
+		if($query = $this->Input_model->get_data_pk($sessiondata)) {
 			$data['proposale'] = $query;
 		}
 		else{

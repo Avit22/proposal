@@ -66,6 +66,8 @@
 
                       <li><a href="<?php echo site_url('kajur_te/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kajur_te/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kajur_te/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kajur_te/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -97,6 +99,8 @@
 
                       <li><a href="<?php echo site_url('kajur_tjp/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kajur_tjp/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kajur_tjp/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kajur_tjp/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -128,6 +132,8 @@
 
                       <li><a href="<?php echo site_url('kajur_tk/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kajur_tk/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kajur_tk/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kajur_tk/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -158,6 +164,8 @@
 
                       <li><a href="<?php echo site_url('kajur_tm/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kajur_tm/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kajur_tm/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kajur_tm/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -189,6 +197,8 @@
 
                       <li><a href="<?php echo site_url('kajur_ts/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kajur_ts/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kajur_ts/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kajur_ts/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -220,6 +230,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_boga/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_boga/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_boga/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_boga/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -251,6 +263,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_busana/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_busana/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_busana/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_busana/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -282,6 +296,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_kecantikan/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_kecantikan/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                       <li><a href="<?php echo site_url('kaprodi_kecantikan/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_kecantikan/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -313,6 +329,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_pkk/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_pkk/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_pkk/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_pkk/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -344,6 +362,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_ptb/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_ptb/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ptb/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ptb/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -375,6 +395,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_pte/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_pte/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_pte/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_pte/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -406,6 +428,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_ptik/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_ptik/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ptik/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ptik/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -437,6 +461,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_ptm/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_ptm/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ptm/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ptm/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -468,6 +494,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_pto/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_pto/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_pto/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_pto/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -499,6 +527,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_ta/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_ta/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ta/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ta/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -530,6 +560,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_te/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_te/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_te/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_te/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -561,6 +593,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_tm/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_tm/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_tm/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_tm/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -592,6 +626,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_ts/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_ts/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ts/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_ts/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 
@@ -622,6 +658,8 @@
 
                       <li><a href="<?php echo site_url('kaprodi_tk/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('kaprodi_tk/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_tk/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('kaprodi_tk/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 

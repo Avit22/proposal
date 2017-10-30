@@ -58,9 +58,9 @@
             <select name="pencairanke">
                <option selected value="Pertama">Pertama</option>
                <option value="kedua">Kedua</option>
-               <option value="Ketiga">ketiga</option>
+               <option value="Ketiga">Ketiga</option>
                <option value="Keempat">Keempat</option>
-               <option value="Kelima">kelima</option>
+               <option value="Kelima">Kelima</option>
             </select>
           </div>
         </div>

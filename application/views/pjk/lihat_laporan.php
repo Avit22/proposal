@@ -22,7 +22,6 @@
               <th>No.</th>
               <th>Judul Kegiatan</th>
               <th>Nama PJK</th>
-              <th>Kegiatan</th>
               <th>Anggaran/Biaya</th>
               <th>Tanggal Terkirim</th>              
               
@@ -38,7 +37,6 @@
                 <td><?php echo $i++; ?></td>
                 <td><a href="<?php echo base_url('pjk/laporan_terkirim/detail/');?><?php  echo '/'.$laporan->id_laporan; ?>"><?php echo $laporan->judul; ?></a></td>
                 <td><?php echo $laporan->nama_pjk; ?></td>
-                <td><?php echo $laporan->rincian_kegiatan; ?></td>
                 <td><?php echo rupiah2($laporan->rincian_biaya); ?></td>
                 <td><?php echo $laporan->tgl_input; ?></td>
                 

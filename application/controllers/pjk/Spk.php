@@ -19,8 +19,8 @@ class Spk extends CI_Controller {
 
 	
 	public function index() {
-
-		if($query = $this->Input_model->get_data_spk()) {
+		$sessiondata = $this->session->userdata('id_user');
+		if($query = $this->Input_model->get_data_spk($sessiondata)) {
 			$data['proposale'] = $query;
 		}
 		else
