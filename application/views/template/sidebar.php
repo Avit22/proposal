@@ -776,6 +776,8 @@
 
                       <li><a href="<?php echo site_url('admin/input_laporan'); ?>"><i class="fa fa-table"></i> Input Laporan Kegiatan </a></li>
                       <li><a href="<?php echo site_url('admin/laporan_terkirim'); ?>"><i class="fa fa-table"></i> Lihat Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('admin/notifikasi_laporan'); ?>"><i class="fa fa-table"></i> Revisi Laporan Kegiatan </a></li>
+                      <li><a href="<?php echo site_url('admin/status_laporan'); ?>"><i class="fa fa-table"></i> Status Laporan Kegiatan </a></li>
                       </ul>
                     </li>
 

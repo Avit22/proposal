@@ -87,6 +87,11 @@ function tambah_revisi_laporan($data) {
 		return;
 	}
 
+	function delete_rab($id_rab) {
+		$this->db->where('id',$id_rab);	
+		$this->db->delete('rab');	
+		return;
+	}
 
 	function tambah_rab_keu($data) {
 		$this->db->insert('rab_keu',$data);
@@ -310,7 +315,7 @@ function tambah_revisi_laporan($data) {
 		$this->db->from('revisi_laporan');
 		$this->db->where('revisi_laporan.id_pjk = "'.$id_user.'"');
 		$this->db->join('user','revisi_laporan.id_user = user.id_user');
-		$this->db->join('revisi_laporan','laporan.id_laporan = revisi_laporan.id_laporan');
+		$this->db->join('laporan','laporan.id_laporan = revisi_laporan.id_laporan');
 		$this->db->join('tingkatan','user.tingkatan = tingkatan.nama_tingkatan');
 		$this->db->order_by('revisi_laporan.tgl_revisi desc');
 		$query = $this->db->get();
