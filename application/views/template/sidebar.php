@@ -745,7 +745,7 @@
                     <li><a><i class="fa fa-clone"></i> Panjar Kerja <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
 
-                      <li><a href="<?php echo site_url('admin//pk'); ?>"><i class="fa fa-table"></i> Cetak Panjar Kerja </a></li>
+                      <li><a href="<?php echo site_url('admin/pk'); ?>"><i class="fa fa-table"></i> Cetak Panjar Kerja </a></li>
                       <li><a href="<?php echo site_url('admin/spk'); ?>"><i class="fa fa-table"></i> Cetak Sisa Panjar Kerja </a></li>
                       </ul>
                     </li>

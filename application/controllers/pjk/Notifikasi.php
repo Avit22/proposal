@@ -72,8 +72,7 @@ class Notifikasi extends CI_Controller {
 			$data['proposale'] = NULL;
 
 		$this->load->view('pjk/edit_proposal', $data);
-	}	
-
+	}
 	
 
 }

@@ -29,11 +29,10 @@
             <?php $i =1; if(!empty($proposale)) {
             foreach($proposale as $proposal) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">
-                <td><?php echo $i++; ?></td>
-                
+                <td><?php echo $i++; ?></td>                
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
-                <td><?php echo anchor("xxxxxxx",'<span class="glyphicon glyphicon-edit text-primary fa-lg" aria-hidden="true" title="Input Rekomendasi"></span>'); ?>   
+                <td><?php echo anchor("admin/detail_item/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-edit text-primary fa-lg" aria-hidden="true" title="Input Rekomendasi"></span>'); ?>   
                 </td>
                 
       

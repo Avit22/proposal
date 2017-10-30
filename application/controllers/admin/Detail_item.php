@@ -10,7 +10,7 @@ class Detail_item extends CI_Controller {
 
 	    	redirect('login', 'refresh');
 	   	}
-   		elseif($this->session->userdata('tingkatan') != "dekan" && $this->session->userdata('tingkatan') != "dekan") {
+   		elseif($this->session->userdata('tingkatan') != "admin" && $this->session->userdata('tingkatan') != "admin") {
 
    		redirect('login', 'refresh');
 	   	}
@@ -24,7 +24,7 @@ class Detail_item extends CI_Controller {
 		}
 		else
 			$data['laporane'] = NULL;
-		$this->load->view('dekan/detail_item', $data);
+		$this->load->view('admin/detail_item', $data);
 	}
 	
 	public function detail($id) {
@@ -35,7 +35,7 @@ class Detail_item extends CI_Controller {
 		else{
 			$data['rab'] = NULL;
 		}
-		$this->load->view('dekan/detail_item', $data);
+		$this->load->view('admin/detail_item', $data);
 	}
 
 }
