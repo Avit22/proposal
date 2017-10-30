@@ -137,8 +137,8 @@ class Input_laporan extends CI_Controller {
 			$data = array(				
 				'judul' => $this->input->post('judul'),
 				'nama_pjk' => $this->input->post('nama_pjk'),
-				'rincian_kegiatan' => $this->input->post('rincian_kegiatan'),
-				'rincian_biaya' => $this->input->post('rincian_biaya'),
+				//'rincian_kegiatan' => $this->input->post('rincian_kegiatan'),
+				'rincian_biaya' => $this->input->post('nominal'),
 				//'bukti_biaya' => $this->input->post('bukti_biaya'),
 				'tgl_input' => $tgl,
 				'file1' => $name_of_file,       // Returns: mypic.jpg,

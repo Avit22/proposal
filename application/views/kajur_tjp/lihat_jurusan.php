@@ -27,6 +27,8 @@
               <th>Jurusan</th>
               <th>Prodi</th>
               <th>View Proposal</th>
+              <th>Status</th>
+              <th>Keterangan</th>
            </tr>
             </thead> 
             <tbody>
@@ -42,7 +44,8 @@
                 <td><?php echo $proposal->nama_prodi; ?></td>
                 <td><?php echo anchor("kajur_tjp/detail_proposal/detail/$proposal->id_proposal",'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
-                
+                <td><?php echo $proposal->status_review; ?></td>
+                <td><?php echo $proposal->keterangan_review; ?></td>
             </tr>
             <?php } endforeach; } ?>
                   
