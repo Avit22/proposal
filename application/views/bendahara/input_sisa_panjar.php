@@ -67,7 +67,7 @@
 
         <!-- Pencaiiran -->
         <div class="form-group">
-          <label for="pencairan" class="col-sm-4 control-label">70 %</label>
+          <label for="pencairan" class="col-sm-4 control-label">30 %</label>
           <div class="col-sm-4">
             <?php 
            $data = array('name' => 'pencairan', 'id' => 'pencairan', 'class' => 'form-control', 'placeholder' => 'Masukkan Nominal Uang Yang Akan Dicairkan','rows' => '2');
