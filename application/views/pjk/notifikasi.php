@@ -25,8 +25,7 @@
               <th>Nama PJK</th>
               <th>Tanggal Revisi</th>
               <th>Catatan Revisi</th>
-              <th>Korektor</th>
-              
+              <th>Korektor</th>              
            </tr>
             </thead> 
             <tbody>
