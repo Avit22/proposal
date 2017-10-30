@@ -62,7 +62,7 @@ class Edit_proposal extends CI_Controller {
 		else
 			$data['proposale'] = NULL;
 
-		$this->load->view('kaprodi_boga/edit_proposal', $data);
+		$this->load->view('admin/edit_proposal', $data);
 	}	
 	
 	public function tambah_proses() {
