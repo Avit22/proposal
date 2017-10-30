@@ -34,8 +34,6 @@
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo anchor("admin/detail_item/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-edit text-primary fa-lg" aria-hidden="true" title="Input Rekomendasi"></span>'); ?>   
                 </td>
-                
-      
             </tr>
             <?php } endforeach; } ?>
                   

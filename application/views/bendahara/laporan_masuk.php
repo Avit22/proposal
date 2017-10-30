@@ -37,7 +37,7 @@
                 <td><?php echo $laporan->judul; ?></td>
                 <td><?php echo $laporan->nama_pjk; ?></td>
                 <td><?php echo $laporan->tgl_input; ?></td>
-                <td><?php echo anchor("bendahara/laporan_terkirim/detail/$laporan->id_laporan",'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Laporan"></span>'); ?>   
+                <td><?php echo '<a href="'.base_url('assets/image/').'/'.$laporan->file1.'"><span class="glyphicon glyphicon-book text-primary fa-lg" aria-hidden="true" title="View Proposal"></span></a>'; ?>   
                 </td>
                 <td><?php echo anchor("bendahara/laporan_terkirim/revisi/$laporan->id_laporan",'<span class="glyphicon glyphicon-tags text-primary fa-lg" aria-hidden="true" title="View Laporan"></span>'); ?>   
                 </td>
