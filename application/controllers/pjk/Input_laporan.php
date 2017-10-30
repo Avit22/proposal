@@ -59,8 +59,7 @@ class Input_laporan extends CI_Controller {
 	$this->form_validation->set_message('required', '%s Harus Diisi.');
 	$this->form_validation->set_rules('judul', 'Judul', 'required');
 	$this->form_validation->set_rules('nama_pjk', 'Nama PJK', 'required');
-	$this->form_validation->set_rules('rincian_kegiatan', 'Rincian Kegiatan', 'required');
-	$this->form_validation->set_rules('rincian_biaya', 'Rincian Biaya', 'required');
+	$this->form_validation->set_rules('nominal', 'Nominal', 'required');
 	//$this->form_validation->set_rules('bukti_biaya', 'Bukti Biaya', 'required');
 	$name_of_file = "empty.jpg";
 				$config['upload_path']          = 'assets/image/';
@@ -84,28 +83,7 @@ class Input_laporan extends CI_Controller {
                         //$this->load->view('upload_success', $data);
                 }
                 
-    $name_of_file1 = "empty.jpg";
-				$config['upload_path']          = 'assets/image/';
-                $config['allowed_types']        = 'gif|jpg|jpeg|png|pdf|doc|docx';
-                $config['max_size']             = 10000;
-                $config['max_width']            = 4086;
-                $config['max_height']           = 2048;
-                $this->upload->initialize($config);
-                $this->load->library('upload', $config);
-
-                if ( ! $this->upload->do_upload('filename1'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        $this->load->view('pjk/input_laporan', $error);
-                }
-                else
-                {
-                        $datas = $this->upload->data();
-                        $name_of_file1 = $datas['file_name'];
-                        //$this->load->view('upload_success', $data);
-                }
-
+    
 		if ($this->form_validation->run() == FALSE) {
 			$this->index();
 		}
@@ -115,12 +93,10 @@ class Input_laporan extends CI_Controller {
 			$data = array(				
 				'judul' => $this->input->post('judul'),
 				'nama_pjk' => $this->input->post('nama_pjk'),
-				'rincian_kegiatan' => $this->input->post('rincian_kegiatan'),
-				'rincian_biaya' => $this->input->post('rincian_biaya'),
+				'rincian_biaya' => $this->input->post('nominal'),
 				//'bukti_biaya' => $this->input->post('bukti_biaya'),
 				'tgl_input' => $tgl,
 				'file1' => $name_of_file,       // Returns: mypic.jpg,
-				'file2' => $name_of_file1,       // Returns: mypic.jpg,
 				'id_user' => $id_user_session,
 				'id_proposal'=>$this->input->post('id_proposalnya'),
 				);	
@@ -137,8 +113,7 @@ class Input_laporan extends CI_Controller {
 	$this->form_validation->set_message('required', '%s Harus Diisi.');
 	$this->form_validation->set_rules('judul', 'Judul', 'required');
 	$this->form_validation->set_rules('nama_pjk', 'Nama PJK', 'required');
-	$this->form_validation->set_rules('rincian_kegiatan', 'Rincian Kegiatan', 'required');
-	$this->form_validation->set_rules('rincian_biaya', 'Rincian Biaya', 'required');
+	$this->form_validation->set_rules('nominal', 'Nominal', 'required');
 	//$this->form_validation->set_rules('bukti_biaya', 'Bukti Biaya', 'required');
 	$name_of_file = "empty.jpg";
 				$config['upload_path']          = 'assets/image/';
@@ -162,27 +137,7 @@ class Input_laporan extends CI_Controller {
                         //$this->load->view('upload_success', $data);
                 }
                 
-    $name_of_file1 = "empty.jpg";
-				$config['upload_path']          = 'assets/image/';
-                $config['allowed_types']        = 'gif|jpg|jpeg|png|pdf|doc|docx';
-                $config['max_size']             = 10000;
-                $config['max_width']            = 4086;
-                $config['max_height']           = 2048;
-                $this->upload->initialize($config);
-                $this->load->library('upload', $config);
-
-                if ( ! $this->upload->do_upload('filename1'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        $this->load->view('pjk/input_laporan', $error);
-                }
-                else
-                {
-                        $datas = $this->upload->data();
-                        $name_of_file1 = $datas['file_name'];
-                        //$this->load->view('upload_success', $data);
-                }
+    
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->index();
@@ -198,7 +153,7 @@ class Input_laporan extends CI_Controller {
 				//'bukti_biaya' => $this->input->post('bukti_biaya'),
 				'tgl_input' => $tgl,
 				'file1' => $name_of_file,       // Returns: mypic.jpg,
-				'file2' => $name_of_file1,       // Returns: mypic.jpg,
+				
 				'id_user' => $id_user_session,
 				'id_proposal'=>$this->input->post('id_proposalnya'),
 				'revisi'=>$this->input->post('catatan_revisi'),

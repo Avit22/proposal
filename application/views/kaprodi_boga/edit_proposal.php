@@ -35,7 +35,7 @@ foreach($proposale as $proposal)
        <?php echo validation_errors(); ?>
 
 
-       	<!-- Jenis Proposal -->
+        <!-- Jenis Proposal -->
         <div class="form-group">
           <label for="jenis" class="col-sm-2 control-label">Jenis Proposal</label>
           <div class="col-sm-6">
@@ -107,9 +107,6 @@ foreach($proposale as $proposal)
             </select>
           </div>
         </div>
-
-
-
         
         <!-- Judul -->
         <div class="form-group">
@@ -143,15 +140,22 @@ foreach($proposale as $proposal)
 
         <!-- RAB -->
         <div class="form-group">
-          <label for="rab" class="col-sm-2 control-label">RAB</label>
-          <div class="col-sm-10">
+          <label for="rab" class="col-sm-2 control-label">RAB</label>         
+
+
+            <button type="button" onclick="openInNewTab('http://localhost/proposal/kaprodi_boga/insert_rab')">EDIT RAB</button>
+
+            
+
+            
+          <div class="col-sm-2">
             <?php 
-           $data = array('name' => 'rab', 'id' => 'rab', 'class' => 'form-control', 'placeholder' => 'Masukkan RAB','value'=>$proposal->rab);
-           echo form_textarea($data); ?>
+           $data = array('name' => 'rab', 'id' => 'rab', 'class' => 'form-control', 'placeholder' => 'Masukkan RAB', 'value' => $proposal->id_proposal);
+           echo form_input($data); ?>
           </div>
         </div>
 
-       <!-- Tanggal Pelaksanaan -->
+        <!-- Tanggal Pelaksanaan -->
         <div class="form-group">
           <label for="tgl_pelaksanaan" class="col-sm-2 control-label">Tanggal Pelaksanaan</label>
           
@@ -190,6 +194,7 @@ foreach($proposale as $proposal)
           </div>
         </div>
 
+
         <p style="color:red;"><strong>DI ISI BILA MELAKUKAN REVISI PROPOSAL UNTUK CATATAN KOREKTOR</strong></p>
 
         <!-- Catatan Revisi -->
@@ -227,3 +232,11 @@ foreach($proposale as $proposal)
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript">
+    function openInNewTab(url) {
+    var id_prop = document.getElementById('rab').value;
+    var url_modi= url+'/index/'+id_prop;    
+    var win = window.open(url_modi, '_blank');
+    win.focus();
+}
+  </script>

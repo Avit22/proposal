@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -24,7 +24,8 @@
         <!-- page content -->
         <div class="right_col" role="main">
 
-        <?php 
+
+         <?php 
 foreach($proposale as $proposal)
 { 
 ?>
@@ -33,8 +34,8 @@ foreach($proposale as $proposal)
        <?php echo form_open('kaprodi_ptm/input/update_proses/'.$proposal->id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
        <?php echo validation_errors(); ?>
 
- 
-       	<!-- Jenis Proposal -->
+
+        <!-- Jenis Proposal -->
         <div class="form-group">
           <label for="jenis" class="col-sm-2 control-label">Jenis Proposal</label>
           <div class="col-sm-6">
@@ -88,7 +89,7 @@ foreach($proposale as $proposal)
 
 <!-- Prodi -->
         <div class="form-group">
-          <label for="prodi" class="col-sm-2 control-label">JProgram Studi</label>
+          <label for="prodi" class="col-sm-2 control-label">Program Studi</label>
           <div class="col-sm-6">
           <select class="form-control" name="prodi">
             <option value="">--- Pilih Program Studi ---</option>
@@ -106,9 +107,6 @@ foreach($proposale as $proposal)
             </select>
           </div>
         </div>
-
-
-
         
         <!-- Judul -->
         <div class="form-group">
@@ -142,11 +140,18 @@ foreach($proposale as $proposal)
 
         <!-- RAB -->
         <div class="form-group">
-          <label for="rab" class="col-sm-2 control-label">RAB</label>
-          <div class="col-sm-10">
+          <label for="rab" class="col-sm-2 control-label">RAB</label>         
+
+
+            <button type="button" onclick="openInNewTab('http://localhost/proposal/kaprodi_ptm/insert_rab')">EDIT RAB</button>
+
+            
+
+            
+          <div class="col-sm-2">
             <?php 
-           $data = array('name' => 'rab', 'id' => 'rab', 'class' => 'form-control', 'placeholder' => 'Masukkan RAB','value'=>$proposal->rab);
-           echo form_textarea($data); ?>
+           $data = array('name' => 'rab', 'id' => 'rab', 'class' => 'form-control', 'placeholder' => 'Masukkan RAB', 'value' => $proposal->id_proposal);
+           echo form_input($data); ?>
           </div>
         </div>
 
@@ -158,7 +163,7 @@ foreach($proposale as $proposal)
           <input type="text" id="datepicker" name='tgl_pelaksanaan' placeholder="   Masukkan Tanggal" value = "<?php echo $proposal->tgl_pelaksanaan; ?>">
           </div>         
         </div>
-
+        
         <!-- Tempat -->
         <div class="form-group">
           <label for="tempat" class="col-sm-2 control-label">Tempat Pelaksanaan</label>
@@ -179,7 +184,6 @@ foreach($proposale as $proposal)
           </div>
         </div>
 
-
         <!-- Penutup -->
         <div class="form-group">
           <label for="penutup" class="col-sm-2 control-label">Penutup</label>
@@ -189,6 +193,7 @@ foreach($proposale as $proposal)
           echo form_textarea($data); ?>
           </div>
         </div>
+
 
         <p style="color:red;"><strong>DI ISI BILA MELAKUKAN REVISI PROPOSAL UNTUK CATATAN KOREKTOR</strong></p>
 
@@ -227,3 +232,11 @@ foreach($proposale as $proposal)
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript">
+    function openInNewTab(url) {
+    var id_prop = document.getElementById('rab').value;
+    var url_modi= url+'/index/'+id_prop;    
+    var win = window.open(url_modi, '_blank');
+    win.focus();
+}
+  </script>

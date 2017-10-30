@@ -15,7 +15,7 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="text-center" style="font-size:30px;"> Cetak Sisa Panjar Kerja </div><br />
+          <div class="text-center" style="font-size:30px;"> Cetak Panjar Kerja </div><br />
           <table id="example" class="table table-bordered table-striped header-fixed ">
             <thead>
             <tr>
@@ -24,21 +24,20 @@
               <th>Nama PJK</th>
               <th>Tanggal</th>
               <th>Status</th>
-              <th>Cetak Sisa Panjar Kerja</th>
+              <th>Cetak Panjar Kerja</th>
            </tr>
             </thead>
             <tbody>
             <?php $i =1; if(!empty($proposale)) {
             foreach($proposale as $proposal) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">
-               <td><?php echo $i++; ?></td>
-                
+               <td><?php echo $i++; ?></td>                
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo $proposal->tgl_input; ?></td>
-                <td><?php echo anchor("xxxxxxxxxxx",'<span class="glyphicon glyphicon-print text-primary fa-lg" aria-hidden="true" title="Cetak Panjar Kerja"></span>'); ?>   
-                </td>
-      
+                <td><?php echo $proposal->dekan_review; ?></td>
+                <td><?php echo anchor(base_url()."kaprodi_pto/spk_print/index/".$proposal->id_proposal.'/Kedua','<span class="glyphicon glyphicon-print text-primary fa-lg" aria-hidden="true" title="Cetak Panjar Kerja"></span>'); ?>   
+                </td>      
             </tr>
             <?php } endforeach; } ?>
                   

@@ -22,26 +22,26 @@
               <th>No.</th>
               <th>Judul Kegiatan</th>
               <th>Nama PJK</th>
-              <th>Tanggal Terkirim</th>
-              <th>File 1</th>
-              <th>File 2</th>
-              <th>Status</th>
+              <th>Kegiatan</th>
+              <th>Anggaran/Biaya</th>
+              <th>Tanggal Terkirim</th>              
+              
            </tr>
             </thead>
             <tbody>
+            <?php 
+            $this->load->helper('fungsidate');
+            ?>
             <?php $i =1; if(!empty($laporane)) {
             foreach($laporane as $laporan) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">
                 <td><?php echo $i++; ?></td>
                 <td><a href="<?php echo base_url('kaprodi_busana/laporan_terkirim/detail/');?><?php  echo '/'.$laporan->id_laporan; ?>"><?php echo $laporan->judul; ?></a></td>
                 <td><?php echo $laporan->nama_pjk; ?></td>
+                <td><?php echo $laporan->rincian_kegiatan; ?></td>
+                <td><?php echo rupiah2($laporan->rincian_biaya); ?></td>
                 <td><?php echo $laporan->tgl_input; ?></td>
-                <td><a href="<?php echo base_url('assets/image/');?><?php  echo '/'.$laporan->file1; ?>"><?php echo $laporan->file1; ?></a>
-                </td>
-                <td><a href="<?php echo base_url('assets/image/');?><?php  echo '/'.$laporan->file2; ?>"><?php echo $laporan->file2; ?></a>
-                </td>
-                <th>"-"</th>
-      
+                
             </tr>
             <?php } endforeach; } ?>
                   

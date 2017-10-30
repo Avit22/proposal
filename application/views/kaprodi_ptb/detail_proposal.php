@@ -54,15 +54,17 @@
               echo '<tr><td>TANGGAL PELAKSANAAN</td><td>'.$proposal->tgl_pelaksanaan.'</td></tr>'; 
               echo '<tr><td>TEMPAT PELAKSANAAN</td><td>'.$proposal->tempat.'</td></tr>'; 
               echo '<tr><td>PENUTUP</td><td>'.$proposal->penutup.'</td></tr>'; 
-              echo "<a href='".base_url('pjk/insert_rab/').'/index/'.$proposal->id_proposal."'>INSERT RAB</a>";
+              echo "<a href='".base_url('kaprodi_ptb/insert_rab/').'/index/'.$proposal->id_proposal."'>INSERT RAB</a>";
              } endforeach;         
           }
           echo '     
     </tbody>
   </table>
 </div>';
-          ?>
-         
+        ?> <?php foreach($proposale as $proposal){ ?>
+        <a href="<?php echo base_url('kaprodi_ptb/proposal_print/index').'/'?><?php echo $proposal->id_proposal ?>"><button type="buttton" class="btn btn-success">PRINT</button> </a>
+
+        <?php } ?>
         </div>
 
         <!-- /page content -->

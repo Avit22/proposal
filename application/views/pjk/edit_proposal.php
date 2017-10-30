@@ -145,7 +145,7 @@ foreach($proposale as $proposal)
 
             <button type="button" onclick="openInNewTab('http://localhost/proposal/pjk/insert_rab')">EDIT RAB</button>
 
-            <button type="button" onclick="openInNewTab('http://localhost/proposal/pjk/insert_rab')">edit rab</button>
+            
 
             
           <div class="col-sm-2">

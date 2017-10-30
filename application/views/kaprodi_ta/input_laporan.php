@@ -23,7 +23,7 @@ foreach($proposale as $proposal)
 { 
 ?>
         
-
+<input type="hidden" name="id_proposalnya" value="<?php echo $proposal->id_proposal; ?>">
 
 <!-- Judul -->
         <div class="form-group">
@@ -46,29 +46,21 @@ foreach($proposale as $proposal)
         </div>
 
            
-        <!-- Rincian Kegiatan -->
-        <div class="form-group">
-          <label for="rincian_kegiatan" class="col-sm-2 control-label">Rincian Kegiatan</label>
-          <div class="col-sm-10">
-            <?php 
-           $data = array('name' => 'rincian_kegiatan', 'id' => 'rincian_kegiatan', 'class' => 'form-control', 'placeholder' => 'Masukkan Rincian Kegiatan');
-           echo form_textarea($data); ?>
-          </div>
-        </div>
+        
 
-        <!-- Rincian Biaya -->
+        <!-- Penggunaan Dana -->
         <div class="form-group">
-          <label for="rincian_biaya" class="col-sm-2 control-label">Rincian Biaya</label>
+          <label for="nominal" class="col-sm-2 control-label">Penggunaan Dana</label>
           <div class="col-sm-10">
             <?php 
-           $data = array('name' => 'rincian_biaya', 'id' => 'rincian_biaya', 'class' => 'form-control', 'placeholder' => 'Masukkan Rincian Biaya');
-           echo form_textarea($data); ?>
+           $data = array('name' => 'nominal', 'id' => 'nominal', 'class' => 'form-control',  'placeholder' => 'Masukkan Penggunaan Dana');
+          echo form_input($data); ?>
           </div>
         </div>
 
          <!-- file upload-->
         <div class="form-group">
-        <label for="image" class="col-sm-2 control-label">Dokumentasi</label>
+        <label for="image" class="col-sm-2 control-label">Upload Laporan Kegiatan</label>
         <div class="col-sm-10">
                 <div class="row">
                     <div class="col-md-12">
@@ -77,14 +69,9 @@ foreach($proposale as $proposal)
                     </div>
                 </div>
             </div>
-        <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-md-12">
-                        <input type="file" name="filename1" size="60" />
-                        <span class="text-danger"><?php if (isset($error)) { echo $error; } ?></span>
-                    </div>
-                </div>
             </div>
+
+      
 
         
 
