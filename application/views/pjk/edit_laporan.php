@@ -23,7 +23,7 @@ foreach($laporane as $laporan)
 
 
         
-<input type="hidden" name="id_proposalnya" value="<?php echo $laporan->id_laporan; ?>">
+<input type="hidden" name="id_proposalnya" value="<?php echo $laporan->id_proposal; ?>">
 
 <!-- Judul -->
         <div class="form-group">
@@ -53,7 +53,7 @@ foreach($laporane as $laporan)
           <label for="nominal" class="col-sm-2 control-label">Penggunaan Dana</label>
           <div class="col-sm-10">
             <?php 
-           $data = array('name' => 'nominal', 'id' => 'nominal', 'class' => 'form-control',  'placeholder' => 'Masukkan Penggunaan Dana');
+           $data = array('name' => 'nominal', 'id' => 'nominal', 'class' => 'form-control',  'placeholder' => 'Masukkan Penggunaan Dana','value'=>$laporan->rincian_biaya);
           echo form_input($data); ?>
           </div>
         </div>

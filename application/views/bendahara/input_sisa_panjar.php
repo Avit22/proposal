@@ -122,7 +122,7 @@
           <label for="tujuanbayar" class="col-sm-4 control-label">UNTUK PEMBAYARAN</label>
           <div class="col-sm-4">
             <?php 
-           $data = array('name' => 'tujuanbayar', 'id' => 'tujuanbayar', 'class' => 'form-control', 'placeholder' => 'Masukkan Tujuan Pembayaran','rows' => '2');
+           $data = array('name' => 'tujuanbayar', 'id' => 'tujuanbayar', 'class' => 'form-control', 'placeholder' => 'Masukkan Tujuan Pembayaran','rows' => '2','value'=>$row->judul);
            echo form_input($data); ?>
           </div>
         </div>

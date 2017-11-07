@@ -15,6 +15,7 @@
         <div class="right_col" role="main">
           
           <h1 class="text-center text-info">PENGESAHAN VALIDASI PROPOSAL</h1> <br /><br />
+          
  <?php 
 foreach($proposale as $proposal) { ?> 
 <?php echo form_open('kabag_akun/revisi/update_review/'.$proposal->id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
@@ -86,9 +87,9 @@ foreach($proposale as $proposal) { ?>
           </div>
         </div>
 
-        <!-- Tujuan -->
+        <!-- Dasar Hukum -->
         <div class="form-group">
-          <label for="dasar_hukum" class="col-sm-2 control-label">Tujuan</label>
+          <label for="dasar_hukum" class="col-sm-2 control-label">Dasar HUkum</label>
           <div class="col-sm-10">
             <?php 
            $data = array('name' => 'dasar_hukum', 'id' => 'dasar_hukum', 'class' => 'form-control', 'readonly'=>'true', 'placeholder' => 'Masukkan Tujuan','value'=>$proposal->dasar_hukum);
@@ -96,7 +97,7 @@ foreach($proposale as $proposal) { ?>
           </div>
         </div>
 
-       <!-- RAB -->
+        <!-- RAB -->
         <div class="form-group">
           <label for="rab" class="col-sm-2 control-label">RAB</label>
           <div class="col-sm-10">
@@ -105,6 +106,7 @@ foreach($proposale as $proposal) { ?>
            echo form_textarea($data); ?>
           </div>
         </div>
+       
 
         <!-- Tempat -->
         <div class="form-group">

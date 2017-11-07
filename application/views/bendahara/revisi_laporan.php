@@ -39,7 +39,7 @@
                 <td><?php echo $revisi_laporan->tgl_revisi; ?></td>
                 <td><?php echo $revisi_laporan->catatan_revisi; ?></td>
                 <td><?php echo $revisi_laporan->revisi; ?></td>
-                <td><?php echo anchor("bendahara/laporan_terkirim/detail/".$revisi_laporan->id_laporan,'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
+                <td><?php echo '<a href="'.base_url('assets/image/').'/'.$revisi_laporan->file1.'"><span class="glyphicon glyphicon-book text-primary fa-lg" aria-hidden="true" title="View Proposal"></span></a>'; ?>   
                 </td>
                     
             </tr>

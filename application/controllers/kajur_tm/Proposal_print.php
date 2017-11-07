@@ -25,7 +25,7 @@ class Proposal_print extends CI_Controller {
     $this->load->model('Input_model');
     $this->load->helper('fungsidate'); //kita load helper yang kita buat cukup    
     $data= NULL;
-    if($query = $this->Input_model->get_data_pk($id_proposal)) {
+    if($query = $this->Input_model->get_data_pk_print($id_proposal)) {
             $data['proposale'] = $query;
         }
         else{
@@ -37,7 +37,12 @@ class Proposal_print extends CI_Controller {
         else{
             $data['rabnya'] = NULL;                
         }
-   
+   if($query = $this->Input_model->get_total_rab($id_proposal)) {
+            $data['totalrab'] = $query;
+        }
+        else{
+            $data['totalrab'] = NULL;
+        }
   
     // create new PDF document
     $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);    
@@ -105,6 +110,10 @@ $pdf->setPrintFooter(false);
     //$nominal_70 = (70/100)* $nominal;
     //$sisa = $nominal - $nominal_70;
     $this->load->helper('fungsidate');
+    $total;
+    foreach ($data['totalrab'] as $row) {
+        $total = $row->total_rab;
+    }
 
     foreach ($data['proposale'] as $proposal) { 
     $html = '
@@ -114,8 +123,9 @@ $pdf->setPrintFooter(false);
     <p align="justify">'.$proposal->pendahuluan.'</p><br />
     <strong>B. Dasar Hukum</strong>
     <p align="justify">'.$proposal->dasar_hukum.'</p><br />
-    <strong>C. Tempat</strong>
-    <p align="justify">'.$proposal->tempat.' '.$proposal->tgl_pelaksanaan.'</p><br />
+    <strong>C. Tempat dan Tanggal Pelaksanaan</strong>
+    <p align="justify">Tempat :'.$proposal->tempat.'</p><br />
+    Tanggal :'.$proposal->tgl_pelaksanaan.'<br />
     <br />
     <strong>D. Keluaran</strong>
     <p align="justify">'.$proposal->keluaran.'</p><br />
@@ -144,14 +154,18 @@ $pdf->setPrintFooter(false);
     <h2><p align="center">Lampiran Rencana Anggaran Belanja</p></h2>
     <table border="1" align="center"><tr><td>Nama Barang</td><td>Harga Barang</td><td>Jumlah</td><td>Harga</td></tr></table>';
     // Print text using writeHTMLCell()
-    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);  
-
+    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true); 
     foreach ($data['rabnya'] as $rab) { 
     $html = '    
     <table border="1"><tr><td> '.$rab->barang.'</td><td> '.rupiah3($rab->harga).'</td><td> '.$rab->jumlah.'</td><td> '.rupiah3($rab->total).'</td></tr></table>';
     // Print text using writeHTMLCell()
-    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);  
+    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
   }
+
+  $html = '    
+    <table border="1"><tr><td colspan="3"><p align="RIGHT">TOTAL</p></td><td> '.rupiah3($total).'</td></tr></table>';
+    // Print text using writeHTMLCell()
+    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true); 
 
   
     

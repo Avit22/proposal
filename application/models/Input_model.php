@@ -128,6 +128,17 @@ function tambah_revisi_laporan($data) {
 		return $query->result();
 	}
 
+	function get_data_pk_print($id_proposal) {
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		//$this->db->where('dekan_review is not null');
+		$this->db->where('proposal.id_proposal = "'.$id_proposal.'"');
+		$this->db->order_by('tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	function get_data_pk_2($id,$pencairan) {
 		$this->db->select('*');
 		$this->db->from('proposal');
@@ -777,8 +788,9 @@ function get_data_by_idlaporan($id_laporan) {
 	}	
 
 public function get_all_rab_id_proposal($id_prop){
-	$this->db->where('id_proposal',$id_prop);
+	$this->db->select('*');
 	$this->db->from('rab');
+	$this->db->where('id_proposal',$id_prop);
 	$query = $this->db->get();
 	return $query->result();
 }

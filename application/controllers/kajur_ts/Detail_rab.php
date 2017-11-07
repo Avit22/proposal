@@ -43,7 +43,18 @@ class Detail_rab extends CI_Controller {
 		else{
 			$data['rab_keu'] = NULL;
 		}
-
+		if($query = $this->Input_model->get_total_rab($id)) {
+			$data['totalrab'] = $query;
+		}
+		else{
+			$data['totalrab'] = NULL;
+		}
+		if($query = $this->Input_model->get_total_rab_keu($id)) {
+			$data['totalrab_keu'] = $query;
+		}
+		else{
+			$data['totalrab_keu'] = NULL;
+		}
 		$this->load->view('kajur_ts/detail_rab', $data);
 	}
 

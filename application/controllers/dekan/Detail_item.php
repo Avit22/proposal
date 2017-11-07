@@ -35,6 +35,13 @@ class Detail_item extends CI_Controller {
 		else{
 			$data['rab'] = NULL;
 		}
+		if($query = $this->Input_model->get_total_item($id)) {
+			$data['totalitem'] = $query;
+		}
+		else{
+			$data['totalitem'] = NULL;
+		}
+
 		$this->load->view('dekan/detail_item', $data);
 	}
 
