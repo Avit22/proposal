@@ -30,8 +30,7 @@ class Spk_print extends CI_Controller {
         }
         else{
             $data['proposale'] = NULL;
-    }
-   
+    }   
   
     // create new PDF document
     $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);    
@@ -92,7 +91,11 @@ $pdf->setPrintFooter(false);
     // set text shadow effect
     //$pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));    
   
-    
+    if($data['proposale']==null){
+        $html = '
+    <h3>SISA PANJAR KERJA MASIH KOSONG</h3>';
+
+    }else {
 
     foreach ($data['proposale'] as $proposal) { 
     // Set some content to print
@@ -119,7 +122,7 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="50%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="30%">Semarang,'.tgl_indo($proposal->tgl_input).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
+    <table><tr><td align="left" width="50%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="30%">Semarang,'.tgl_indo($proposal->tgl_input).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP/NIM.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
     </table>
 
     <br /><br />
@@ -142,10 +145,10 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="50%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="30%">Semarang,'.tgl_indo($proposal->tgl_input).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
+    <table><tr><td align="left" width="50%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="30%">Semarang,'.tgl_indo($proposal->tgl_input).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP/NIM.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
     </table>
 
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <h3>SISA PANJAR KERJA</h3>
     <table border="1"><tr><td align="center" width="60%"><strong>KEMENTRIAN RISET, TEKNOLOGI DAN PENDIDIKAN TINGGI<br /> BADAN LAYANAN UMUM <br /> UNIVERSITAS NEGERI SEMARANG</strong></td><td align="CENTER" width="20%">PANJAR KERJA <br /> <br /> <strong>BSPJ-PK-UP</strong></td><td align="center" width="20%">Lembar ke <br /> <br /> <strong>3</strong></td></tr>    
     </table>
@@ -165,10 +168,11 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="50%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="30%">Semarang,'.tgl_indo($proposal->tgl_input).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
+    <table><tr><td align="left" width="50%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="30%">Semarang,'.tgl_indo($proposal->tgl_input).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP/NIM.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
     </table>
     ';
   }
+}
     // Print text using writeHTMLCell()
     $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);   
   
@@ -176,7 +180,7 @@ $pdf->setPrintFooter(false);
   
     // Close and output PDF document
     // This method has several options, check the source code documentation for more information.
-    $pdf->Output('example_001.pdf', 'I');    
+    $pdf->Output('Sisa Panjar Kerja.pdf', 'I');    
   
     //============================================================+
     // END OF FILE

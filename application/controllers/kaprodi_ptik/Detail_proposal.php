@@ -38,7 +38,12 @@ class Detail_proposal extends CI_Controller {
 		else{
 			$data['rab'] = NULL;
 		}
-
+		if($query = $this->Input_model->get_total_rab($id)) {
+			$data['totalrab'] = $query;
+		}
+		else{
+			$data['totalrab'] = NULL;
+		}
 		$this->load->view('kaprodi_ptik/detail_proposal', $data);
 	}
 

@@ -92,7 +92,11 @@ $pdf->setPrintFooter(false);
     // set text shadow effect
     //$pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));    
   
-    
+    if($data['proposale']==null){
+        $html = '
+    <h3>SISA PANJAR KERJA MASIH KOSONG</h3>';
+
+    }else {
 
     foreach ($data['proposale'] as $proposal) { 
     // Set some content to print
@@ -114,9 +118,12 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td></tr>
+    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="40%">Semarang,'.tgl_indo($proposal->tgl_validasi).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP/NIM.</td></tr>
     </table>
-    <br />
+    <br /><br /><br />
+    
+    ===============================potong disini===============================<br /><br />
+    
     <h3>PANJAR KERJA</h3>
     <table border="1"><tr><td align="center" width="60%"><strong>KEMENTRIAN RISET, TEKNOLOGI DAN PENDIDIKAN TINGGI<br /> BADAN LAYANAN UMUM <br /> UNIVERSITAS NEGERI SEMARANG</strong></td><td align="CENTER" width="20%">PANJAR KERJA <br /> <br /> <strong>BSPJ-PK-UP</strong></td><td align="center" width="20%">Lembar ke <br /> <br /> <strong>2</strong></td></tr>
     </table>
@@ -131,7 +138,7 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td></tr>
+    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="40%">Semarang,'.tgl_indo($proposal->tgl_validasi).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP/NIM.</td></tr>
     </table>
     <br /> <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
@@ -149,9 +156,10 @@ $pdf->setPrintFooter(false);
     </table>
     <br />
     <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="20%">Semarang,'.$proposal->tgl_validasi.' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP.</td></tr>
+    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="40%">Semarang,'.tgl_indo($proposal->tgl_validasi).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP/NIM.</td></tr>
     </table>
     ';
+  }
   }
     // Print text using writeHTMLCell()
     $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);   

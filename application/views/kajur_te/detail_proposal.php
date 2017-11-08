@@ -45,6 +45,11 @@
       echo "</tr>";
     }
     }
+     if(isset($totalrab)){
+      foreach ($totalrab as $row){
+        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row->total_rab.'</strong></td></tr>';
+      }
+    }
     echo '
     </tbody>
   </table>';

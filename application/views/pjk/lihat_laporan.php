@@ -24,7 +24,7 @@
               <th>Nama PJK</th>
               <th>Anggaran/Biaya</th>
               <th>Tanggal Terkirim</th>              
-              
+              <th>Laporan Kegiatan</th>
            </tr>
             </thead>
             <tbody>
@@ -35,11 +35,12 @@
             foreach($laporane as $laporan) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">
                 <td><?php echo $i++; ?></td>
-                <td><a href="<?php echo base_url('pjk/laporan_terkirim/detail/');?><?php  echo '/'.$laporan->id_laporan; ?>"><?php echo $laporan->judul; ?></a></td>
+               <td><?php echo $laporan->judul; ?></td>
                 <td><?php echo $laporan->nama_pjk; ?></td>
                 <td><?php echo rupiah2($laporan->rincian_biaya); ?></td>
                 <td><?php echo $laporan->tgl_input; ?></td>
-                
+                <td><?php echo '<a href="'.base_url('assets/image/').'/'.$laporan->file1.'"><span class="glyphicon glyphicon-book text-primary fa-lg" aria-hidden="true" title="View Proposal"></span></a>'; ?>   
+                </td>
             </tr>
             <?php } endforeach; } ?>
                   

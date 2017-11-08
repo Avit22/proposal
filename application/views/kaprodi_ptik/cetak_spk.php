@@ -15,7 +15,7 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="text-center" style="font-size:30px;"> Cetak Panjar Kerja </div><br />
+          <div class="text-center" style="font-size:30px;"> Cetak Sisa Panjar Kerja </div><br />
           <table id="example" class="table table-bordered table-striped header-fixed ">
             <thead>
             <tr>

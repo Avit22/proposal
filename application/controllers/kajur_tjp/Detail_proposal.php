@@ -26,6 +26,8 @@ class Detail_proposal extends CI_Controller {
 			$data['laporane'] = NULL;
 		$this->load->view('kajur_tjp/detail_proposal', $data);
 	}
+
+	
 	public function detail($id) {		
 		if($query = $this->Input_model->get_data_by_idproposal($id)) {
 			$data['proposale'] = $query;
@@ -38,7 +40,12 @@ class Detail_proposal extends CI_Controller {
 		else{
 			$data['rab'] = NULL;
 		}
-
+		if($query = $this->Input_model->get_total_rab($id)) {
+			$data['totalrab'] = $query;
+		}
+		else{
+			$data['totalrab'] = NULL;
+		}
 		$this->load->view('kajur_tjp/detail_proposal', $data);
 	}
 

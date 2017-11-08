@@ -107,7 +107,11 @@ table, td {
       echo "</tr>";
     }
     }
-    
+    if(isset($totalrab)){
+      foreach ($totalrab as $row){
+        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row->total_rab.'</strong></td></tr>';
+      }
+    }
     ?>
     </tbody>
   </table>
@@ -117,7 +121,7 @@ table, td {
   <!-- Catatan Revisi -->
   <?php echo form_open('pjk/insert_rab/tambah_catatan_rab/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
         <div class="form-group">
-          <label for="catatan" class="col-sm-1 control-label">Catatan Dekan </label>
+          <label for="catatan" class="col-sm-1 control-label">Catatan  </label>
           <div class="col-sm-11">
             <?php 
            $data = array('name' => 'catatan', 'id' => 'catatan', 'class' => 'form-control', 'placeholder' => 'Masukkan Catatan','rows' => '2');

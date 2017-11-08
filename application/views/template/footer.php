@@ -1,7 +1,7 @@
 <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+           Copyright@2017 - <a href="http://ft.unnes.ac.id/">Fakultas Teknik Universitas Negeri Semarang</a>
           </div>
           <div class="clearfix"></div>
         </footer>

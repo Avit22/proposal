@@ -16,7 +16,7 @@
       <input type="password" placeholder="password" name="password" id="password"/>
       <button><b>login</b></button>
     <?php echo $this->session->flashdata('msg'); ?>
-      <!--<p class="message">Not registered? <a href="#">Create an account</a></p> -->
+      <p class="message">  <a href="panduan">Petunjuk Penggunaan Sistem</a></p>
     <?php echo form_close();?>
   </div>
 </div>
