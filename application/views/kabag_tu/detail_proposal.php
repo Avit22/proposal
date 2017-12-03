@@ -38,16 +38,17 @@
       </tr>
     </thead>
     <tbody>';    
+    $this->load->helper('fungsidate');
     if(isset($rab)){
       foreach ($rab as $row){
       echo "<tr>";
-      echo "<td>".$row->barang."</td><td>".$row->harga."</td><td>".$row->jumlah."</td><td>".$row->total."</td>";
+      echo "<td>".$row->barang."</td><td>".rupiah3($row->harga)."</td><td>".$row->jumlah."</td><td>".rupiah3($row->total)."</td>";
       echo "</tr>";
     }
     }
     if(isset($totalrab)){
       foreach ($totalrab as $row){
-        echo '<tr><td colspan="3" align="right"><strong>TOTAL RAB</strong></td><td><strong>'.$row->total_rab.'</strong></td></tr>';
+        echo '<tr><td colspan="3" align="right"><strong>TOTAL RAB</strong></td><td><strong>'.rupiah3($row->total_rab).'</strong></td></tr>';
       }
     }
     echo '
@@ -58,7 +59,7 @@
 
               echo '<tr><td>KELUARAN</td><td>'.$proposal->keluaran.'</td></tr>'; 
               
-              echo '<tr><td>TANGGAL PELAKSANAAN</td><td>'.$proposal->tgl_pelaksanaan.'</td></tr>'; 
+              echo '<tr><td>TANGGAL PELAKSANAAN</td><td>'.tgl_indo($proposal->tgl_pelaksanaan).'</td></tr>'; 
               echo '<tr><td>TEMPAT PELAKSANAAN</td><td>'.$proposal->tempat.'</td></tr>'; 
 
               echo '<tr><td>KELUARAN</td><td>'.$proposal->keluaran.'</td></tr>'; 

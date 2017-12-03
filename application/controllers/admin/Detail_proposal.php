@@ -32,7 +32,18 @@ class Detail_proposal extends CI_Controller {
 		}
 		else
 			$data['proposale'] = NULL;
-
+		if($query = $this->Input_model->get_all_rab_id_proposal($id)) {
+			$data['rab'] = $query;
+		}
+		else{
+			$data['rab'] = NULL;
+		}
+		if($query = $this->Input_model->get_total_rab($id)) {
+			$data['totalrab'] = $query;
+		}
+		else{
+			$data['totalrab'] = NULL;
+		}
 		$this->load->view('admin/detail_proposal', $data);
 	}
 

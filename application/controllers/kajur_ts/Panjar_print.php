@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Panjar_print extends CI_Controller {
+class Proposal_print extends CI_Controller {
   
     public function __construct()
     {
@@ -7,7 +7,7 @@ class Panjar_print extends CI_Controller {
         $this->load->library("Pdf");
     }
   
-    public function index($id_proposal,$pencairan) {
+    public function index($id_proposal) {
     //============================================================+
     // File name   : example_001.php
     //
@@ -25,22 +25,33 @@ class Panjar_print extends CI_Controller {
     $this->load->model('Input_model');
     $this->load->helper('fungsidate'); //kita load helper yang kita buat cukup    
     $data= NULL;
-    if($query = $this->Input_model->get_data_pk_2($id_proposal,$pencairan)) {
+    if($query = $this->Input_model->get_data_pk_print($id_proposal)) {
             $data['proposale'] = $query;
         }
         else{
             $data['proposale'] = NULL;
     }
-   
+    if($query = $this->Input_model->get_all_rab_id_proposal($id_proposal)) {
+            $data['rabnya'] = $query;
+        }
+        else{
+            $data['rabnya'] = NULL;                
+        }
+   if($query = $this->Input_model->get_total_rab($id_proposal)) {
+            $data['totalrab'] = $query;
+        }
+        else{
+            $data['totalrab'] = NULL;
+        }
   
     // create new PDF document
     $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);    
   
     // set document information
     $pdf->SetCreator(PDF_CREATOR);
-    $pdf->SetAuthor('Avit22');
-    $pdf->SetTitle('Print Panjar Kerja');
-    $pdf->SetSubject('Penjar Kerja');
+    $pdf->SetAuthor('Avit');
+    $pdf->SetTitle('Naskah Proposal Lengkap Print');
+    $pdf->SetSubject('Naskah Proposal');
     $pdf->SetKeywords('TCPDF, PDF, example, test, guide');   
   
     // set default header data
@@ -91,84 +102,78 @@ $pdf->setPrintFooter(false);
   
     // set text shadow effect
     //$pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));    
-  
-    if($data['proposale']==null){
-        $html = '
-    <h3>SISA PANJAR KERJA MASIH KOSONG</h3>';
-
-    }else {
-
-    foreach ($data['proposale'] as $proposal) { 
+    
+            # code...    
+        
     // Set some content to print
    // $nominal = rupiah2($proposal->nominal_disetujui_dekan);   
     //$nominal_70 = (70/100)* $nominal;
     //$sisa = $nominal - $nominal_70;
-    $html = '
-    <h3>PANJAR KERJA</h3>
-    <table border="1"><tr><td align="center" width="60%"><strong>KEMENTRIAN RISET, TEKNOLOGI DAN PENDIDIKAN TINGGI<br /> BADAN LAYANAN UMUM <br /> UNIVERSITAS NEGERI SEMARANG</strong></td><td align="CENTER" width="20%">PANJAR KERJA <br /> <br /> <strong>BSPJ-PK-UP</strong></td><td align="center" width="20%">Lembar ke <br /> <br /> <strong>1</strong></td></tr>
-    </table>
-    <br /><br />
-    <table>
-    <tr><td width="40%">Telah diterima dari</td><td width="1%">:</td><td width="59%">Kuasa Pengguna Anggaran Universitas Negeri Semarang</td></tr>
-    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.rupiah3($proposal->nominal_70).'</td></tr>
-    <tr><td width="40%">Sumber dana</td><td width="1%">:</td><td width="59%">'.$proposal->sumberdana.'</td></tr>
-    <tr><td width="40%">Terbilang</td><td width="1%">:</td><td width="59%">'.$proposal->terbilang.'</td></tr>
-    <tr><td width="40%">Untuk Pembayaran</td><td width="1%">:</td><td width="59%">'.$proposal->tujuanbayar.' dg. Nomor '.$proposal->noseri.'</td></tr>
-    <tr><td width="40%">Keterangan</td><td width="1%">:</td><td width="59%">'.$proposal->keterangan.'</td></tr>
-    </table>
-    <br />
-    <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="40%">Semarang,'.tgl_indo($proposal->tgl_validasi).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP/NIM.</td></tr>
-    </table>
-    <br /><br /><br />
-    
-    ===============================potong disini===============================<br /><br />
-    
-    <h3>PANJAR KERJA</h3>
-    <table border="1"><tr><td align="center" width="60%"><strong>KEMENTRIAN RISET, TEKNOLOGI DAN PENDIDIKAN TINGGI<br /> BADAN LAYANAN UMUM <br /> UNIVERSITAS NEGERI SEMARANG</strong></td><td align="CENTER" width="20%">PANJAR KERJA <br /> <br /> <strong>BSPJ-PK-UP</strong></td><td align="center" width="20%">Lembar ke <br /> <br /> <strong>2</strong></td></tr>
-    </table>
-    <br /><br />
-    <table>
-    <tr><td width="40%">Telah diterima dari</td><td width="1%">:</td><td width="59%">Kuasa Pengguna Anggaran Universitas Negeri Semarang</td></tr>
-    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.rupiah3($proposal->nominal_70).'</td></tr>
-    <tr><td width="40%">Sumber dana</td><td width="1%">:</td><td width="59%">'.$proposal->sumberdana.'</td></tr>
-    <tr><td width="40%">Terbilang</td><td width="1%">:</td><td width="59%">'.$proposal->terbilang.'</td></tr>
-    <tr><td width="40%">Untuk Pembayaran</td><td width="1%">:</td><td width="59%">'.$proposal->tujuanbayar.' dg. Nomor '.$proposal->noseri.'</td></tr>
-    <tr><td width="40%">Keterangan</td><td width="1%">:</td><td width="59%">'.$proposal->keterangan.'</td></tr>
-    </table>
-    <br />
-    <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="40%">Semarang,'.tgl_indo($proposal->tgl_validasi).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP/NIM.</td></tr>
-    </table>
-    <br /> <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    $this->load->helper('fungsidate');
+    $total;
+    foreach ($data['totalrab'] as $row) {
+        $total = $row->total_rab;
+    }
 
-    <h3>PANJAR KERJA</h3>
-    <table border="1"><tr><td align="center" width="60%"><strong>KEMENTRIAN RISET, TEKNOLOGI DAN PENDIDIKAN TINGGI<br /> BADAN LAYANAN UMUM <br /> UNIVERSITAS NEGERI SEMARANG</strong></td><td align="CENTER" width="20%">PANJAR KERJA <br /> <br /> <strong>BSPJ-PK-UP</strong></td><td align="center" width="20%">Lembar ke <br /> <br /> <strong>3</strong></td></tr>
-    </table>
-    <br /><br />
-    <table>
-    <tr><td width="40%">Telah diterima dari</td><td width="1%">:</td><td width="59%">Kuasa Pengguna Anggaran Universitas Negeri Semarang</td></tr>
-    <tr><td width="40%">Uang Sebesar</td><td width="1%">:</td><td width="59%">'.rupiah3($proposal->nominal_70).'</td></tr>
-    <tr><td width="40%">Sumber dana</td><td width="1%">:</td><td width="59%">'.$proposal->sumberdana.'</td></tr>
-    <tr><td width="40%">Terbilang</td><td width="1%">:</td><td width="59%">'.$proposal->terbilang.'</td></tr>
-    <tr><td width="40%">Untuk Pembayaran</td><td width="1%">:</td><td width="59%">'.$proposal->tujuanbayar.' dg. Nomor '.$proposal->noseri.'</td></tr>
-    <tr><td width="40%">Keterangan</td><td width="1%">:</td><td width="59%">'.$proposal->keterangan.'</td></tr>
-    </table>
+    foreach ($data['proposale'] as $proposal) { 
+    $html = '
+    <h3><p align="center">'.$proposal->judul.'</p></h3>
+    <br /><br /><br />
+    <strong>A. Pendahuluan</strong>
+    <p align="justify">'.$proposal->pendahuluan.'</p><br />
+    <strong>B. Dasar Hukum</strong>
+    <p align="justify">'.$proposal->dasar_hukum.'</p><br />
+    <strong>C. Tempat dan Tanggal Pelaksanaan</strong>
+    <p align="justify">Tempat :'.$proposal->tempat.'</p><br />
+    Tanggal :'.tgl_indo($proposal->tgl_pelaksanaan).'<br />
     <br />
-    <br />
-    <table><tr><td align="left" width="60%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="40%">Semarang,'.tgl_indo($proposal->tgl_validasi).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP/NIM.</td></tr>
-    </table>
+    <strong>D. Keluaran</strong>
+    <p align="justify">'.$proposal->keluaran.'</p><br />
+    <strong>E. Penutup</strong>
+    <p align="justify">'.$proposal->penutup.'</p><br />    
     ';
   }
-  }
+
+
     // Print text using writeHTMLCell()
     $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);   
   
+  $pdf->AddPage(); 
+  
+    // set text shadow effect
+    //$pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));    
+    
+            # code...    
+        
+    // Set some content to print
+   // $nominal = rupiah2($proposal->nominal_disetujui_dekan);   
+    //$nominal_70 = (70/100)* $nominal;
+    //$sisa = $nominal - $nominal_70;
+
+    $html = '    
+    <h2><p align="center">Lampiran Rencana Anggaran Belanja</p></h2>
+    <table border="1" align="center"><tr><td>Nama Barang</td><td>Harga Barang</td><td>Jumlah</td><td>Harga</td></tr></table>';
+    // Print text using writeHTMLCell()
+    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true); 
+    foreach ($data['rabnya'] as $rab) { 
+    $html = '    
+    <table border="1"><tr><td> '.$rab->barang.'</td><td> '.rupiah3($rab->harga).'</td><td> '.$rab->jumlah.'</td><td> '.rupiah3($rab->total).'</td></tr></table>';
+    // Print text using writeHTMLCell()
+    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
+  }
+
+  $html = '    
+    <table border="1"><tr><td colspan="3"><p align="RIGHT">TOTAL</p></td><td> '.rupiah3($total).'</td></tr></table>';
+    // Print text using writeHTMLCell()
+    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true); 
+
+  
+    
     // ---------------------------------------------------------    
   
     // Close and output PDF document
     // This method has several options, check the source code documentation for more information.
-    $pdf->Output('Panjar Kerja.pdf', 'I');    
+    $pdf->Output('Proposal_Naskah_Print.pdf', 'I');    
   
     //============================================================+
     // END OF FILE

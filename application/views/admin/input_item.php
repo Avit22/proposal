@@ -16,11 +16,10 @@ table, td {
         <?php $this->view('template/top'); ?>
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="text-center" style="font-size:30px;">DETAIL REKOMENDASI RAB</div><br />
+          <div class="text-center" style="font-size:30px;">INPUT REKOMENDASI ITEM</div><br />
           <div class="container">
   <h2>ID PROPOSAL : <?php echo $id_proposal;?></h2>
   <br />
-  <p><strong> RAB DARI PJK</strong></p>
  <table class="table table-striped" id="myTable">
     <thead>
       <tr>
@@ -30,6 +29,7 @@ table, td {
         <th>Total</th>
       </tr>
     </thead>
+
     <tbody>
     <?php 
     $this->load->helper('fungsidate');
@@ -69,6 +69,7 @@ table, td {
       echo "</tr>";
     }
     }
+
     if(isset($totalrab_keu)){
       foreach ($totalrab_keu as $row1){
         echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.rupiah3($row1->total_rab).'</strong></td></tr>';
@@ -79,7 +80,65 @@ table, td {
   </table>
 
 
+</div>
+<br>
+  <div class="container">
+  <br />
+   <p><strong>INPUT REKOMENDASI RAB KEPADA DEKAN</strong></p>
+  <?php echo form_open('wd2/rekomendasi/add_rab_item/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
+    <?php echo validation_errors(); ?>
+      <input type="text" id="nb" placeholder="Nama Barang"  name="nb">
+      <input type="text" id="harga" placeholder="Harga Barang"  name="harga">
+      <input type="text" id="jumlah" placeholder="Jumlah Barang/Item"  name="jumlah">
+      <input type="text" id="total" placeholder="Total Harga"  name="total">
+    <button>ADD RAB</button>  
+    </form>
+ <table class="table table-striped" id="myTable">
+    <thead>
+      <tr>
+        <th>Nama Barang</th>
+        <th>Harga</th>
+        <th>Jumlah</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
 
+    <?php 
+    if(isset($item_wd2)){
+      foreach ($item_wd2 as $row){
+      echo "<tr>";
+      echo "<td>".$row->barang."</td><td>".rupiah3($row->harga)."</td><td>".$row->jumlah."</td><td>".rupiah3($row->total)."</td>";
+      echo "</tr>";
+    }
+    }
+    if(isset($totalitem)){
+      foreach ($totalitem as $row){
+        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.rupiah3($row->total_rab).'</strong></td></tr>';
+      }
+    }
+    ?>
+    </tbody>
+  </table>
+  
+  <!-- Catatan Revisi -->
+  <?php echo form_open('wd2/rekomendasi/tambah_catatan_rab_keu/'.$id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
+        <div class="form-group">
+          <label for="revisi" class="col-sm-1 control-label">Catatan </label>
+          <div class="col-sm-11">
+            <?php 
+           $data = array('name' => 'catatan', 'id' => 'catatan', 'class' => 'form-control', 'placeholder' => 'Masukkan Catatan','rows' => '2');
+           echo form_textarea($data); ?>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10">
+            <button type="submit" class="btn btn-primary">Kirim</button>
+            
+          </div>
+        </div>
+</div>
 
 <br>
 <script>

@@ -34,19 +34,21 @@ table, td {
     </thead>
     <tbody>
     <?php 
+    $this->load->helper('fungsidate');
     if(isset($item_wd2)){
       foreach ($item_wd2 as $row1){
       
       echo "<tr>";
-      echo "<td>".$row1->barang."</td><td>".$row1->harga."</td><td>".$row1->jumlah."</td><td>".$row1->total."</td>";
+      echo "<td>".$row1->barang."</td><td>".rupiah3($row1->harga)."</td><td>".$row1->jumlah."</td><td>".rupiah3($row1->total)."</td>";
       echo "</tr>";
     }
     }
     if(isset($totalitem)){
       foreach ($totalitem as $row1){
-        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row1->total_rab.'</strong></td></tr>';
+        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.rupiah3($row1->total_rab).'</strong></td></tr>';
       }
     }
+     
     ?>
     </tbody>
   </table>
