@@ -166,8 +166,17 @@ class Revisi_rab extends CI_Controller {
 		if($query = $this->Input_model->get_all_rab_keu_id_proposal($id)) {
 			$data['rab_keu'] = $query;
 		}
+		if($query = $this->Input_model->get_total_rab($id)) {
+			$data['totalrab'] = $query;
+		}
 		else{
-			$data['rab_keu'] = NULL;
+			$data['totalrab'] = NULL;
+		}
+		if($query = $this->Input_model->get_total_rab_keu($id)) {
+			$data['totalrab_keu'] = $query;
+		}
+		else{
+			$data['totalrab_keu'] = NULL;
 		}
 
 		$this->load->view('kabag_keu/detail_revisi_rab', $data);

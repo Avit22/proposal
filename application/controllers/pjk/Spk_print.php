@@ -125,6 +125,10 @@ $pdf->setPrintFooter(false);
     <table><tr><td align="left" width="50%">&nbsp;<br />BPP FT <br /><br /><br /> <br />Soleh Adi Wibowo<br />NIP. 197512172005011002</td><td align="left" width="30%">Semarang,'.tgl_indo($proposal->tgl_input).' <br /> Pemegang PK <br /><br /><br /><br />'.$proposal->nama_pjk.'<br />NIP/NIM.</td><td border="1" width="20%">&nbsp;<br/>Total : '.rupiah3($proposal->nominal_total).' <br /> Lalu : '.rupiah3($proposal->lalu).' <br /> Nominal : '.rupiah3($proposal->nominal_70).' <br /> Sisa : '.rupiah3($proposal->sisa).'</td></tr>
     </table>
 
+
+<br /><br />
+
+
     <br /><br />
     <h3>SISA PANJAR KERJA</h3>
     <table border="1"><tr><td align="center" width="60%"><strong>KEMENTRIAN RISET, TEKNOLOGI DAN PENDIDIKAN TINGGI<br /> BADAN LAYANAN UMUM <br /> UNIVERSITAS NEGERI SEMARANG</strong></td><td align="CENTER" width="20%">PANJAR KERJA <br /> <br /> <strong>BSPJ-PK-UP</strong></td><td align="center" width="20%">Lembar ke <br /> <br /> <strong>2</strong></td></tr>    

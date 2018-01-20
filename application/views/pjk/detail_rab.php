@@ -32,16 +32,17 @@ table, td {
     </thead>
     <tbody>
     <?php 
+    $this->load->helper('fungsidate');
     if(isset($rab)){
       foreach ($rab as $row){
       echo "<tr>";
-      echo "<td>".$row->barang."</td><td>".$row->harga."</td><td>".$row->jumlah."</td><td>".$row->total."</td>";
+      echo "<td>".$row->barang."</td><td>".rupiah3($row->harga)."</td><td>".$row->jumlah."</td><td>".rupiah3($row->total)."</td>";
       echo "</tr>";
     }
     }
     if(isset($totalrab)){
       foreach ($totalrab as $row){
-        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row->total_rab.'</strong></td></tr>';
+        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.rupiah3($row->total_rab).'</strong></td></tr>';
       }
     }
     ?>
@@ -64,13 +65,13 @@ table, td {
       foreach ($rab_keu as $row1){
       
       echo "<tr>";
-      echo "<td>".$row1->barang."</td><td>".$row1->harga."</td><td>".$row1->jumlah."</td><td>".$row1->total."</td>";
+      echo "<td>".$row1->barang."</td><td>".rupiah3($row1->harga)."</td><td>".$row1->jumlah."</td><td>".rupiah3($row1->total)."</td>";
       echo "</tr>";
     }
     }
     if(isset($totalrab_keu)){
       foreach ($totalrab_keu as $row1){
-        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row1->total_rab.'</strong></td></tr>';
+        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.rupiah3($row1->total_rab).'</strong></td></tr>';
       }
     }
     ?>
@@ -103,13 +104,13 @@ table, td {
     if(isset($rab)){
       foreach ($rab as $row){
       echo "<tr>";
-      echo "<td>".$row->barang."</td><td>".$row->harga."</td><td>".$row->jumlah."</td><td>".$row->total."</td>"."<td><a href='".base_url('pjk/insert_rab/update1/').'/'.$id_proposal.'/'.$row->id."'>UPDATE</a></td><td><a href='".base_url('pjk/insert_rab/delete_rab1/').'/'.$id_proposal.'/'.$row->id."'>DELETE</a></td>";
+      echo "<td>".$row->barang."</td><td>".rupiah3($row->harga)."</td><td>".$row->jumlah."</td><td>".rupiah3($row->total)."</td>"."<td><a href='".base_url('pjk/insert_rab/update1/').'/'.$id_proposal.'/'.$row->id."'>UPDATE</a></td><td><a href='".base_url('pjk/insert_rab/delete_rab1/').'/'.$id_proposal.'/'.$row->id."'>DELETE</a></td>";
       echo "</tr>";
     }
     }
     if(isset($totalrab)){
       foreach ($totalrab as $row){
-        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.$row->total_rab.'</strong></td></tr>';
+        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.rupiah3($row->total_rab).'</strong></td></tr>';
       }
     }
     ?>

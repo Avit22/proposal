@@ -6,8 +6,8 @@
 </head>
 <body>
 
-<h1 class="text-center"><b>SIPENGPRO </b></h1> <br/><br/>
-<h3 class="text-center"><b>Sistem Informasi Pengajuan Proposal Anggaran</b></h3> 
+<h1 class="text-center"><b>SIMPENGPRO </b></h1> <br/><br/>
+<h3 class="text-center"><b>Sistem Informasi Manajemen Pengajuan Proposal Anggaran</b></h3> 
 <div class="login-page" style="margin-top: -50px;">
   <div class="form">
     <?php $data = array('class' => 'login-form');
