@@ -50,14 +50,19 @@ table, td {
     </thead>
     <tbody>
     <?php 
+    $this->load->helper('fungsidate');
     if(isset($rab)){
       foreach ($rab as $row){
       echo "<tr>";
-      echo "<td>".$row->barang."</td><td>".$row->harga."</td><td>".$row->jumlah."</td><td>".$row->total."</td>"."<td><a href='".base_url('admin/insert_rab/update/').'/'.$id_proposal.'/'.$row->id."'>UPDATE</a></td><td><a href='".base_url('admin/insert_rab/delete_rab/').'/'.$id_proposal.'/'.$row->id."'>DELETE</a></td>";
+      echo "<td>".$row->barang."</td><td>".rupiah3($row->harga)."</td><td>".$row->jumlah."</td><td>".rupiah3($row->total)."</td>"."<td><a href='".base_url('admin/insert_rab/update/').'/'.$id_proposal.'/'.$row->id."'>UPDATE</a></td><td><a href='".base_url('admin/insert_rab/delete_rab/').'/'.$id_proposal.'/'.$row->id."'>DELETE</a></td>";
       echo "</tr>";
     }
     }
-    
+    if(isset($totalrab)){
+      foreach ($totalrab as $row){
+        echo '<tr><td colspan="3" align="right"><strong>TOTAL</strong></td><td><strong>'.rupiah3($row->total_rab).'</strong></td></tr>';
+      }
+    }
     ?>
     </tbody>
   </table>

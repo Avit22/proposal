@@ -15,7 +15,7 @@
         <div class="right_col" role="main">
           
           <div style="font-size:25px;"><center><p class="text-danger well" style="font-size:20px;"><?php echo $this->session->flashdata('pesan'); ?></p></center></div><br />
-          <div style="font-size:25px;"><center>Selamat Datang di Sistem Informasi Pengajuan Proposal</center></div>
+          <div style="font-size:25px;"><center>Selamat Datang di Sistem Informasi Manajemen Pengajuan Proposal</center></div>
 
         </div>
         <!-- /page content -->

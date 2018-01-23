@@ -14,7 +14,7 @@
         <!-- page content -->
         <div class="right_col" role="main">
           
-          <div style="font-size:25px;"><center>Selamat Datang di Sistem Informasi Pengajuan Proposal Anggaran</center></div>
+          <div style="font-size:25px;"><center>Selamat Datang di Sistem Informasi Manajemen Pengajuan Proposal Anggaran</center></div>
 
         </div>
         <!-- /page content -->

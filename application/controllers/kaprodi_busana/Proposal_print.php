@@ -125,7 +125,7 @@ $pdf->setPrintFooter(false);
     <p align="justify">'.$proposal->dasar_hukum.'</p><br />
     <strong>C. Tempat dan Tanggal Pelaksanaan</strong>
     <p align="justify">Tempat :'.$proposal->tempat.'</p><br />
-    Tanggal :'.$proposal->tgl_pelaksanaan.'<br />
+    Tanggal :'.tgl_indo($proposal->tgl_pelaksanaan).'<br />
     <br />
     <strong>D. Keluaran</strong>
     <p align="justify">'.$proposal->keluaran.'</p><br />
