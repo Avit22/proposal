@@ -19,15 +19,15 @@ class Email extends CI_Controller{
     'protocol' => 'smtp',  
     'smtp_host' => 'ssl://smtp.googlemail.com',  
     'smtp_port' => 465,  
-    'smtp_user' => 'serendipity.10they@gmail.com',   
-    'smtp_pass' => 'MyLifeJourney2016',   
+    'smtp_user' => 'avitwisnu22@gmail.com',   
+    'smtp_pass' => 'organn22',   
     'mailtype' => 'html',   
     'charset' => 'iso-8859-1'  
    );  
    $this->load->library('email', $config);  
    $this->email->set_newline("\r\n");  
-   $this->email->from('serendipity.10they@gmail.com', 'ADMIN PROPOSAL');   
-   $this->email->to('atanasiustendy@hotmail.com');   
+   $this->email->from('avitwisnu22@gmail.com', 'ADMIN PROPOSAL');   
+   $this->email->to('tendydeveloper@gmail.com');   
    $this->email->subject('Percobaan email');   
    $this->email->message('Ini adalah email percobaan untuk Tutorial CodeIgniter: Mengirim Email via Gmail SMTP menggunakan Email Library CodeIgniter Tendy Developer');  
    if (!$this->email->send()) {  

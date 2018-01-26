@@ -120,7 +120,7 @@ public function tambah_proses() {
    $this->load->library('email', $config);  
    $this->email->set_newline("\r\n");  
    $this->email->from('avitwisnu22@gmail.com', 'ADMIN PROPOSAL');   
-   $this->email->to('atanasiustendy@hotmail.com');   
+   $this->email->to('serendipity.10they@gmail.com');   
    $this->email->subject('Input Proposal Masuk');   
    $this->email->message($this->input->post('judul'));  
    if (!$this->email->send()) {  
