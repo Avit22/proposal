@@ -41,7 +41,7 @@ class Input_model extends CI_Model {
 	}
 
 	function tambah($data) {
-		$this->db->where('id_proposal',$id);
+		//$this->db->where('id_proposal',$id);
 		$this->db->insert('proposal',$data);
 		return;
 	}
