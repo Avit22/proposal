@@ -34,6 +34,13 @@ class Email extends CI_Controller{
     show_error($this->email->print_debugger());   
    }else{  
     echo 'Success to send email';   
+
    }  
   }  
+
+  function dir(){
+    $this->load->helper('url');
+    $currentURL = current_url();
+    print_r($currentURL);
+  }
 	}
