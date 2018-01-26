@@ -5,6 +5,8 @@
               //echo $this->session->userdata('tingkatan');
               if($this->session->userdata('tingkatan')=="admin"){
                 echo '<a href='.base_url('admin/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }else if($this->session->userdata('tingkatan')=="pjk"){
+                echo '<a href='.base_url('pjk/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
               }
               ?>
               
