@@ -107,6 +107,27 @@ public function tambah_proses() {
 				);
 
 			if($this->Input_model->tambah($data));
+
+	$config = Array(  
+    'protocol' => 'smtp',  
+    'smtp_host' => 'ssl://smtp.googlemail.com',  
+    'smtp_port' => 465,  
+    'smtp_user' => 'avitwisnu22@gmail.com',   
+    'smtp_pass' => 'organn22',   
+    'mailtype' => 'html',   
+    'charset' => 'iso-8859-1'  
+   );  
+   $this->load->library('email', $config);  
+   $this->email->set_newline("\r\n");  
+   $this->email->from('avitwisnu22@gmail.com', 'ADMIN PROPOSAL');   
+   $this->email->to('atanasiustendy@hotmail.com');   
+   $this->email->subject('Input Proposal Masuk');   
+   $this->email->message($this->input->post('judul'));  
+   if (!$this->email->send()) {  
+    show_error($this->email->print_debugger());   
+   }else{  
+    //echo 'Success to send email';   
+   } 
 				
 		}	
 		redirect('pjk/terkirim');	
