@@ -54,6 +54,9 @@ class Input extends CI_Controller {
 			$data['rab'] = NULL;
 		}
 		$this->load->view('pjk/input_proposal',$data);
+
+
+		
 		
 	}
 
