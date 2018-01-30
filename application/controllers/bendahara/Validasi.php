@@ -107,9 +107,9 @@ public function insert_panjar($id) {
 				'keterangan_input'=>"Sudah Input",
 				);
 			if($this->Input_model->insert_panjar($data));
-				redirect('bendahara/validasi');	
+				redirect('bendahara/lihat_proposal');	
 		}	
-	redirect('bendahara/validasi');	
+	redirect('bendahara/lihat_proposal');	
 }	
 
 public function insert_sisa_panjar($id) {
@@ -125,7 +125,7 @@ public function insert_sisa_panjar($id) {
 	$this->form_validation->set_rules('sumberdana', 'Sumber Dana', 'required');
 	$this->form_validation->set_rules('terbilang', 'Terbilang Rupiah', 'required');
 	$this->form_validation->set_rules('tujuanbayar', 'Tujuan Pembayaaran', 'required');
-	$this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
+	//$this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->index();
 		}
@@ -149,8 +149,8 @@ public function insert_sisa_panjar($id) {
 				'keterangan_input'=>"Sudah Input",
 				);
 			if($this->Input_model->insert_panjar($data));
-				redirect('bendahara/validasi');	
+				redirect('bendahara/lihat');	
 		}	
-	redirect('bendahara/validasi');	
+	redirect('bendahara/lihat');	
 }	
 }

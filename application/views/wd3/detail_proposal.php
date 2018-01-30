@@ -38,8 +38,10 @@
       </tr>
     </thead>
     <tbody>';    
+    $this->load->helper('fungsidate');
+
     if(isset($rab)){
-       $this->load->helper('fungsidate');
+       
       foreach ($rab as $row){
       echo "<tr>";
       echo "<td>".$row->barang."</td><td>".rupiah3($row->harga)."</td><td>".$row->jumlah."</td><td>".rupiah3($row->total)."</td>";

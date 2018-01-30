@@ -31,7 +31,7 @@ table, td {
           
           <h1 class="text-center text-info">Input Proposal</h1> <p class="text-center text-info" id="maxid"><?php echo "Kode Proposal : ".$max_id_proposal ?></p><br /><br />
 
-       <?php echo form_open('pjk/input/tambah_proses',array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
+       <?php echo form_open('admin/input/tambah_proses',array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
        <?php echo validation_errors(); ?>
 
 
