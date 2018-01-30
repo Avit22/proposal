@@ -108,21 +108,25 @@ public function tambah_proses() {
 
 			if($this->Input_model->tambah($data));
 
+
+
 	$config = Array(  
     'protocol' => 'smtp',  
     'smtp_host' => 'ssl://smtp.googlemail.com',  
     'smtp_port' => 465,  
-    'smtp_user' => 'avitwisnu22@gmail.com',   
-    'smtp_pass' => 'organn22',   
+    'smtp_user' => 'proposalft22@gmail.com',   
+    'smtp_pass' => 'adminproposal22',   
     'mailtype' => 'html',   
     'charset' => 'iso-8859-1'  
    );  
    $this->load->library('email', $config);  
    $this->email->set_newline("\r\n");  
-   $this->email->from('avitwisnu22@gmail.com', 'ADMIN PROPOSAL');   
-   $this->email->to('serendipity.10they@gmail.com');   
-   $this->email->subject('Input Proposal Masuk');   
-   $this->email->message($this->input->post('judul'));  
+   $this->email->from('proposalft22@gmail.com', 'ADMIN PROPOSAL');   
+   $this->email->to('avitwisnu22@gmail.com');   
+   $this->email->subject('Proposal Masuk');   
+   $this->email->message('Menginformasikan Bahwa Telah Masuk Proposal Baru Ke Dashboard Anda'.'<br />'.
+   						 'Nama Pjk   :'. $this->input->post('nama_pjk').'<br />'.
+   						 'Judul :'.$this->input->post('judul').'<br />');  
    if (!$this->email->send()) {  
     show_error($this->email->print_debugger());   
    }else{  

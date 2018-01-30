@@ -117,6 +117,8 @@ function tambah_revisi_laporan($data) {
 		return $query->result();
 	}
 
+	
+
 	function get_data_pk($id_user) {
 		$this->db->select('*');
 		$this->db->from('proposal');
@@ -349,6 +351,7 @@ function tambah_revisi_laporan($data) {
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
 		$this->db->join('jurusan','proposal.jurusan = jurusan.id_jurusan');
 		$this->db->join('prodi','proposal.prodi = prodi.id_prodi');
+		$this->db->join('panjar_kerja','proposal.id_proposal = panjar_kerja.id_proposal');
 		$this->db->where('proposal.id_proposal = "'.$id_proposal.'"');
 		$query = $this->db->get();
 		return $query->result();
@@ -428,6 +431,17 @@ function get_revisi_rab($id_user) {
 		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->where('wd.id_wd=1');
+		$this->db->order_by('tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_proposal_wd1() {
+
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.urusan');
 		$this->db->where('wd.id_wd=1');
 		$this->db->order_by('tgl_input desc');
 		$query = $this->db->get();

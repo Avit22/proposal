@@ -26,6 +26,7 @@
               <th>View Laporan </th>
               <th>Revisi Laporan </th>
               <th>Input Sisa Panjar Kerja</th>
+              
            </tr>
             </thead>
             <tbody>
@@ -43,7 +44,7 @@
                 </td>
                 <td><?php echo anchor("bendahara/detail_proposal/input_sisa_panjar/$laporan->id_proposal",'<span class="glyphicon glyphicon-pencil text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
-      
+                
             </tr>
             <?php } endforeach; } ?>
                   

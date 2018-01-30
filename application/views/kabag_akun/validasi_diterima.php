@@ -47,15 +47,7 @@ foreach($proposale as $proposal) { ?>
           </div>
         </div>
 
-        <!-- Jenis Proposal-->
-        <div class="form-group">
-          <label for="jenis_proposal" class="col-sm-2 control-label">Jenis Proposal</label>
-          <div class="col-sm-10">
-            <?php 
-           $data = array('name' => 'jenis_proposal', 'id' => 'jenis_proposal', 'class' => 'form-control', 'placeholder' => 'Nama PJK','value'=>$proposal->id_wd,'readonly'=>'true');
-           echo form_input($data); ?>
-          </div>
-        </div>
+        
 
 <!-- Nama PJK-->
         <div class="form-group">

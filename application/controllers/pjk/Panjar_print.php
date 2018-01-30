@@ -94,7 +94,8 @@ $pdf->setPrintFooter(false);
   
     if($data['proposale']==null){
         $html = '
-    <h3>PANJAR KERJA MASIH KOSONG</h3>';
+    <h3>PANJAR KERJA MASIH KOSONG, SILAHKAN TUNGGU BENDAHARA MENGINPUT DATA  </h3>';
+
 
     }else {
 
