@@ -146,7 +146,7 @@ public function insert_sisa_panjar($id) {
 				'tujuanbayar' => $this->input->post('tujuanbayar'),
 				'keterangan' => $this->input->post('keterangan'),
 				'tgl_input'=>$tgl,
-				'keterangan_input'=>"Sudah Input",
+				'status_input'=>"Sudah Input",
 				);
 			if($this->Input_model->insert_panjar($data));
 				redirect('bendahara/lihat');	

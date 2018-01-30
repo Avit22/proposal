@@ -351,6 +351,7 @@ function tambah_revisi_laporan($data) {
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
 		$this->db->join('jurusan','proposal.jurusan = jurusan.id_jurusan');
 		$this->db->join('prodi','proposal.prodi = prodi.id_prodi');
+		$this->db->join('panjar_kerja','proposal.id_proposal = panjar_kerja.id_proposal');
 		$this->db->where('proposal.id_proposal = "'.$id_proposal.'"');
 		$query = $this->db->get();
 		return $query->result();

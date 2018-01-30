@@ -73,7 +73,7 @@
           <label for="pencairan" class="col-sm-4 control-label">30 %</label>
           <div class="col-sm-4">
             <?php 
-           $data = array('name' => 'pencairan', 'id' => 'pencairan', 'class' => 'form-control', 'placeholder' => 'Masukkan Nominal Uang Yang Akan Dicairkan','rows' => '2');
+           $data = array('name' => 'pencairan', 'id' => 'pencairan', 'class' => 'form-control', 'placeholder' => 'Masukkan Nominal Uang Yang Akan Dicairkan','rows' => '2','value'=>rupiah3($row->sisa), 'readonly'=>'true');
            echo form_input($data); ?>
           </div>
         </div>
