@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 		  GNU LESSER GENERAL PUBLIC LICENSE
 		       Version 2.1, February 1999
+=======
+      GNU LESSER GENERAL PUBLIC LICENSE
+           Version 2.1, February 1999
+>>>>>>> 3e71ae7dfdf042bfa0f10127ea253905141fdeea
 
  Copyright (C) 1991, 1999 Free Software Foundation, Inc.
  51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
@@ -10,7 +15,11 @@
  as the successor of the GNU Library Public License, version 2, hence
  the version number 2.1.]
 
+<<<<<<< HEAD
 			    Preamble
+=======
+          Preamble
+>>>>>>> 3e71ae7dfdf042bfa0f10127ea253905141fdeea
 
   The licenses for most software are designed to take away your
 freedom to share and change it.  By contrast, the GNU General Public
@@ -112,7 +121,11 @@ modification follow.  Pay close attention to the difference between a
 former contains code derived from the library, whereas the latter must
 be combined with the library in order to run.
 
+<<<<<<< HEAD
 		  GNU LESSER GENERAL PUBLIC LICENSE
+=======
+      GNU LESSER GENERAL PUBLIC LICENSE
+>>>>>>> 3e71ae7dfdf042bfa0f10127ea253905141fdeea
    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
   0. This License Agreement applies to any software library or other
@@ -432,7 +445,11 @@ decision will be guided by the two goals of preserving the free status
 of all derivatives of our free software and of promoting the sharing
 and reuse of software generally.
 
+<<<<<<< HEAD
 			    NO WARRANTY
+=======
+          NO WARRANTY
+>>>>>>> 3e71ae7dfdf042bfa0f10127ea253905141fdeea
 
   15. BECAUSE THE LIBRARY IS LICENSED FREE OF CHARGE, THERE IS NO
 WARRANTY FOR THE LIBRARY, TO THE EXTENT PERMITTED BY APPLICABLE LAW.
@@ -455,7 +472,11 @@ FAILURE OF THE LIBRARY TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
 SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGES.
 
+<<<<<<< HEAD
 		     END OF TERMS AND CONDITIONS
+=======
+         END OF TERMS AND CONDITIONS
+>>>>>>> 3e71ae7dfdf042bfa0f10127ea253905141fdeea
 
            How to Apply These Terms to Your New Libraries
 

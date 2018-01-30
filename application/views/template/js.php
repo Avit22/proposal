@@ -39,6 +39,9 @@
     <!-- Custom Theme Scripts -->
     <script src="<?=base_url()?>assets/build/js/custom.min.js"></script>
     <script src="<?=base_url()?>asset/production/js/datepicker/daterangepicker.js"></script>
+    <script src="<?=base_url()?>assets/vendors/tinymce/js/tinymce/tinymce.min.js"></script>
+
+    <script>tinymce.init({ selector:'textarea' });</script>
     <!--
     <script src="http://code.highcharts.com/4.2.2/highcharts.js"></script>
     <script src="http://code.highcharts.com/4.2.2/modules/exporting.js"></script>
