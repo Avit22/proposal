@@ -34,4 +34,8 @@
 
     .glyphicon-print { margin-right: 25px; }
     </style>
+
+    <script src="<?=base_url()?>assets/vendors/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+    <!-- <script>tinymce.init({ selector:'textarea' });</script> -->
   </head>
