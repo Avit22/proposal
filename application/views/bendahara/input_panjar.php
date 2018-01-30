@@ -26,7 +26,10 @@
           <label for="total" class="col-sm-4 control-label">Nominal Total</label>
           <div class="col-sm-4">
             <?php 
-           $data = array('name' => 'total', 'id' => 'total', 'class' => 'form-control', 'readonly'=>'yes','placeholder' => 'Nominal Anggaran Disetujui Dekan', 'value' => $row->nominal_disetujui_dekan);
+            
+            $this->load->helper('fungsidate');
+
+           $data = array('name' => 'total', 'id' => 'total', 'class' => 'form-control', 'readonly'=>'yes','placeholder' => 'Nominal Anggaran Disetujui Dekan', 'value' => rupiah3($row->nominal_disetujui_dekan));
            echo form_input($data); ?>
           </div>
         </div>

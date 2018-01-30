@@ -8,6 +8,87 @@
               }else if($this->session->userdata('tingkatan')=="pjk"){
                 echo '<a href='.base_url('pjk/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
               }
+              else if($this->session->userdata('tingkatan')=="wd1"){
+                echo '<a href='.base_url('wd1/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="wd2"){
+                echo '<a href='.base_url('wd2/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="wd3"){
+                echo '<a href='.base_url('wd3/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kabag_tu"){
+                echo '<a href='.base_url('kabag_tu/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kabag_keu"){
+                echo '<a href='.base_url('kabag_keu/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kabag_akun"){
+                echo '<a href='.base_url('kabag_akun/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="bendahara"){
+                echo '<a href='.base_url('bendahara/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="dekan"){
+                echo '<a href='.base_url('dekan/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kajur_te"){
+                echo '<a href='.base_url('kajur_te/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kajur_tjp"){
+                echo '<a href='.base_url('kajur_tjp/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kajur_tk"){
+                echo '<a href='.base_url('kajur_tk/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kajur_tm"){
+                echo '<a href='.base_url('kajur_tm/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kajur_ts"){
+                echo '<a href='.base_url('kajur_ts/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_ptb"){
+                echo '<a href='.base_url('kaprodi_ptb/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_ts"){
+                echo '<a href='.base_url('kaprodi_ts/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_ta"){
+                echo '<a href='.base_url('kaprodi_ta/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_ptm"){
+                echo '<a href='.base_url('kaprodi_ptm/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_pto"){
+                echo '<a href='.base_url('kaprodi_pto/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_tm"){
+                echo '<a href='.base_url('kaprodi_tm/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_pte"){
+                echo '<a href='.base_url('kaprodi_pte/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_ptik"){
+                echo '<a href='.base_url('kaprodi_ptik/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_te"){
+                echo '<a href='.base_url('kaprodi_te/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_pkk"){
+                echo '<a href='.base_url('kaprodi_pkk/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_busana"){
+                echo '<a href='.base_url('kaprodi_busana/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_boga"){
+                echo '<a href='.base_url('kaprodi_boga/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_kecantikan"){
+                echo '<a href='.base_url('kaprodi_kecantikan/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
+              else if($this->session->userdata('tingkatan')=="kaprodi_tk"){
+                echo '<a href='.base_url('kaprodi_tk/home').' class="site_title"><i class="fa fa-desktop"></i> <span>SIMPENGPRO</span></a>';
+              }
               ?>
               
             </div>

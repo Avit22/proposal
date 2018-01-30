@@ -54,7 +54,7 @@ class Validasi extends CI_Controller {
 	$this->form_validation->set_rules('validasi_proposal', 'Validasi Proposal', 'required');
 	$this->form_validation->set_rules('alasan', 'Alasan', 'required');
 	$this->form_validation->set_rules('nama_pjk', 'Nama PJK', 'required');
-	$this->form_validation->set_rules('jenis_proposal', 'Jenis Proposal', 'required');
+	//$this->form_validation->set_rules('jenis_proposal', 'Jenis Proposal', 'required');
 	$this->form_validation->set_rules('judul', 'Judul', 'required');
 	$this->form_validation->set_rules('pendahuluan', 'Pendahuluan', 'required');
 	$this->form_validation->set_rules('dasar_hukum', 'Dasar Hukum', 'required');
@@ -63,8 +63,8 @@ class Validasi extends CI_Controller {
 	$this->form_validation->set_rules('keluaran', 'Keluaran', 'required');
 	$this->form_validation->set_rules('tgl_pelaksanaan', 'Tanggal Pelaksanaan', 'required');
 	$this->form_validation->set_rules('penutup', 'Penutup', 'required');
-	$this->form_validation->set_rules('nominal', 'Nominal', 'required');
-	$this->form_validation->set_rules('terbilang', 'Terbilang', 'required');
+	//$this->form_validation->set_rules('nominal', 'Nominal', 'required');
+	//$this->form_validation->set_rules('terbilang', 'Terbilang', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->index();
 		}
@@ -76,7 +76,7 @@ class Validasi extends CI_Controller {
 				'dekan_review' => $this->input->post('validasi_proposal'),
 				'keterangan_review' => $this->input->post('alasan'),				
 				'nama_pjk' => $this->input->post('nama_pjk'),
-				'jenis_proposal' => $this->input->post('jenis_proposal'),
+				//'jenis_proposal' => $this->input->post('jenis_proposal'),
 				'judul' => $this->input->post('judul'),
 				'pendahuluan' => $this->input->post('pendahuluan'),
 				'dasar_hukum' => $this->input->post('dasar_hukum'),
@@ -92,8 +92,35 @@ class Validasi extends CI_Controller {
 				);
 
 			if($this->Input_model->update($id,$data));
-				redirect('dekan/lihat');	
+if($this->input->post('validasi_proposal')=="TIDAK DISETUJUI"){
+ 		// tidak disetujui = do nothing
+ }else {
+ 	   $config = Array(  
+    'protocol' => 'smtp',  
+    'smtp_host' => 'ssl://smtp.googlemail.com',  
+    'smtp_port' => 465,  
+    'smtp_user' => 'proposalft22@gmail.com',   
+    'smtp_pass' => 'adminproposal22',   
+    'mailtype' => 'html',   
+    'charset' => 'iso-8859-1'  
+   );  
+   $this->load->library('email', $config);  
+   $this->email->set_newline("\r\n");  
+   $this->email->from('proposalft22@gmail.com', 'ADMIN PROPOSAL');   
+   $this->email->to('avitwisnu22@gmail.com');   
+   $this->email->subject('Proposal Masuk');   
+   $this->email->message('Menginformasikan Bahwa Telah Masuk Proposal Baru Ke Dashboard Anda'.'<br />'.
+   						 'Nama Pjk   :'. $this->input->post('nama_pjk').'<br />'.
+   						 'Judul :'.$this->input->post('judul').'<br />');  
+   if (!$this->email->send()) {  
+    show_error($this->email->print_debugger());   
+   }else{  
+    //echo 'Success to send email';   
+   } 
+ }
+			
+				redirect('dekan/validasi');	
 		}	
-	redirect('dekan/lihat');	
+	redirect('dekan/validasi');	
 }
 }
