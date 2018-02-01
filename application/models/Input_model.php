@@ -351,12 +351,24 @@ function tambah_revisi_laporan($data) {
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
 		$this->db->join('jurusan','proposal.jurusan = jurusan.id_jurusan');
 		$this->db->join('prodi','proposal.prodi = prodi.id_prodi');
-		$this->db->join('panjar_kerja','proposal.id_proposal = panjar_kerja.id_proposal');
+		//$this->db->join('panjar_kerja','proposal.id_proposal = panjar_kerja.id_proposal');
 		$this->db->where('proposal.id_proposal = "'.$id_proposal.'"');
 		$query = $this->db->get();
 		return $query->result();
 	}
 
+	function get_data_by_idproposal2($id_proposal) {
+
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->join('jurusan','proposal.jurusan = jurusan.id_jurusan');
+		$this->db->join('prodi','proposal.prodi = prodi.id_prodi');
+		$this->db->join('panjar_kerja','proposal.id_proposal = panjar_kerja.id_proposal');
+		$this->db->where('proposal.id_proposal = "'.$id_proposal.'"');
+		$query = $this->db->get();
+		return $query->result();
+	}
 
 	function get_data_laporan($id_laporan){
 
@@ -761,6 +773,7 @@ function get_laporan() {
 		$this->db->select('*');
 		$this->db->from('laporan');
 		$this->db->join('proposal','laporan.id_proposal = proposal.id_proposal');
+		$this->db->join('panjar_kerja','laporan.id_proposal = panjar_kerja.id_proposal');
 		$this->db->order_by('laporan.tgl_input_bendahara desc');
 		$query = $this->db->get();
 		return $query->result();

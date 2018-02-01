@@ -19,7 +19,7 @@ class Detail_proposal extends CI_Controller {
 
 	
 	public function index() {
-		if($query = $this->Input_model->get_data_by_idproposal()) {
+		if($query = $this->Input_model->get_data_by_idproposal2()) {
 			$data['laporane'] = $query;
 		}
 		else
@@ -28,7 +28,7 @@ class Detail_proposal extends CI_Controller {
 	}
 	
 	public function detail($id) {		
-		if($query = $this->Input_model->get_data_by_idproposal($id)) {
+		if($query = $this->Input_model->get_data_by_idproposal2($id)) {
 			$data['proposale'] = $query;
 		}
 		else{
@@ -69,7 +69,7 @@ class Detail_proposal extends CI_Controller {
 	}
 
 	public function input_sisa_panjar($id) {		
-		if($query = $this->Input_model->get_data_by_idproposal($id)) {
+		if($query = $this->Input_model->get_data_by_idproposal2($id)) {
 			$data['proposale'] = $query;
 		}
 		else{

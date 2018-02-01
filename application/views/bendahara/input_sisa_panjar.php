@@ -29,7 +29,7 @@
 
             $this->load->helper('fungsidate');
 
-           $data = array('name' => 'total', 'id' => 'total', 'class' => 'form-control', 'readonly'=>'yes','placeholder' => 'Nominal Anggaran Disetujui Dekan', 'value' => rupiah3($row->nominal_disetujui_dekan));
+           $data = array('name' => 'total', 'id' => 'total', 'class' => 'form-control', 'readonly'=>'yes','placeholder' => 'Nominal Anggaran Disetujui Dekan', 'value' => $row->nominal_disetujui_dekan);
            echo form_input($data); ?>
           </div>
         </div>
@@ -73,7 +73,7 @@
           <label for="pencairan" class="col-sm-4 control-label">30 %</label>
           <div class="col-sm-4">
             <?php 
-           $data = array('name' => 'pencairan', 'id' => 'pencairan', 'class' => 'form-control', 'placeholder' => 'Masukkan Nominal Uang Yang Akan Dicairkan','rows' => '2','value'=>rupiah3($row->sisa), 'readonly'=>'true');
+           $data = array('name' => 'pencairan', 'id' => 'pencairan', 'class' => 'form-control', 'placeholder' => 'Masukkan Nominal Uang Yang Akan Dicairkan','rows' => '2','value'=>$row->sisa, 'readonly'=>'true');
            echo form_input($data); ?>
           </div>
         </div>
@@ -93,7 +93,7 @@
           <label for="lalu" class="col-sm-4 control-label">Pencairan Lalu</label>
           <div class="col-sm-4">
             <?php 
-           $data = array('name' => 'lalu', 'id' => 'lalu', 'class' => 'form-control', 'placeholder' => 'Masukkan Besar Pencairan Lalu, 0 Jika Pertama kali','rows' => '2');
+           $data = array('name' => 'lalu', 'id' => 'lalu', 'class' => 'form-control', 'placeholder' => 'Masukkan Besar Pencairan Lalu, 0 Jika Pertama kali','rows' => '2','value'=>$row->nominal_70, 'readonly'=>'true');
            echo form_input($data); ?>
           </div>
         </div>
