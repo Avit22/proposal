@@ -61,6 +61,16 @@ table, td {
         </div>
 
 
+<!-- Email PJK-->
+        <div class="form-group">
+          <label for="email_pjk" class="col-sm-2 control-label">Email PJK</label>
+          <div class="col-sm-10">
+            <?php 
+           $data = array('name' => 'email_pjk', 'id' => 'email_pjk', 'class' => 'form-control', 'placeholder' => 'Email PJK');
+           echo form_input($data); ?>
+          </div>
+        </div>
+
 <!-- Jurusan -->
         <div class="form-group">
           <label for="jurusan" class="col-sm-2 control-label">Jurusan</label>
