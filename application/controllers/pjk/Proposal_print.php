@@ -99,6 +99,38 @@ $pdf->setPrintFooter(false);
     // Add a page
     // This method has several options, check the source code documentation for more information.
     $pdf->AddPage(); 
+
+    // set a barcode on the page footer
+$pdf->setBarcode(date('Y-m-d H:i:s'));
+
+// set font
+$pdf->SetFont('helvetica', '', 11);
+
+// add a page
+// print a message
+// -----------------------------------------------------------------------------
+$pdf->SetFont('helvetica', '', 10);
+// define barcode style
+$style = array(
+    'position' => '',
+    'align' => 'C',
+    'stretch' => false,
+    'fitwidth' => true,
+    'cellfitalign' => '',
+    'border' => true,
+    'hpadding' => 'auto',
+    'vpadding' => 'auto',
+    'fgcolor' => array(0,0,0),
+    'bgcolor' => false, //array(255,255,255),
+    'text' => true,
+    'font' => 'helvetica',
+    'fontsize' => 8,
+    'stretchtext' => 4
+);
+// PRINT VARIOUS 1D BARCODES
+// CODE 39 - ANSI MH10.8M-1983 - USD-3 - 3 of 9.
+// Standard 2 of 5
+
   
     // set text shadow effect
     //$pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));    
@@ -116,6 +148,9 @@ $pdf->setPrintFooter(false);
     }
 
     foreach ($data['proposale'] as $proposal) { 
+    $pdf->Cell(0, 0, 'Generate by SIPENGPRO', 0, 1);
+    $pdf->write1DBarcode("20180512"."$proposal->id_proposal", 'S25', '', '', '', 18, 0.4, $style, 'N');
+    $pdf->Ln();
     $html = '
     <h3><p align="center">'.$proposal->judul.'</p></h3>
     <br /><br /><br />
@@ -168,7 +203,9 @@ $pdf->setPrintFooter(false);
     $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true); 
 
   
-    
+    // ---------------------------------------------------------
+
+
     // ---------------------------------------------------------    
   
     // Close and output PDF document
