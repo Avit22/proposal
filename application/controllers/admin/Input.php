@@ -62,6 +62,7 @@ public function tambah_proses() {
 	$this->load->library('form_validation');
 	$this->form_validation->set_message('required', '%s Harus Diisi.');
 	$this->form_validation->set_rules('nama_pjk', 'Nama PJK', 'required');
+	$this->form_validation->set_rules('email_pjk', 'Email PJK', 'required');
 	$this->form_validation->set_rules('jenis_proposal', 'Jenis Proposal', 'required');
 	$this->form_validation->set_rules('judul', 'Judul', 'required');
 	$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
@@ -81,6 +82,7 @@ public function tambah_proses() {
 			$tgl = date("Y-m-d");
 			$data = array(				
 				'nama_pjk' => $this->input->post('nama_pjk'),
+				'email_pjk' => $this->input->post('email_pjk'),
 				'jenis_proposal' => $this->input->post('jenis_proposal'),
 				'judul' => $this->input->post('judul'),
 				'jurusan' => $this->input->post('jurusan'),

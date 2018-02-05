@@ -70,7 +70,7 @@ class Validasi extends CI_Controller {
 	redirect('bendahara/validasi');	
 }
 
-public function insert_panjar($id) {
+public function insert_panjar($id) {	
 	$this->load->library('form_validation');
 	$this->form_validation->set_message('required', '%s Harus Diisi.');
 	$this->form_validation->set_rules('total', 'Total Nominal', 'required');
@@ -85,11 +85,12 @@ public function insert_panjar($id) {
 	$this->form_validation->set_rules('tujuanbayar', 'Tujuan Pembayaaran', 'required');
 	//$this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
 		if ($this->form_validation->run() == FALSE) {
-			$this->index();
+			//$this->index();
 		}
 		else {
 			$id_user_session = $this->session->userdata('id_user'); // tambahkan penanda user
 			$tgl = date("Y-m-d");
+			
 			$data = array(
 				'id_proposal' => $id,
 				'pencairanke' => $this->input->post('pencairanke'),
@@ -107,9 +108,33 @@ public function insert_panjar($id) {
 				'keterangan_input'=>"Sudah Input",
 				);
 			if($this->Input_model->insert_panjar($data));
-				redirect('bendahara/lihat_proposal');	
+			$email = $this->input->post('email');
+
+			$config = Array(  
+    'protocol' => 'smtp',  
+    'smtp_host' => 'ssl://smtp.googlemail.com',  
+    'smtp_port' => 465,  
+    'smtp_user' => 'proposalft22@gmail.com',   
+    'smtp_pass' => 'adminproposal22',   
+    'mailtype' => 'html',   
+    'charset' => 'iso-8859-1'  
+   );  
+   $this->load->library('email', $config);  
+   $this->email->set_newline("\r\n");  
+   $this->email->from('proposalft22@gmail.com', 'BENDAHARA PROPOSAL');   
+   $this->email->to($email);   
+   $this->email->subject('Proposal Disetujui');   
+   $this->email->message('Menginformasikan Bahwa  Proposal  Anda Telah Disetujui'.'<br />'.
+   						 'Nama Pjk   :'. $this->input->post('nama_pjk').'<br />'.
+   						 'Judul :'.$this->input->post('judul').'<br />');  
+   if (!$this->email->send()) {  
+    show_error($this->email->print_debugger());   
+   }else{  
+    //echo 'Success to send email';   
+   } 
+			redirect('bendahara/lihat_proposal');	
 		}	
-	redirect('bendahara/lihat_proposal');	
+	 redirect('bendahara/lihat_proposal');	
 }	
 
 public function insert_sisa_panjar($id) {
