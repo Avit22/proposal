@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="en"> 
-  
-
-  <?php $this->view('template/head'); ?>
-    
-
+  <?php $this->view('template/head'); ?>  
   <body class="nav-md">
     <div class="container body">
-      <div class="main_container">
-        
+      <div class="main_container">        
         <?php $this->view('template/sidebar'); ?>
         <?php $this->view('template/top'); ?>
         <!-- page content -->
@@ -66,8 +61,8 @@
           echo '     
     </tbody>
   </table>
-</div>';
-        ?> <?php foreach($proposale as $proposal){ ?>
+</div>';?> 
+<?php foreach($proposale as $proposal){ ?>
         <a href="<?php echo base_url('pjk/proposal_print/index').'/'?><?php echo $proposal->id_proposal ?>"><button type="buttton" class="btn btn-success">PRINT</button> </a>
 
         <?php } ?>
