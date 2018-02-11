@@ -61,7 +61,7 @@ class Validasi extends CI_Controller {
 	$this->form_validation->set_rules('rab', 'RAB', 'required');
 	$this->form_validation->set_rules('tempat', 'Tempat', 'required');
 	$this->form_validation->set_rules('keluaran', 'Keluaran', 'required');
-	$this->form_validation->set_rules('tgl_pelaksanaan', 'Tanggal Pelaksanaan', 'required');
+	//$this->form_validation->set_rules('tgl_pelaksanaan', 'Tanggal Pelaksanaan', 'required');
 	$this->form_validation->set_rules('penutup', 'Penutup', 'required');
 	//$this->form_validation->set_rules('nominal', 'Nominal', 'required');
 	//$this->form_validation->set_rules('terbilang', 'Terbilang', 'required');
@@ -84,11 +84,12 @@ class Validasi extends CI_Controller {
 				'tempat' => $this->input->post('tempat'),
 				'keluaran' => $this->input->post('keluaran'),
 				'penutup' => $this->input->post('penutup'),
-				'tgl_pelaksanaan' => $this->input->post('tgl_pelaksanaan'),
+				//'tgl_pelaksanaan' => $this->input->post('tgl_pelaksanaan'),
 				'tgl_validasi' => $tgl,
 				'nominal_disetujui_dekan' => $this->input->post('nominal'),
 				'nominal_disetujui_rp' => $nominal_rp,
 				'terbilang' => $this->input->post('terbilang'),
+				'kode' => $this->input->post('kode'),
 				);
 
 			if($this->Input_model->update($id,$data));

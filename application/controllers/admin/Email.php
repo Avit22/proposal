@@ -15,12 +15,12 @@ class Email extends CI_Controller{
 	}
 
 	function index(){
-	$config = Array(  
+    $config = Array(  
     'protocol' => 'smtp',  
     'smtp_host' => 'ssl://smtp.googlemail.com',  
     'smtp_port' => 465,  
-    'smtp_user' => 'avitwisnu22@gmail.com',   
-    'smtp_pass' => 'organn22',   
+    'smtp_user' => 'proposalft22@gmail.com',   
+    'smtp_pass' => 'adminproposal22',   
     'mailtype' => 'html',   
     'charset' => 'iso-8859-1'  
    );  
