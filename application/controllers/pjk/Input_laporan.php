@@ -102,8 +102,30 @@ class Input_laporan extends CI_Controller {
 				);	
 
 			if($this->Input_model->tambah_laporan($data)){
-				redirect('pjk/laporan_terkirim');
+			//redirect('pjk/laporan_terkirim');
 			}
+			$config = Array(  
+    'protocol' => 'smtp',  
+    'smtp_host' => 'ssl://smtp.googlemail.com',  
+    'smtp_port' => 465,  
+    'smtp_user' => 'proposalft22@gmail.com',   
+    'smtp_pass' => 'adminproposal22',   
+    'mailtype' => 'html',   
+    'charset' => 'iso-8859-1'  
+   );  
+   $this->load->library('email', $config);  
+   $this->email->set_newline("\r\n");  
+   $this->email->from('proposalft22@gmail.com', 'ADMIN PROPOSAL');   
+   $this->email->to('tendydeveloper@gmail.com');   
+   $this->email->subject('Laporan Kegiatan Masuk');   
+   $this->email->message('Menginformasikan Bahwa Telah Masuk Laporan Kegiatan Baru Ke Dashboard Anda'.'<br />'.
+   						 'Nama Pjk   :'. $this->input->post('nama_pjk').'<br />'.
+   						 'Judul :'.$this->input->post('judul').'<br />');  
+   if (!$this->email->send()) {  
+    show_error($this->email->print_debugger());   
+   }else{  
+    //echo 'Success to send email';   
+   } 
 		}
 		redirect('pjk/laporan_terkirim');
 	}

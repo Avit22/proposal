@@ -117,7 +117,13 @@ function tambah_revisi_laporan($data) {
 		return $query->result();
 	}
 
-	
+	function search_proposal_bykode($kode) {
+		$this->db->select('*');
+		$this->db->from('proposal');
+		$this->db->where('proposal.kode = "'.$kode.'"');
+		$query = $this->db->get();
+		return $query->result();
+	}
 
 	function get_data_pk($id_user) {
 		$this->db->select('*');
@@ -366,6 +372,7 @@ function tambah_revisi_laporan($data) {
 		$this->db->join('prodi','proposal.prodi = prodi.id_prodi');
 		$this->db->join('panjar_kerja','proposal.id_proposal = panjar_kerja.id_proposal');
 		$this->db->where('proposal.id_proposal = "'.$id_proposal.'"');
+		$this->db->group_by('proposal.id_proposal');
 		$query = $this->db->get();
 		return $query->result();
 	}

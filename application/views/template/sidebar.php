@@ -113,6 +113,7 @@
                       <li><a href="<?php echo site_url('pjk/status'); ?>"><i class="fa fa-list"></i> Status Proposal</a></li>
                       <li><a href="<?php echo site_url('pjk/notifikasi'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi</a></li>
                       <li><a href="<?php echo site_url('pjk/notifikasi_rab'); ?>"><i class="fa fa-list"></i> Notifikasi Revisi RAB</a></li>
+                      <li><a href="<?php echo site_url('pjk/cek_proposal'); ?>"><i class="fa fa-list"></i> Cek Proposal</a></li>
                        </ul>
                     </li>
                   

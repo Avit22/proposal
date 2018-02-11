@@ -146,10 +146,15 @@ $style = array(
     foreach ($data['totalrab'] as $row) {
         $total = $row->total_rab;
     }
+    if($data['proposale']==null){
+        $html = '
+    <h3>PROPOSAL BELUM DISETUJUI DEKAN  </h3>';
 
+
+    }else {
     foreach ($data['proposale'] as $proposal) { 
-    $pdf->Cell(0, 0, 'Generate by SIPENGPRO', 0, 1);
-    $pdf->write1DBarcode("20180512"."$proposal->id_proposal", 'S25', '', '', '', 18, 0.4, $style, 'N');
+    $pdf->Cell(0, 0, 'Generate by SIMPENGPRO', 0, 1);
+    $pdf->write1DBarcode("$proposal->kode", 'S25', '', '', '', 18, 0.4, $style, 'N');
     $pdf->Ln();
     $html = '
     <h3><p align="center">'.$proposal->judul.'</p></h3>
@@ -216,6 +221,7 @@ $style = array(
     // END OF FILE
     //============================================================+
     }
+}
 }
   
 /* End of file c_test.php */

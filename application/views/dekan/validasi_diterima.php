@@ -16,6 +16,11 @@
           
           <h1 class="text-center text-info">PENGESAHAN VALIDASI PROPOSAL</h1> <br /><br />
  <?php 
+
+ $this->load->helper('string');
+
+ 
+
 foreach($proposale as $proposal) { ?> 
 <?php echo form_open('dekan/validasi/update_review/'.$proposal->id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
        <?php echo validation_errors(); ?>
@@ -159,6 +164,9 @@ foreach($proposale as $proposal) { ?>
           </div>
         </div>
 
+        
+
+        <input type="hidden" name="kode" id="kode" value="<?php echo random_string('numeric',8); ?>">
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-primary">Kirim</button>

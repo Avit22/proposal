@@ -124,7 +124,7 @@ public function insert_panjar($id) {
    $this->email->from('proposalft22@gmail.com', 'BENDAHARA PROPOSAL');   
    $this->email->to($email);   
    $this->email->subject('Proposal Disetujui');   
-   $this->email->message('Menginformasikan Bahwa  Proposal  Anda Telah Disetujui'.'<br />'.
+   $this->email->message('Menginformasikan Bahwa  Proposal  Anda Telah Disetujui Silahkan Cetak Panjar Kerja'.'<br />'.
    						 'Nama Pjk   :'. $this->input->post('nama_pjk').'<br />'.
    						 'Judul :'.$this->input->post('judul').'<br />');  
    if (!$this->email->send()) {  
@@ -174,6 +174,31 @@ public function insert_sisa_panjar($id) {
 				'status_input'=>"Sudah Input",
 				);
 			if($this->Input_model->insert_panjar($data));
+
+			$email = $this->input->post('email');
+
+			$config = Array(  
+    'protocol' => 'smtp',  
+    'smtp_host' => 'ssl://smtp.googlemail.com',  
+    'smtp_port' => 465,  
+    'smtp_user' => 'proposalft22@gmail.com',   
+    'smtp_pass' => 'adminproposal22',   
+    'mailtype' => 'html',   
+    'charset' => 'iso-8859-1'  
+   );  
+   $this->load->library('email', $config);  
+   $this->email->set_newline("\r\n");  
+   $this->email->from('proposalft22@gmail.com', 'BENDAHARA PROPOSAL');   
+   $this->email->to($email);   
+   $this->email->subject('Proposal Disetujui');   
+   $this->email->message('Menginformasikan Bahwa  Laporan Kegiatan  Anda Telah Disetujui Silahkan Cetak Sisa Panjar Kerja'.'<br />'.
+   						 'Nama Pjk   :'. $this->input->post('nama_pjk').'<br />'.
+   						 'Judul :'.$this->input->post('judul').'<br />');  
+   if (!$this->email->send()) {  
+    show_error($this->email->print_debugger());   
+   }else{  
+    //echo 'Success to send email';   
+   } 
 				redirect('bendahara/lihat');	
 		}	
 	redirect('bendahara/lihat');	

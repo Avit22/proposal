@@ -140,7 +140,7 @@
           </div>
         </div>
         
-
+        <input type="hidden" name="email" id="email" value="<?php echo $row->email_pjk; ?>">
         <div class="form-group">
           <div class="col-sm-offset-4 col-sm-4">
             <button type="submit" class="btn btn-primary">Kirim</button>
