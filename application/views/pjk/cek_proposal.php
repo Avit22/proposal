@@ -3,11 +3,13 @@
 table, td {
     border: 1px solid black;
 }
-</style>
+</style> 
 <html lang="en"> 
   
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   
 
   <?php $this->view('template/head'); ?>
@@ -23,31 +25,31 @@ table, td {
         <!-- page content -->
         <div class="right_col" role="main">
           
-          <h1 class="text-center text-info">CEK STATUS PROPOSAL</h1><br /><br />
+          <h1 class="text-center text-info">Cek Proposal</h1> <br /><br />
+
        <?php echo form_open('pjk/input/cek_proposal',array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
        <?php echo validation_errors(); ?>
-
-
         
-<!-- Kode Validasi-->
+<!-- Kode-->
         <div class="form-group">
-          <label for="kode" class="col-sm-4 control-label">Nomor Kode</label>
+          <label for="kode" class="col-sm-5 control-label">Kode Validasi</label>
           <div class="col-sm-3">
             <?php 
-           $data = array('name' => 'kode', 'id' => 'kode', 'class' => 'form-control', 'placeholder' => 'Masukkan Nomor Kode');
+           $data = array('name' => 'kode', 'id' => 'kode', 'class' => 'form-control', 'placeholder' => 'Masukkan kode validasi');
            echo form_input($data); ?>
           </div>
         </div>
 
         <div class="form-group">
-          <div class="col-sm-offset-4 col-sm-10">
+          <div class="col-sm-offset-5 col-sm-5">
             <button type="submit" class="btn btn-primary">Kirim</button>
             <button type="reset" class="btn btn-warning">Reset</button>
           </div>
         </div>
        <?php echo form_close(); ?>
-       <div>
-          <div class="" style="font-size:30px;"> Status Proposal </div><br />
+
+
+       <div class="" style="font-size:30px;"> Status Proposal </div><br />
           <table id="example" class="table table-bordered table-striped header-fixed ">
             <thead>
             <tr>
@@ -64,7 +66,6 @@ table, td {
             foreach($proposale as $proposal) : { ?>
            <tr data-toggle="modal" data-target="myModal" class="noExl">
                 <td><?php echo $i++; ?></td>
-                
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo $proposal->tgl_validasi; ?></td>
@@ -75,24 +76,15 @@ table, td {
                   
           </table>
 
+
         </div>
-
-
-      
-
-
-
         <!-- /page content -->
 
-
+        
+      </div>
+    </div>
+    
     <?php $this->view('template/js'); ?>
 </body>
-</html> 
+</html>
     
-              
-      </div>
-     
-    
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  

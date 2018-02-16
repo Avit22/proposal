@@ -21,7 +21,7 @@ class Validasi extends CI_Controller {
 	public function index() {
 
 
-		if($query = $this->Input_model->get_data_wd1()) {
+		if($query = $this->Input_model->get_data_validasi_wd1()) {
 			$data['proposale'] = $query;
 		}
 		else
@@ -30,6 +30,13 @@ class Validasi extends CI_Controller {
 		$this->load->view('wd1/validasi_proposal',$data);
 		
 	}
+
+	public function index2() {
+
+				$this->load->view('wd1/cek_proposal');
+
+	}
+
 
 	public function validasi($id) {
 		$this->load->model('Input_model');
@@ -90,5 +97,24 @@ class Validasi extends CI_Controller {
 		}	
 	redirect('wd1/lihat');	
 }
-
+	
+	public function cek_proposal() {
+	$this->load->library('form_validation');
+	$this->form_validation->set_message('required', '%s Harus Diisi.');
+	$this->form_validation->set_rules('kode', 'Kode Proposal', 'required');
+	
+		if ($this->form_validation->run() == FALSE) {
+			$this->index2();
+		}
+		else {
+			if($query = $this->Input_model->search_proposal_bykode($this->input->post('kode'))) {
+			$data['proposale'] = $query;
+			}
+			else{
+				$data['proposale'] = NULL;
+			}
+			$this->load->view('wd1/cek_proposal2',$data);
+		}
+		
+}
 }

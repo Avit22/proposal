@@ -38,7 +38,7 @@
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
                 <td><?php echo $proposal->tgl_input; ?></td>
-                <td><?php echo anchor("pjk/detail_proposal/detail/$proposal->id_proposal",'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
+                <td><?php echo '<a href="'.base_url('assets/image/').'/'.$proposal->file1.'"><span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span></a>'; ?>   
                 </td>
                 <td><?php echo anchor("pjk/edit_proposal/edit/".$proposal->id_proposal,'<span class="glyphicon glyphicon-edit text-primary fa-lg" aria-hidden="true" title="Edit Proposal"></span>'); ?>   
                 </td>

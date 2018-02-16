@@ -30,6 +30,7 @@
               <th>Tanggal Terkirim</th>
               <th>View Proposal</th>
               <th>Revisi Proposal</th>
+              <th>Validasi Proposal</th>
            </tr>
             </thead>
             <tbody>
@@ -44,6 +45,8 @@
                 <td><?php echo anchor("wd1/detail_proposal/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
                 <td><?php echo anchor("wd1/revisi_proposal/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-tags text-primary fa-lg" aria-hidden="true" title="Revisi"></span>'); ?>   
+                </td>
+                <td><?php echo anchor("wd1/validasi/validasi/".$proposal->id_proposal,'<span class="glyphicon glyphicon-check text-primary fa-lg" aria-hidden="true" title="Validasi"></span>'); ?>   
                 </td>
             </tr>
             <?php } endforeach; } ?>

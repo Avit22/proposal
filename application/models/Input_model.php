@@ -35,6 +35,11 @@ class Input_model extends CI_Model {
 		$this->db->update('proposal',$data);
 	}
 
+	function validasi($id,$data) {
+		$this->db->where('id_proposal',$id);
+		$this->db->insert('validasi',$data);
+	}
+
 	function update_laporan($id,$data) {
 		$this->db->where('id_laporan',$id);
 		$this->db->update('laporan',$data);
@@ -174,8 +179,8 @@ function tambah_revisi_laporan($data) {
 	function get_data_proposal_disetujui() {
 		$this->db->where('status_review','DISETUJUI');
 		$this->db->select('*');
-		$this->db->from('proposal');
-		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
+		$this->db->from('validasi');
+		$this->db->join('wd','validasi.jenis_proposal = wd.id_wd');
 		$this->db->order_by('tgl_input desc');
 		$query = $this->db->get();
 		return $query->result();
@@ -451,7 +456,28 @@ function get_revisi_rab($id_user) {
 		$this->db->from('proposal');
 		$this->db->join('wd','proposal.jenis_proposal = wd.id_wd');
 		$this->db->where('wd.id_wd=1');
-		$this->db->order_by('tgl_input desc');
+		//$this->db->order_by('tgl_input desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_validasi_wd1() {
+
+		$this->db->select('*');
+		$this->db->from('validasi');
+		$this->db->join('wd','validasi.jenis_proposal = wd.id_wd');
+		$this->db->where('wd.id_wd=1');
+		$this->db->order_by('tgl_validasi desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_data_validasi($id_proposal) {
+
+		$this->db->select('*');
+		$this->db->from('validasi');
+		$this->db->where('id_proposal = "'.$id_proposal.'"');
+		$this->db->order_by('tgl_validasi desc');
 		$query = $this->db->get();
 		return $query->result();
 	}

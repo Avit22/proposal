@@ -26,6 +26,7 @@
               <th>Tanggal Terkirim</th>
               <th>View Proposal</th>
               <th>Revisi Proposal</th>
+              <th>Validasi Proposal</th>
            </tr>
             </thead>
             <tbody>
@@ -40,6 +41,8 @@
                 <td><?php echo anchor("kabag_tu/detail_proposal/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-file text-primary fa-lg" aria-hidden="true" title="View Proposal"></span>'); ?>   
                 </td>
                 <td><?php echo anchor("kabag_tu/revisi_proposal/detail/".$proposal->id_proposal,'<span class="glyphicon glyphicon-tags text-primary fa-lg" aria-hidden="true" title="Revisi"></span>'); ?>   
+                </td>
+                <td><?php echo anchor("kabag_tu/validasi/validasi/".$proposal->id_proposal,'<span class="glyphicon glyphicon-check text-primary fa-lg" aria-hidden="true" title="Validasi"></span>'); ?>   
                 </td>
       
             </tr>

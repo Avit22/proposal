@@ -159,17 +159,19 @@ $style = array(
     $html = '
     <h3><p align="center">'.$proposal->judul.'</p></h3>
     <br /><br /><br />
-    <strong>A. Pendahuluan</strong>
+    <strong>A. Nama Pjk</strong>
+    <p align="justify">'.$proposal->nama_pjk.'</p><br />
+    <strong>B. Pendahuluan</strong>
     <p align="justify">'.$proposal->pendahuluan.'</p><br />
-    <strong>B. Dasar Hukum</strong>
+    <strong>C. Dasar Hukum</strong>
     <p align="justify">'.$proposal->dasar_hukum.'</p><br />
-    <strong>C. Tempat dan Tanggal Pelaksanaan</strong>
+    <strong>D. Tempat dan Tanggal Pelaksanaan</strong>
     <p align="justify">Tempat :'.$proposal->tempat.'</p><br />
     Tanggal :'.tgl_indo($proposal->tgl_pelaksanaan).'<br />
     <br />
-    <strong>D. Keluaran</strong>
+    <strong>E. Keluaran</strong>
     <p align="justify">'.$proposal->keluaran.'</p><br />
-    <strong>E. Penutup</strong>
+    <strong>F. Penutup</strong>
     <p align="justify">'.$proposal->penutup.'</p><br />    
     ';
   }

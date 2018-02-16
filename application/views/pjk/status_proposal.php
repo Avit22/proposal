@@ -22,9 +22,8 @@
               <th>No.</th>
               <th>Judul Proposal</th>
               <th>Nama PJK</th>
-              <th>Tanggal Validasi</th>
-              <th>Status Validasi</th>
-              <th>Keterangan</th>
+              <th>History</th>
+              
            </tr>
             </thead>
             <tbody>
@@ -35,9 +34,9 @@
                 
                 <td><?php echo $proposal->judul; ?></td>
                 <td><?php echo $proposal->nama_pjk; ?></td>
-                <td><?php echo $proposal->tgl_validasi; ?></td>
-                <td><?php echo $proposal->status_review; ?></td>
-                <td><?php echo $proposal->keterangan_review; ?></td>
+                <td><?php echo anchor("pjk/status/history/".$proposal->id_proposal,'<span class="glyphicon glyphicon-folder-close text-primary fa-lg" aria-hidden="true" title="History Proposal"></span>'); ?>   
+                </td>
+                
             </tr>
             <?php } endforeach; } ?>
                   

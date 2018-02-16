@@ -18,12 +18,12 @@
           
  <?php 
 foreach($proposale as $proposal) { ?> 
-<?php echo form_open('wd1/revisi/update_review/'.$proposal->id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
+<?php echo form_open('wd1/revisi/validasi/'.$proposal->id_proposal,array('id' => 'tambah','name' => 'tambah', 'class' => 'form-horizontal')); ?>
        <?php echo validation_errors(); ?>
 
         <!-- Validasi Proposal -->
         <div class="form-group">
-          <label for="validasiproposal" class="col-sm-2 control-label">Validasi Proposal</label>
+          <label for="validasi_proposal" class="col-sm-2 control-label">Validasi Proposal</label>
           <div class="col-sm-6">
           <select class="form-control" name="validasi_proposal">
             <option value="">--- Validasi Proposal ---</option>
@@ -69,77 +69,10 @@ foreach($proposale as $proposal) { ?>
           </div>
         </div>
 
-        <!-- Pendahuluan -->
-        <div class="form-group">
-          <label for="pendahuluan" class="col-sm-2 control-label">Pendahuluan</label>
-          <div class="col-sm-10">
-            <?php 
-           $data = array('name' => 'pendahuluan', 'id' => 'pendahuluan', 'class' => 'form-control', 'readonly'=>'true', 'placeholder' => 'Masukkan Pendahuluan','value'=>$proposal->pendahuluan);
-           echo form_textarea($data); ?>
-          </div>
-        </div>
-
-        <!-- Dasar Hukum -->
-        <div class="form-group">
-          <label for="dasar_hukum" class="col-sm-2 control-label">Dasar HUkum</label>
-          <div class="col-sm-10">
-            <?php 
-           $data = array('name' => 'dasar_hukum', 'id' => 'dasar_hukum', 'class' => 'form-control', 'readonly'=>'true', 'placeholder' => 'Masukkan Tujuan','value'=>$proposal->dasar_hukum);
-           echo form_textarea($data); ?>
-          </div>
-        </div>
-
-        <!-- RAB -->
-        <div class="form-group">
-          <label for="rab" class="col-sm-2 control-label">RAB</label>
-          <div class="col-sm-10">
-            <?php 
-           $data = array('name' => 'rab', 'id' => 'rab', 'class' => 'form-control', 'readonly'=>'true', 'placeholder' => 'Masukkan RAB','value'=>$proposal->rab);
-           echo form_textarea($data); ?>
-          </div>
-        </div>
-       
-
-        <!-- Tempat -->
-        <div class="form-group">
-          <label for="tempat" class="col-sm-2 control-label">Tempat</label>
-          <div class="col-sm-10">
-            <?php 
-           $data = array('name' => 'tempat', 'id' => 'tempat', 'class' => 'form-control', 'readonly'=>'true', 'placeholder' => 'Masukkan Tempat','value'=>$proposal->tempat);
-           echo form_textarea($data); ?>
-          </div>
-        </div>
-
-        <!-- Tanggal Pelaksanaan -->
-        <div class="form-group">
-          <label for="tgl_pelaksanaan" class="col-sm-2 control-label">Tanggal Pelaksanaan</label>
-          <div class="col-sm-10">
-            <?php 
-           $data = array('name' => 'tgl_pelaksanaan', 'id' => 'tgl_pelaksanaan', 'class' => 'form-control', 'readonly'=>'true', 'placeholder' => 'Masukkan Tanggal Pelaksanaan','value'=>$proposal->tgl_pelaksanaan);
-           echo form_textarea($data); ?>
-          </div>         
-        </div>
-
-        <!-- Keluaran -->
-        <div class="form-group">
-          <label for="keluaran" class="col-sm-2 control-label">Keluaran</label>
-          <div class="col-sm-10">
-            <?php 
-           $data = array('name' => 'keluaran', 'id' => 'keluaran', 'class' => 'form-control', 'readonly'=>'true', 'placeholder' => 'Masukkan Keluaran','value'=>$proposal->keluaran);
-           echo form_textarea($data); ?>
-          </div>
-        </div>
-
-        <!-- Penutup -->
-        <div class="form-group">
-          <label for="penutup" class="col-sm-2 control-label">Penutup</label>
-          <div class="col-sm-10">
-            <?php 
-           $data = array('name' => 'penutup', 'id' => 'penutup', 'class' => 'form-control', 'readonly'=>'true', 'placeholder' => 'Masukkan Penutup','value'=>$proposal->penutup);
-          echo form_textarea($data); ?>
-          </div>
-        </div>
-
+        
+        <input type="hidden" name="id_proposal" id="id_proposal" value=<?php echo $proposal->id_proposal; ?>>
+        <input type="hidden" name="jenis_proposal" id="jenis_proposal" value=<?php echo $proposal->jenis_proposal; ?>>
+        <input type="hidden" name="tgl_input" id="tgl_input" value=<?php echo $proposal->tgl_input; ?>>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-primary">Kirim</button>

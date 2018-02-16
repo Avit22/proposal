@@ -56,6 +56,12 @@ class Input extends CI_Controller {
 		
 	}
 
+	public function index2() {
+
+				$this->load->view('kaprodi_ts/cek_proposal');
+
+	}
+
 	function hapus($id) {
 		$this->Input_model->hapus($id);
 		redirect('kaprodi_ts/terkirim');
@@ -198,6 +204,24 @@ public function update_review($id) {
 		}	
 	redirect('kaprodi_ts/terkirim');	
 }
+	public function cek_proposal() {
+	$this->load->library('form_validation');
+	$this->form_validation->set_message('required', '%s Harus Diisi.');
+	$this->form_validation->set_rules('kode', 'Kode Proposal', 'required');
 	
+		if ($this->form_validation->run() == FALSE) {
+			$this->index2();
+		}
+		else {
+			if($query = $this->Input_model->search_proposal_bykode($this->input->post('kode'))) {
+			$data['proposale'] = $query;
+			}
+			else{
+				$data['proposale'] = NULL;
+			}
+			$this->load->view('kaprodi_ts/cek_proposal2',$data);
+		}
+		
+}
 
 }

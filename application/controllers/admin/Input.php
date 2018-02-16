@@ -51,6 +51,13 @@ class Input extends CI_Controller {
 		
 	}
 
+	public function index2() {
+
+				$this->load->view('admin/cek_proposal');
+
+	}
+
+
 	public function hapus($id) {
 		$this->load->model('Input_model');
 		$this->Input_model->hapus($id);
@@ -218,4 +225,24 @@ public function update_review($id) {
 		}	
 	redirect('admin/terkirim');	
 }
+	public function cek_proposal() {
+	$this->load->library('form_validation');
+	$this->form_validation->set_message('required', '%s Harus Diisi.');
+	$this->form_validation->set_rules('kode', 'Kode Proposal', 'required');
+	
+		if ($this->form_validation->run() == FALSE) {
+			$this->index2();
+		}
+		else {
+			if($query = $this->Input_model->search_proposal_bykode($this->input->post('kode'))) {
+			$data['proposale'] = $query;
+			}
+			else{
+				$data['proposale'] = NULL;
+			}
+			$this->load->view('admin/cek_proposal2',$data);
+		}
+		
+}
+
 }

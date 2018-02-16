@@ -30,6 +30,17 @@ class Status extends CI_Controller {
 		
 	}
 
+	public function history($id_proposal) {
+		if($query = $this->Input_model->get_data_validasi($id_proposal)) {
+			$data['proposale'] = $query;
+		}
+		else{
+			$data['proposale'] = NULL;
+		}		
+
+		$this->load->view('pjk/history_proposal',$data);
+		
+	}
 	
 
 }

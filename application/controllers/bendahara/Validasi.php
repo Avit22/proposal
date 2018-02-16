@@ -30,6 +30,12 @@ class Validasi extends CI_Controller {
 		
 	}
 
+	public function index2() {
+
+				$this->load->view('bendahara/cek_proposal');
+
+	}
+
 	public function validasi($id) {
 		$this->load->model('Input_model');
 		
@@ -203,4 +209,24 @@ public function insert_sisa_panjar($id) {
 		}	
 	redirect('bendahara/lihat');	
 }	
+	public function cek_proposal() {
+	$this->load->library('form_validation');
+	$this->form_validation->set_message('required', '%s Harus Diisi.');
+	$this->form_validation->set_rules('kode', 'Kode Proposal', 'required');
+	
+		if ($this->form_validation->run() == FALSE) {
+			$this->index2();
+		}
+		else {
+			if($query = $this->Input_model->search_proposal_bykode($this->input->post('kode'))) {
+			$data['proposale'] = $query;
+			}
+			else{
+				$data['proposale'] = NULL;
+			}
+			$this->load->view('bendahara/cek_proposal2',$data);
+		}
+		
+}
+
 }
